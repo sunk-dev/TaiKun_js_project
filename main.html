@@ -4,26 +4,36 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="./main.css">
+    <link rel="stylesheet" href="./main.css" />
   </head>
   <body>
     <div id="box">
-        <header id="header">
-            <button id="request">요구사항</button>
-            <h1>title</h1>
-            <button id="request">menu</button>
-        </header>
-            <div id="line1">
-                <button id="animal1">동물1</button>
-                <button id="animal2">동물2</button>
-                <button id="ainmal3">동물3</button>
-            </div>
-            <div id="line2">
-                <button id="animal4">동물4</button>
-                <button id="animal5">동물5</button>
-                <button id="animal6">동물6</button>
-            </div>
-        <footer>푸터부분입미다</footer>
+      <header id="header">
+        <button id="request">요구사항</button>
+        <h1>title</h1>
+        <button id="request">menu</button>
+      </header>
+      <div id="line1">
+        <button id="animal1">닭</button>
+        <button id="animal2">젖소</button>
+        <button id="ainmal3">양</button>
+      </div>
+      <div id="line2">
+        <button id="animal4">오리</button>
+        <button id="animal5">염소</button>
+        <button id="animal6">돼지</button>
+      </div>
+      <footer>푸터부분입미다</footer>
+
+      <script>
+        const agg = document.getElementById('animal1');
+        let aggValue = 0;
+        agg.addEventListener('click', () => {
+          console.log('닭 버튼을 클릭했습니다');
+          aggValue++;
+          console.log(aggValue);
+        });
+      </script>
     </div>
   </body>
 </html>
