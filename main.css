@@ -1,0 +1,58 @@
+#box {
+  width: 900px;
+  height: 900px;
+  background: red;
+  position: relative;
+}
+
+header {
+  background: gray;
+  width: 100%;
+  height: 13%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+header button {
+  width: 30%;
+  height: 100%;
+}
+.demend-modal {
+  width: 450px;
+  height: 780px;
+  top: 12.8%;
+  background: rgb(0, 0, 255);
+  position: fixed;
+  z-index: 100;
+  display: none;
+}
+.demend-modal.visible {
+  display: block;
+}
+.demend-modal .modal__content {
+  width: 450px;
+  height: 90%;
+}
+.demend-modal .modal__actions {
+  width: 450px;
+}
+.demend-modal .modal__actions .out-btn {
+  position: relative;
+  left: 350px;
+  padding: 0.5rem 1.5rem;
+  border: 1px solid #00329e;
+  background: #a21649;
+  color: rgb(255, 255, 255);
+  border-radius: 6px;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.26);
+  cursor: pointer;
+  margin: 0 0.5rem;
+}
+
+footer {
+  background: violet;
+  width: 100%;
+  height: 130px;
+  position: absolute;
+  bottom: 0;
+}
