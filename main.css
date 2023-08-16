@@ -24,3 +24,17 @@ footer{
     position: absolute;
     bottom: 0;
 }
+#body{
+    background: blue;
+    flex-direction: column;
+}
+#line1, #line2{
+    height: 33%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+#line1 button, #line2 button{
+    height: 30%;
+    width: 20%;
+}
