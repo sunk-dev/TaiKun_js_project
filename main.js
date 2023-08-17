@@ -35,12 +35,6 @@ const $demendModal = document.querySelector(".demend-modal");
 const $demendModalCloseBtn = $demendModal.querySelector(".modal__actions");
 // 요구사항 확인 컨텐츠들
 const $modal__content = document.querySelector(".modal__content");
-const $egg = $modal__content.querySelector(".egg");
-const $milk = $modal__content.querySelector(".milk");
-const $fleece = $modal__content.querySelector(".fleece");
-const $duckegg = $modal__content.querySelector(".duckegg");
-const $goatMilk = $modal__content.querySelector(".goatMilk");
-const $truffle = $modal__content.querySelector(".truffle");
 const CLASS_VISIBLE = "visible";
 
 const closeModal = (e) => {
