@@ -63,7 +63,6 @@ let aggValue = 0;
 agg.addEventListener("click", () => {
   console.log("닭 버튼을 클릭했습니다");
   aggValue++;
-
   console.log("계란: ", aggValue);
   $egg.textContent = `계란: 5/${aggValue}`;
 });
@@ -106,4 +105,14 @@ truffle.addEventListener("click", () => {
   truffleValue++;
   console.log("트러플: ", truffleValue);
   $truffle.textContent = `트러플: 5/${truffleValue}`;
+});
+
+// 판매 버튼 이벤트
+const buyButton = document.getElementById("buy");
+buyButton.addEventListener('click', () => {
+  console.log('구매버튼');
+});
+const sellButton = document.getElementById("sell");
+sellButton.addEventListener('click', () => {
+  console.log('판매버튼');
 });

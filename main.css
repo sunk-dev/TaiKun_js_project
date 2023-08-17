@@ -3,6 +3,7 @@
   height: 900px;
   background: red;
   position: relative;
+
 }
 
 #backdrop {
@@ -29,6 +30,12 @@ header button {
   width: 30%;
   height: 100%;
 }
+
+/* 현재자산 css */
+p .money{
+ 
+}
+
 .demend-modal {
   position: fixed;
   display: none;
@@ -158,4 +165,12 @@ footer {
   display: flex;
   align-content: center;
   justify-content: center;
+}
+
+#buy{
+  background: palegoldenrod;
+}
+
+#sell{
+  background: palegoldenrod;
 }
