@@ -3,6 +3,14 @@
 const $menuBtn = document.getElementById('menu');
 // 메뉴 모달
 const $menuModal = document.querySelector('body .menu-modal');
+//메뉴 모달 안에서 x 버튼
+const $exitBtn = document.getElementById('exit-btn');
+
+//메뉴 모달을 사라지게 하는
+const exitMenuModalHandler = (e) => {
+  console.log(`취소 버튼 눌림`);
+  $menuModal.classList.remove('show');
+};
 
 //메뉴 모달을 보여주는 showMenuModalHandler
 const showMenuModalHandler = (e) => {
@@ -11,6 +19,7 @@ const showMenuModalHandler = (e) => {
 
 //menu 버튼에 클릭이벤트
 $menuBtn.addEventListener('click', showMenuModalHandler);
+$exitBtn.addEventListener('click', exitMenuModalHandler);
 
 //요구사항 모달 구현(이승한
 // 헤더에 요구사항 버튼

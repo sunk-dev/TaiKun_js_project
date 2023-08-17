@@ -112,14 +112,11 @@ footer {
 .menu-header {
   height: 50px;
   display: flex;
-  justify-content: center;
-  align-content: center;
+  flex-direction: row;
 }
 .menu-header .title {
   /* border: 2px solid red; */
   flex: 3;
-  display: flex;
-  justify-content: center;
 }
 
 .menu-header span {
