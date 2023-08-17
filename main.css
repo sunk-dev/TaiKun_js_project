@@ -66,12 +66,87 @@ header button {
   display: flex;
   justify-content: space-around;
   align-items: center;
+
 }
 #line1 button,
 #line2 button {
   height: 30%;
   width: 20%;
 }
+
+footer {
+  background: violet;
+  width: 100%;
+  height: 130px;
+  position: absolute;
+  bottom: 0;
+
+/* 메뉴 css 부분 */
+/* 메뉴 버튼 css */
+@import url('https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css');
+
+/* 크기 400 x 600 기준 */
+
+.menu-modal {
+  position: fixed;
+  background: #fff;
+  z-index: 100;
+  top: 15%;
+  left: 250px;
+  display: none;
+  border: 4px solid black;
+  width: 400px;
+  height: 600px;
+  border-radius: 20px;
+}
+
+.menu-modal.show {
+  display: flex;
+
+  border: 4px solid black;
+  width: 400px;
+  height: 600px;
+  border-radius: 20px;
+}
+
+.menu-header {
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+}
+.menu-header .title {
+  /* border: 2px solid red; */
+  flex: 3;
+}
+
+.menu-header span {
+  /* border: 2px solid red; */
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.main_info {
+  height: 550px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  text-align: center;
+  flex: 3;
+}
+
+.main_info span {
+  border: 2px solid blue;
+  width: 200px;
+  height: 50px;
+  border-radius: 20px;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
 
 footer {
   background: violet;
