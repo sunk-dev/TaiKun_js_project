@@ -9,7 +9,9 @@ const $demendModal = document.querySelector(".demend-modal");
 
 // 닫기버튼
 const $demendModalCloseBtn = $demendModal.querySelector(".modal__actions");
-
+// 요구사항 확인 컨텐츠들
+const $modal__content = document.querySelector(".modal__content");
+const $egg = $modal__content.querySelector(".egg");
 const CLASS_VISIBLE = "visible";
 const closeModal = (e) => {
   $demendModal.classList.remove(CLASS_VISIBLE);
@@ -32,6 +34,7 @@ agg.addEventListener("click", () => {
   console.log("닭 버튼을 클릭했습니다");
   aggValue++;
   console.log("계란: ", aggValue);
+  $egg.textContent = `계란: 5/${aggValue}`;
 });
 const milk = document.getElementById("animal2");
 let milkValue = 0;
