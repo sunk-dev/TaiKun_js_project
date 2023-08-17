@@ -1,7 +1,11 @@
+body {
+  background: url('./image_main/main_background.jpg');
+}
+
 #box {
   width: 900px;
   height: 900px;
-  background: red;
+  background: url('./image_main/grass.jpg');
   position: relative;
 }
 
@@ -28,6 +32,14 @@ header {
 header button {
   width: 30%;
   height: 100%;
+}
+header #demend img{
+  max-width: 100%;
+  max-height: 100%;
+}
+header #request img {
+  max-width: 100%;
+  max-height: 100%;
 }
 .demend-modal {
   width: 450px;
@@ -71,6 +83,13 @@ header button {
 #line2 button {
   height: 30%;
   width: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
 }
 #line1 button img,
 #line2 button img {
