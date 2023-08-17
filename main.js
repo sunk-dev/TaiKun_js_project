@@ -1,3 +1,12 @@
+//menu 버튼
+//헤더에 menu 버튼
+const $menuBtn=document.getElementById('menu');
+// 메뉴 모달
+const $menuModal = document.querySelector(".menu-modal");
+
+
+
+
 //요구사항 모달 구현(이승한
 // 헤더에 요구사항 버튼
 const $demendBtn = document.getElementById("demend");
