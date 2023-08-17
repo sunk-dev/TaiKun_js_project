@@ -93,39 +93,64 @@ let milkValue = 0;
 milk.addEventListener('click', () => {
   console.log('젖소 버튼을 클릭했습니다');
   milkValue++;
+<<<<<<< HEAD
 
   console.log('우유: ', milkValue);
   $milk.textContent = `우유: 5/${aggValue}`;
+=======
+  console.log("우유: ", milkValue);
+  $milk.textContent = `우유: 5/${milkValue}`;
+>>>>>>> Main_Page
 });
 const fleece = document.getElementById('ainmal3');
 let fleeceValue = 0;
 fleece.addEventListener('click', () => {
   console.log('양 버튼을 클릭했습니다');
   fleeceValue++;
+<<<<<<< HEAD
   console.log('양털: ', fleeceValue);
   $fleece.textContent = `양털: 5/${aggValue}`;
+=======
+  console.log("양털: ", fleeceValue);
+  $fleece.textContent = `양털: 5/${fleeceValue}`;
+>>>>>>> Main_Page
 });
 const duckEgg = document.getElementById('animal4');
 let duckEggValue = 0;
 duckEgg.addEventListener('click', () => {
   console.log('오리 버튼을 클릭했습니다');
   duckEggValue++;
+<<<<<<< HEAD
   console.log('오리알: ', duckEggValue);
   $duckegg.textContent = `오리알: 5/${aggValue}`;
+=======
+  console.log("오리알: ", duckEggValue);
+  $duckegg.textContent = `오리알: 5/${duckEggValue}`;
+>>>>>>> Main_Page
 });
 const goatsMilk = document.getElementById('animal5');
 let goatsMilkValue = 0;
 goatsMilk.addEventListener('click', () => {
   console.log('염소 버튼을 클릭했습니다');
   goatsMilkValue++;
+<<<<<<< HEAD
   console.log('염소젖: ', goatsMilkValue);
   $goatMilk.textContent = `염소젖: 5/${aggValue}`;
+=======
+  console.log("염소젖: ", goatsMilkValue);
+  $goatMilk.textContent = `염소젖: 5/${goatsMilkValue}`;
+>>>>>>> Main_Page
 });
 const truffle = document.getElementById('animal6');
 let truffleValue = 0;
 truffle.addEventListener('click', () => {
   console.log('돼지 버튼을 클릭했습니다');
   truffleValue++;
+<<<<<<< HEAD
   console.log('트러플: ', truffleValue);
   $truffle.textContent = `트러플: 5/${aggValue}`;
+=======
+  console.log("트러플: ", truffleValue);
+  $truffle.textContent = `트러플: 5/${truffleValue}`;
+>>>>>>> Main_Page
 });
