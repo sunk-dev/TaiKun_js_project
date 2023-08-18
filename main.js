@@ -65,6 +65,9 @@ const $fleece = $sell_modal__content.querySelector(".fleece");
 const $duckegg = $sell_modal__content.querySelector(".duckegg");
 const $goatMilk = $sell_modal__content.querySelector(".goatMilk");
 const $truffle = $sell_modal__content.querySelector(".truffle");
+// 판매버튼 선언
+const $money = document.getElementById('money');
+
 
 const closeModal = (e) => {
   $sellModal.classList.remove(CLASS_VISIBLE);
@@ -81,13 +84,14 @@ $sellBtn.addEventListener("click", showSellModalHandler);
 $sellModalCloseBtn.addEventListener("click", closeModal);
 
 //-------버튼 클릭 이벤트들(오영석)---------
+
 const agg = document.getElementById("animal1");
 let aggValue = 0;
 agg.addEventListener("click", () => {
   console.log("닭 버튼을 클릭했습니다");
   aggValue++;
   console.log("계란: ", aggValue);
-  $egg.textContent = `계란: ${aggValue}/`;
+  $egg.textContent = `계란: ${aggValue}`;
 });
 const milk = document.getElementById("animal2");
 let milkValue = 0;
@@ -95,7 +99,7 @@ milk.addEventListener("click", () => {
   console.log("젖소 버튼을 클릭했습니다");
   milkValue++;
   console.log("우유: ", milkValue);
-  $milk.textContent = `우유: 5/${milkValue}`;
+  $milk.textContent = `우유: ${milkValue}`;
 });
 const fleece = document.getElementById("ainmal3");
 let fleeceValue = 0;
@@ -103,7 +107,7 @@ fleece.addEventListener("click", () => {
   console.log("양 버튼을 클릭했습니다");
   fleeceValue++;
   console.log("양털: ", fleeceValue);
-  $fleece.textContent = `양털: 5/${fleeceValue}`;
+  $fleece.textContent = `양털: ${fleeceValue}`;
 });
 const duckEgg = document.getElementById("animal4");
 let duckEggValue = 0;
@@ -111,7 +115,7 @@ duckEgg.addEventListener("click", () => {
   console.log("오리 버튼을 클릭했습니다");
   duckEggValue++;
   console.log("오리알: ", duckEggValue);
-  $duckegg.textContent = `오리알: 5/${duckEggValue}`;
+  $duckegg.textContent = `오리알: ${duckEggValue}`;
 });
 const goatsMilk = document.getElementById("animal5");
 let goatsMilkValue = 0;
@@ -119,7 +123,7 @@ goatsMilk.addEventListener("click", () => {
   console.log("염소 버튼을 클릭했습니다");
   goatsMilkValue++;
   console.log("염소젖: ", goatsMilkValue);
-  $goatMilk.textContent = `염소젖: 5/${goatsMilkValue}`;
+  $goatMilk.textContent = `염소젖: ${goatsMilkValue}`;
 });
 const truffle = document.getElementById("animal6");
 let truffleValue = 0;
@@ -127,8 +131,53 @@ truffle.addEventListener("click", () => {
   console.log("돼지 버튼을 클릭했습니다");
   truffleValue++;
   console.log("트러플: ", truffleValue);
-  $truffle.textContent = `트러플: 5/${truffleValue}`;
+  $truffle.textContent = `트러플: ${truffleValue}`;
 });
+
+// 상품가격 지정
+aggPrice = 30
+milkPrice = 50
+fleecePrice = 100
+duckEggPrice = 180
+goatsMilkPrice = 300
+trufflePrice = 500000
+
+let totalMoney = 0;
+
+const sellBtn = document.getElementById("asd");
+sellBtn.addEventListener("click", () => {
+  // 각 상품의 개수와 가격을 이용하여 해당 상품들의 가격을 총 수익에 추가
+  totalMoney += (aggValue * aggPrice) + (milkValue * milkPrice) + (fleeceValue * fleecePrice) +
+                (duckEggValue * duckEggPrice) + (goatsMilkValue * goatsMilkPrice) + (truffleValue * trufflePrice);
+  console.log("현재 자산: ", totalMoney);
+
+   // 모든 value 값을 0으로 초기화
+   aggValue = 0;
+   milkValue = 0;
+   fleeceValue = 0;
+   duckEggValue = 0;
+   goatsMilkValue = 0;
+   truffleValue = 0;
+
+  $egg.textContent = `계란 : ${aggValue}`;
+  $milk.textContent = `우유 : ${milkValue}`;
+  $fleece.textContent = `양털 : ${fleeceValue}`;
+  $duckegg.textContent = `오리알 : ${fleeceValue}`;
+  $goatMilk.textContent = `염소젖 : ${fleeceValue}`;
+  $truffle.textContent = `트러플 : ${fleeceValue}`;
+
+  $money.textContent = `현재자산 : ${totalMoney}원`;
+
+});
+
+$egg.textContent = `계란 : ${aggValue}`;
+$milk.textContent = `우유 : ${milkValue}`;
+$fleece.textContent = `양털 : ${fleeceValue}`;
+$duckegg.textContent = `오리알 : ${fleeceValue}`;
+$goatMilk.textContent = `염소젖 : ${fleeceValue}`;
+$truffle.textContent = `트러플 : ${fleeceValue}`;
+
+$money.textContent = `현재자산 : ${totalMoney}원`;
 
 // 판매 버튼 이벤트
 const buyButton = document.getElementById("buy");
