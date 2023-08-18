@@ -23,7 +23,7 @@ $exitBtn.addEventListener("click", exitMenuModalHandler);
 
 //요구사항 모달 구현(이승한
 // 헤더에 요구사항 버튼
-const $demendBtn = document.getElementById("demend");
+const $demendBtn = document.getElementById("sell");
 // console.log($demendBtn);
 
 // 요구사항 모달엘리먼트
@@ -57,6 +57,7 @@ $demendBtn.addEventListener("click", showDemendModalHandler);
 // 요구사항 모달의 닫기 버튼을 눌렀을 때 닫는 기능
 $demendModalCloseBtn.addEventListener("click", closeModal);
 
+
 //-------버튼 클릭 이벤트들(오영석)---------
 const agg = document.getElementById("animal1");
 let aggValue = 0;
@@ -64,7 +65,8 @@ agg.addEventListener("click", () => {
   console.log("닭 버튼을 클릭했습니다");
   aggValue++;
   console.log("계란: ", aggValue);
-  $egg.textContent = `계란: 5/${aggValue}`;
+  $egg.textContent = `계란: ${aggValue}/`;
+  
 });
 const milk = document.getElementById("animal2");
 let milkValue = 0;

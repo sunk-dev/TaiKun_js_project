@@ -62,6 +62,12 @@ p .money{
 .demend-modal .modal__actions {
   width: 450px;
 }
+
+.ip{
+  width: 30px;
+  margin-right: 10px;
+}
+
 .demend-modal .modal__actions .out-btn {
   position: relative;
   left: 300px;
@@ -74,14 +80,14 @@ p .money{
   cursor: pointer;
   margin: 0 0.5rem;
 }
-.demend-modal .modal__content .forBorder {
+/* .demend-modal .modal__content .forBorder {
   border: 2px solid blue;
   width: 200px;
   height: 50px;
   border-radius: 20px;
   display: flex;
   align-content: center;
-}
+} */
 #line1,
 #line2 {
   height: 33%;
