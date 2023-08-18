@@ -4,7 +4,19 @@
   background: red;
   position: relative;
 }
-
+#box .animalBtn {
+  display: none;
+}
+#box .animalBtn.visible {
+  display: block;
+}
+#box .lockImg {
+  width: 20%;
+  height: 20%;
+}
+#box .lockImg.invisible {
+  display: none;
+}
 #backdrop {
   position: fixed;
   width: 100%;
@@ -231,6 +243,7 @@ footer {
   align-content: center;
   justify-content: center;
 }
+
 
 #buy {
   background: palegoldenrod;

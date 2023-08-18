@@ -139,3 +139,30 @@ const sellButton = document.getElementById("sell");
 sellButton.addEventListener("click", () => {
   console.log("판매버튼");
 });
+
+const $imgFn1 = document.querySelector(".imgFn1");
+const $imgFn2 = document.querySelector(".imgFn2");
+const $imgFn3 = document.querySelector(".imgFn3");
+const $imgFn4 = document.querySelector(".imgFn4");
+const $imgFn5 = document.querySelector(".imgFn5");
+
+$imgFn1.addEventListener("click", () => {
+  milk.classList.add("visible");
+  $imgFn1.classList.add("invisible");
+});
+$imgFn2.addEventListener("click", () => {
+  fleece.classList.add("visible");
+  $imgFn2.classList.add("invisible");
+});
+$imgFn3.addEventListener("click", () => {
+  duckEgg.classList.add("visible");
+  $imgFn3.classList.add("invisible");
+});
+$imgFn4.addEventListener("click", () => {
+  goatsMilk.classList.add("visible");
+  $imgFn4.classList.add("invisible");
+});
+$imgFn5.addEventListener("click", () => {
+  truffle.classList.add("visible");
+  $imgFn5.classList.add("invisible");
+});
