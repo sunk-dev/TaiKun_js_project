@@ -66,8 +66,7 @@ const $duckegg = $sell_modal__content.querySelector(".duckegg");
 const $goatMilk = $sell_modal__content.querySelector(".goatMilk");
 const $truffle = $sell_modal__content.querySelector(".truffle");
 // 판매버튼 선언
-const $money = document.getElementById('money');
-
+const $money = document.getElementById("money");
 
 const closeModal = (e) => {
   $sellModal.classList.remove(CLASS_VISIBLE);
@@ -135,29 +134,34 @@ truffle.addEventListener("click", () => {
 });
 
 // 상품가격 지정
-aggPrice = 30
-milkPrice = 50
-fleecePrice = 100
-duckEggPrice = 180
-goatsMilkPrice = 300
-trufflePrice = 500000
+aggPrice = 30;
+milkPrice = 50;
+fleecePrice = 100;
+duckEggPrice = 180;
+goatsMilkPrice = 300;
+trufflePrice = 500000;
 
 let totalMoney = 0;
 
 const sellBtn = document.getElementById("asd");
 sellBtn.addEventListener("click", () => {
   // 각 상품의 개수와 가격을 이용하여 해당 상품들의 가격을 총 수익에 추가
-  totalMoney += (aggValue * aggPrice) + (milkValue * milkPrice) + (fleeceValue * fleecePrice) +
-                (duckEggValue * duckEggPrice) + (goatsMilkValue * goatsMilkPrice) + (truffleValue * trufflePrice);
+  totalMoney +=
+    aggValue * aggPrice +
+    milkValue * milkPrice +
+    fleeceValue * fleecePrice +
+    duckEggValue * duckEggPrice +
+    goatsMilkValue * goatsMilkPrice +
+    truffleValue * trufflePrice;
   console.log("현재 자산: ", totalMoney);
 
-   // 모든 value 값을 0으로 초기화
-   aggValue = 0;
-   milkValue = 0;
-   fleeceValue = 0;
-   duckEggValue = 0;
-   goatsMilkValue = 0;
-   truffleValue = 0;
+  // 모든 value 값을 0으로 초기화
+  aggValue = 0;
+  milkValue = 0;
+  fleeceValue = 0;
+  duckEggValue = 0;
+  goatsMilkValue = 0;
+  truffleValue = 0;
 
   $egg.textContent = `계란 : ${aggValue}`;
   $milk.textContent = `우유 : ${milkValue}`;
@@ -167,7 +171,6 @@ sellBtn.addEventListener("click", () => {
   $truffle.textContent = `트러플 : ${fleeceValue}`;
 
   $money.textContent = `현재자산 : ${totalMoney}원`;
-
 });
 
 $egg.textContent = `계란 : ${aggValue}`;
@@ -195,23 +198,53 @@ const $imgFn3 = document.querySelector(".imgFn3");
 const $imgFn4 = document.querySelector(".imgFn4");
 const $imgFn5 = document.querySelector(".imgFn5");
 
-$imgFn1.addEventListener("click", () => {
-  milk.classList.add("visible");
-  $imgFn1.classList.add("invisible");
+$imgFn1.addEventListener("click", (e) => {
+  if (totalMoney >= 1000) {
+    totalMoney -= 1000;
+    $money.textContent = `현재자산 : ${totalMoney}원`;
+    milk.classList.add("visible");
+    $imgFn1.classList.add("invisible");
+  } else {
+    alert("소지금액이 부족합니다.\n소의 가격은 1,000G 입니다");
+  }
 });
 $imgFn2.addEventListener("click", () => {
-  fleece.classList.add("visible");
-  $imgFn2.classList.add("invisible");
+  if (totalMoney >= 2000) {
+    totalMoney -= 2000;
+    $money.textContent = `현재자산 : ${totalMoney}원`;
+    fleece.classList.add("visible");
+    $imgFn2.classList.add("invisible");
+  } else {
+    alert("소지금액이 부족합니다.\n양의 가격은 2,000G 입니다");
+  }
 });
 $imgFn3.addEventListener("click", () => {
-  duckEgg.classList.add("visible");
-  $imgFn3.classList.add("invisible");
+  if (totalMoney >= 4000) {
+    totalMoney -= 4000;
+    $money.textContent = `현재자산 : ${totalMoney}원`;
+    duckEgg.classList.add("visible");
+    $imgFn3.classList.add("invisible");
+  } else {
+    alert("소지금액이 부족합니다.\n오리의 가격은 4,000G 입니다");
+  }
 });
 $imgFn4.addEventListener("click", () => {
-  goatsMilk.classList.add("visible");
-  $imgFn4.classList.add("invisible");
+  if (totalMoney >= 7200) {
+    totalMoney -= 7200;
+    $money.textContent = `현재자산 : ${totalMoney}원`;
+    goatsMilk.classList.add("visible");
+    $imgFn4.classList.add("invisible");
+  } else {
+    alert("소지금액이 부족합니다.\n염소의 가격은 7,200G 입니다");
+  }
 });
 $imgFn5.addEventListener("click", () => {
-  truffle.classList.add("visible");
-  $imgFn5.classList.add("invisible");
+  if (totalMoney >= 12000) {
+    totalMoney -= 12000;
+    $money.textContent = `현재자산 : ${totalMoney}원`;
+    truffle.classList.add("visible");
+    $imgFn5.classList.add("invisible");
+  } else {
+    alert("소지금액이 부족합니다.\n돼지의 가격은 12,000G 입니다");
+  }
 });
