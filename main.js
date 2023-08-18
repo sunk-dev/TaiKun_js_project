@@ -37,7 +37,7 @@ const $demendModalCloseBtn = $demendModal.querySelector(".modal__actions");
 const $modal__content = document.querySelector(".modal__content");
 const CLASS_VISIBLE = "visible";
 
-const closeModal = (e) => {
+const demendCloseModal = (e) => {
   $demendModal.classList.remove(CLASS_VISIBLE);
 };
 
@@ -49,7 +49,7 @@ const showDemendModalHandler = (e) => {
 $demendBtn.addEventListener("click", showDemendModalHandler);
 
 // 요구사항 모달의 닫기 버튼을 눌렀을 때 닫는 기능
-$demendModalCloseBtn.addEventListener("click", closeModal);
+$demendModalCloseBtn.addEventListener("click", demendCloseModal);
 
 // 판매 버튼
 const $sellBtn = document.getElementById("sell");
@@ -58,25 +58,24 @@ const $sellModal = document.querySelector(".sell-modal");
 
 const $sellModalCloseBtn = $sellModal.querySelector(".sell_modal__actions");
 
-const $modal__content = document.querySelector(".sell_modal__content");
-const $egg = $modal__content.querySelector(".egg");
-const $milk = $modal__content.querySelector(".milk");
-const $fleece = $modal__content.querySelector(".fleece");
-const $duckegg = $modal__content.querySelector(".duckegg");
-const $goatMilk = $modal__content.querySelector(".goatMilk");
-const $truffle = $modal__content.querySelector(".truffle");
-const CLASS_VISIBLE = "visible";
+const $sell_modal__content = document.querySelector(".sell_modal__content");
+const $egg = $sell_modal__content.querySelector(".egg");
+const $milk = $sell_modal__content.querySelector(".milk");
+const $fleece = $sell_modal__content.querySelector(".fleece");
+const $duckegg = $sell_modal__content.querySelector(".duckegg");
+const $goatMilk = $sell_modal__content.querySelector(".goatMilk");
+const $truffle = $sell_modal__content.querySelector(".truffle");
 
 const closeModal = (e) => {
   $sellModal.classList.remove(CLASS_VISIBLE);
 };
 
-const showDemendModalHandler = (e) => {
+const showSellModalHandler = (e) => {
   $sellModal.classList.add(CLASS_VISIBLE);
 };
 
 // 요구사항 버튼을 눌렀을 때 모달을 띄움
-$sellBtn.addEventListener("click", showDemendModalHandler);
+$sellBtn.addEventListener("click", showSellModalHandler);
 
 // 요구사항 모달의 닫기 버튼을 눌렀을 때 닫는 기능
 $sellModalCloseBtn.addEventListener("click", closeModal);
