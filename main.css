@@ -49,6 +49,10 @@ header button {
   border: none;
   cursor: pointer;
   padding: 0;
+  position: relative;
+}
+header button:active {
+  top: 2px;
 }
 header #demend img{
   max-width: 100%;
@@ -107,13 +111,29 @@ header #request img {
   border: none;
   cursor: pointer;
   padding: 0;
+  position: relative;
 }
+#line1 button:active {
+  top: 2px;
+}
+#line2 button:active {
+  top: 2px;
+}
+
 
 /* 동물들 이미지 사이즈 조절 */
 #line1 button img,
 #line2 button img {
   max-width: 150%;
   max-height: 150%;
+}
+
+.item-text {
+  font-size: 16px;
+  font-weight: bold;
+  opacity: 0;
+  transform: translateY(-50%); /* 텍스트를 버튼 중앙으로 위치시키고 위로 50%만큼 이동 */
+  transition: opacity 0.3s ease; /* fade-in 효과를 위한 transition 추가 */
 }
 
 footer {
