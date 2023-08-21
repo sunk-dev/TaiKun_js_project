@@ -28,7 +28,12 @@ $demendBtn.addEventListener("click", showDemendModalHandler);
 $demendModalCloseBtn.addEventListener("click", closeModal);
 
 // 동물 버튼 누를 때 +1 되는 애니메이션 선언
-const itemText = document.querySelector('.item-text');
+const itemChicken = document.querySelector(".item-chicken");
+const itemCow = document.querySelector(".item-cow");
+const itemSheep = document.querySelector(".item-sheep");
+const itemDuck = document.querySelector(".item-duck");
+const itemGoat = document.querySelector(".item-goat");
+const itemPig = document.querySelector(".item-pig");
 let canClick = true;
 
 //-------버튼 클릭 이벤트들(오영석)---------
@@ -41,10 +46,10 @@ agg.addEventListener("click", () => {
   $egg.textContent = `계란: 5/${aggValue}`;
 
   // 동물 버튼 텍스트 애니메이션
-  itemText.style.animation = 'none'; // 애니메이션 제거
-  itemText.style.visibility = 'visible'; // 텍스트 보이기
+  itemChicken.style.animation = "none"; // 애니메이션 제거
+  itemChicken.style.visibility = "visible"; // 텍스트 보이기
   setTimeout(() => {
-    itemText.style.animation = 'fadeInAndOut 2s ease-out forwards'; // 애니메이션 다시 적용
+    itemChicken.style.animation = "fadeInAndOut 2s ease-out forwards"; // 애니메이션 다시 적용
   }, 0);
 });
 const milk = document.getElementById("animal2");
@@ -55,10 +60,10 @@ milk.addEventListener("click", () => {
   console.log("우유: ", milkValue);
 
   // 동물 버튼 텍스트 애니메이션
-  itemText.style.animation = 'none'; // 애니메이션 제거
-  itemText.style.visibility = 'visible'; // 텍스트 보이기
+  itemCow.style.animation = "none"; // 애니메이션 제거
+  itemCow.style.visibility = "visible"; // 텍스트 보이기
   setTimeout(() => {
-    itemText.style.animation = 'fadeInAndOut 2s ease-out forwards'; // 애니메이션 다시 적용
+    itemCow.style.animation = "fadeInAndOut 2s ease-out forwards"; // 애니메이션 다시 적용
   }, 0);
 });
 const fleece = document.getElementById("animal3");
@@ -69,10 +74,10 @@ fleece.addEventListener("click", () => {
   console.log("양털: ", fleeceValue);
 
   // 동물 버튼 텍스트 애니메이션
-  itemText.style.animation = 'none'; // 애니메이션 제거
-  itemText.style.visibility = 'visible'; // 텍스트 보이기
+  itemSheep.style.animation = "none"; // 애니메이션 제거
+  itemSheep.style.visibility = "visible"; // 텍스트 보이기
   setTimeout(() => {
-    itemText.style.animation = 'fadeInAndOut 2s ease-out forwards'; // 애니메이션 다시 적용
+    itemSheep.style.animation = "fadeInAndOut 2s ease-out forwards"; // 애니메이션 다시 적용
   }, 0);
 });
 const duckEgg = document.getElementById("animal4");
@@ -83,10 +88,10 @@ duckEgg.addEventListener("click", () => {
   console.log("오리알: ", duckEggValue);
 
   // 동물 버튼 텍스트 애니메이션
-  itemText.style.animation = 'none'; // 애니메이션 제거
-  itemText.style.visibility = 'visible'; // 텍스트 보이기
+  itemDuck.style.animation = "none"; // 애니메이션 제거
+  itemDuck.style.visibility = "visible"; // 텍스트 보이기
   setTimeout(() => {
-    itemText.style.animation = 'fadeInAndOut 2s ease-out forwards'; // 애니메이션 다시 적용
+    itemDuck.style.animation = "fadeInAndOut 2s ease-out forwards"; // 애니메이션 다시 적용
   }, 0);
 });
 const goatsMilk = document.getElementById("animal5");
@@ -97,10 +102,10 @@ goatsMilk.addEventListener("click", () => {
   console.log("염소젖: ", goatsMilkValue);
 
   // 동물 버튼 텍스트 애니메이션
-  itemText.style.animation = 'none'; // 애니메이션 제거
-  itemText.style.visibility = 'visible'; // 텍스트 보이기
+  itemGoat.style.animation = "none"; // 애니메이션 제거
+  itemGoat.style.visibility = "visible"; // 텍스트 보이기
   setTimeout(() => {
-    itemText.style.animation = 'fadeInAndOut 2s ease-out forwards'; // 애니메이션 다시 적용
+    itemGoat.style.animation = "fadeInAndOut 2s ease-out forwards"; // 애니메이션 다시 적용
   }, 0);
 });
 const truffle = document.getElementById("animal6");
@@ -111,11 +116,9 @@ truffle.addEventListener("click", () => {
   console.log("트러플: ", truffleValue);
 
   // 동물 버튼 텍스트 애니메이션
-  itemText.style.animation = 'none'; // 애니메이션 제거
-  itemText.style.visibility = 'visible'; // 텍스트 보이기
+  itemPig.style.animation = "none"; // 애니메이션 제거
+  itemPig.style.visibility = "visible"; // 텍스트 보이기
   setTimeout(() => {
-    itemText.style.animation = 'fadeInAndOut 2s ease-out forwards'; // 애니메이션 다시 적용
+    itemPig.style.animation = "fadeInAndOut 2s ease-out forwards"; // 애니메이션 다시 적용
   }, 0);
 });
-
-
