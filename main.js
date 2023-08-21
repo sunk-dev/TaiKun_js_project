@@ -82,6 +82,15 @@ $sellBtn.addEventListener("click", showSellModalHandler);
 // 요구사항 모달의 닫기 버튼을 눌렀을 때 닫는 기능
 $sellModalCloseBtn.addEventListener("click", closeModal);
 
+// 동물 버튼 누를 때 +1 되는 애니메이션 선언
+const itemChicken = document.querySelector(".item-chicken");
+const itemCow = document.querySelector(".item-cow");
+const itemSheep = document.querySelector(".item-sheep");
+const itemDuck = document.querySelector(".item-duck");
+const itemGoat = document.querySelector(".item-goat");
+const itemPig = document.querySelector(".item-pig");
+let canClick = true;
+
 //-------버튼 클릭 이벤트들(오영석)---------
 
 const agg = document.getElementById("animal1");
@@ -90,7 +99,15 @@ agg.addEventListener("click", () => {
   console.log("닭 버튼을 클릭했습니다");
   aggValue++;
   console.log("계란: ", aggValue);
+
   $egg.textContent = `계란: ${aggValue}`;
+
+  // 동물 버튼 텍스트 애니메이션
+  itemChicken.style.animation = "none"; // 애니메이션 제거
+  itemChicken.style.visibility = "visible"; // 텍스트 보이기
+  setTimeout(() => {
+    itemChicken.style.animation = "fadeInAndOut 2s ease-out forwards"; // 애니메이션 다시 적용
+  }, 0);
 });
 const milk = document.getElementById("animal2");
 let milkValue = 0;
@@ -99,14 +116,28 @@ milk.addEventListener("click", () => {
   milkValue++;
   console.log("우유: ", milkValue);
   $milk.textContent = `우유: ${milkValue}`;
+
+  // 동물 버튼 텍스트 애니메이션
+  itemCow.style.animation = "none"; // 애니메이션 제거
+  itemCow.style.visibility = "visible"; // 텍스트 보이기
+  setTimeout(() => {
+    itemCow.style.animation = "fadeInAndOut 2s ease-out forwards"; // 애니메이션 다시 적용
+  }, 0);
 });
-const fleece = document.getElementById("ainmal3");
+const fleece = document.getElementById("animal3");
 let fleeceValue = 0;
 fleece.addEventListener("click", () => {
   console.log("양 버튼을 클릭했습니다");
   fleeceValue++;
   console.log("양털: ", fleeceValue);
   $fleece.textContent = `양털: ${fleeceValue}`;
+
+  // 동물 버튼 텍스트 애니메이션
+  itemSheep.style.animation = "none"; // 애니메이션 제거
+  itemSheep.style.visibility = "visible"; // 텍스트 보이기
+  setTimeout(() => {
+    itemSheep.style.animation = "fadeInAndOut 2s ease-out forwards"; // 애니메이션 다시 적용
+  }, 0);
 });
 const duckEgg = document.getElementById("animal4");
 let duckEggValue = 0;
@@ -115,6 +146,13 @@ duckEgg.addEventListener("click", () => {
   duckEggValue++;
   console.log("오리알: ", duckEggValue);
   $duckegg.textContent = `오리알: ${duckEggValue}`;
+
+  // 동물 버튼 텍스트 애니메이션
+  itemDuck.style.animation = "none"; // 애니메이션 제거
+  itemDuck.style.visibility = "visible"; // 텍스트 보이기
+  setTimeout(() => {
+    itemDuck.style.animation = "fadeInAndOut 2s ease-out forwards"; // 애니메이션 다시 적용
+  }, 0);
 });
 const goatsMilk = document.getElementById("animal5");
 let goatsMilkValue = 0;
@@ -123,6 +161,12 @@ goatsMilk.addEventListener("click", () => {
   goatsMilkValue++;
   console.log("염소젖: ", goatsMilkValue);
   $goatMilk.textContent = `염소젖: ${goatsMilkValue}`;
+  // 동물 버튼 텍스트 애니메이션
+  itemGoat.style.animation = "none"; // 애니메이션 제거
+  itemGoat.style.visibility = "visible"; // 텍스트 보이기
+  setTimeout(() => {
+    itemGoat.style.animation = "fadeInAndOut 2s ease-out forwards"; // 애니메이션 다시 적용
+  }, 0);
 });
 const truffle = document.getElementById("animal6");
 let truffleValue = 0;
@@ -247,4 +291,11 @@ $imgFn5.addEventListener("click", () => {
   } else {
     alert("소지금액이 부족합니다.\n돼지의 가격은 12,000G 입니다");
   }
+
+  // 동물 버튼 텍스트 애니메이션
+  itemPig.style.animation = "none"; // 애니메이션 제거
+  itemPig.style.visibility = "visible"; // 텍스트 보이기
+  setTimeout(() => {
+    itemPig.style.animation = "fadeInAndOut 2s ease-out forwards"; // 애니메이션 다시 적용
+  }, 0);
 });
