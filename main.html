@@ -5,24 +5,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>동물농장</title>
     <link rel="stylesheet" href="./main.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css"
+    />
     <link rel="icon" type="image/x-icon" href="./image_main/mini_plant.ico" />
     <script src="./main.js" defer></script>
   </head>
   <body>
-    <div id="backdrop"></div>
+    <!-- 요구사항 모달 -->
     <div class="demend-modal">
       <div class="modal__content">
-        <p class="egg">달걀 5/0</p>
-        <p class="milk">우유 5/0</p>
-        <p class="fleece">양털 5/0</p>
-        <p class="duckegg">오리알 5/0</p>
-        <p class="goatMilk">염소젖 5/0</p>
-        <p class="truffle">트러플 5/0</p>
+        <img src="./home.jpg" alt="" class="demend-main-img" />
+        <p>가격 : G</p>
+        <button class="buy-btn">구매</button>
       </div>
       <div class="modal__actions">
         <button class="out-btn">닫기</button>
       </div>
     </div>
+
+    <!-- 판매 모달 -->
+    <div class="sell-modal">
+      <div class="sell_modal__content">
+        <p class="egg forBorder">달걀 0</p>
+        <p class="milk forBorder">우유 0</p>
+        <p class="fleece forBorder">양털 0</p>
+        <p class="duckegg forBorder">오리알 0</p>
+        <p class="goatMilk forBorder">염소젖 0</p>
+        <p class="truffle forBorder">트러플 0</p>
+        <button id="asd">팔기</button>
+      </div>
+      <div class="sell_modal__actions">
+        <button class="out-btn">닫기</button>
+      </div>
+    </div>
+    <!--메뉴 모달  -->
+    <div class="menu-modal">
+      <div class="menu-header">
+        <h1 class="title">INFO</h1>
+        <button>
+          <span id="exit-btn" class="lnr lnr-cross-circle"></span>
+        </button>
+      </div>
+      <div class="main_info">
+        <span> 게임 방법 </span>
+        <span> 게임 종료 </span>
+        <span> 제작정보 </span>
+      </div>
+    </div>
+
 
     <div class="mainbox">
       <div id="box">
@@ -31,42 +63,51 @@
             <img src="./image_main/truck.png" alt="요구사항" />
           </button>
           <h1 id="main_title">title</h1>
-          <button id="request">
+          <button id="menu">
             <img src="./image_main/bag.png" alt="menu" />
           </button>
         </header>
-
+        <p id="money">현재자산 : 500G</p>
         <div id="line1">
-          <button id="animal1">
+          <button id="animal1" class="animalBtn">
             <img src="./image_main/chicken.png" alt="닭" />
             <div class="item-chicken">+1</div>
           </button>
-          <button id="animal2">
+          <button id="animal2" class="animalBtn">
             <img src="./image_main/milk_cow.png" alt="젖소" />
             <div class="item-cow">+1</div>
           </button>
-          <button id="animal3">
+          <img src="./lock.png" alt="" class="lockImg imgFn1">
+          <button id="animal3" class="animalBtn">
             <img src="./image_main/sheep.png" alt="양" />
             <div class="item-sheep">+1</div>
           </button>
+          <img src="./lock.png" alt="" class="lockImg imgFn2">
         </div>
 
         <div id="line2">
-          <button id="animal4">
+          <button id="animal4" class="animalBtn">
             <img src="./image_main/duck.png" alt="오리" />
             <div class="item-duck">+1</div>
           </button>
-          <button id="animal5">
+          <img src="./lock.png" alt="" class="lockImg imgFn3">
+          <button id="animal5" class="animalBtn">
             <img src="./image_main/goat.png" alt="염소" />
             <div class="item-goat">+1</div>
-          </button>
-          <button id="animal6">
+          </button>          
+          <img src="./lock.png" alt="" class="lockImg imgFn4">
+          <button id="animal6" class="animalBtn">
             <img src="./image_main/pig.png" alt="돼지" />
             <div class="item-pig">+1</div>
           </button>
+          <img src="./lock.png" alt="" class="lockImg imgFn5">
         </div>
 
-        <footer>푸터부분입미다</footer>
+        <footer>
+        푸터부분입미다
+        <button id="buy">구매</button>
+        <button id="sell">판매</button>
+      </footer>
       </div>
     </div>
   </body>

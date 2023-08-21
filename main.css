@@ -14,7 +14,19 @@ body {
   background: url("./image_main/grass.jpg");
   position: relative;
 }
-
+#box .animalBtn {
+  display: none;
+}
+#box .animalBtn.visible {
+  display: block;
+}
+#box .lockImg {
+  width: 20%;
+  height: 20%;
+}
+#box .lockImg.invisible {
+  display: none;
+}
 #backdrop {
   position: fixed;
   width: 100%;
@@ -63,36 +75,123 @@ header #request img {
   max-height: 100%;
 }
 .demend-modal {
-  width: 450px;
-  height: 780px;
-  top: 125px;
-  background: rgb(0, 0, 255);
   position: fixed;
-  z-index: 100;
   display: none;
+  background: #fff;
+  z-index: 100;
+  top: 15%;
+  left: 250px;
+  border: 4px solid black;
+  width: 400px;
+  height: 600px;
+  border-radius: 20px;
 }
 .demend-modal.visible {
   display: block;
 }
 .demend-modal .modal__content {
-  width: 450px;
+  width: 100%;
   height: 90%;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  display: flex;
+}
+.demend-modal .modal__content .demend-main-img {
+  width: 350px;
+  right: 10px;
+}
+.demend-modal .modal__content .buy-btn {
+  top: 30px;
+  position: relative;
+  padding: 0.5rem 1.5rem;
+  border: 1px solid #00329e;
+  background: #a5b7c6;
+  color: rgb(0, 0, 0);
+  border-radius: 6px;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.26);
+  cursor: pointer;
+  margin: 0 0.5rem;
+  width: 200px;
+  height: 100px;
+  font-size: 30px;
 }
 .demend-modal .modal__actions {
   width: 450px;
 }
 .demend-modal .modal__actions .out-btn {
   position: relative;
-  left: 350px;
+  left: 300px;
   padding: 0.5rem 1.5rem;
   border: 1px solid #00329e;
-  background: #a21649;
-  color: rgb(255, 255, 255);
+  background: #328cd6;
+  color: rgb(0, 0, 0);
   border-radius: 6px;
   box-shadow: 0 1px 8px rgba(0, 0, 0, 0.26);
   cursor: pointer;
   margin: 0 0.5rem;
 }
+.demend-modal .modal__content .forBorder {
+  width: 200px;
+  height: 50px;
+  border-radius: 20px;
+  display: flex;
+  align-content: center;
+}
+/* 현재자산 css */
+
+.sell-modal {
+  position: fixed;
+  display: none;
+  background: #fff;
+  z-index: 100;
+  top: 15%;
+  left: 250px;
+  border: 4px solid black;
+  width: 400px;
+  height: 600px;
+  border-radius: 20px;
+}
+.sell-modal.visible {
+  display: block;
+}
+.sell-modal .sell_modal__content {
+  width: 450px;
+  height: 90%;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  display: flex;
+}
+.sell-modal .sell_modal__actions {
+  width: 450px;
+}
+
+.ip {
+  width: 30px;
+  margin-right: 10px;
+}
+
+.sell-modal .sell_modal__actions .out-btn {
+  position: relative;
+  left: 300px;
+  padding: 0.5rem 1.5rem;
+  border: 1px solid #00329e;
+  background: #328cd6;
+  color: rgb(0, 0, 0);
+  border-radius: 6px;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.26);
+  cursor: pointer;
+  margin: 0 0.5rem;
+}
+/* .demend-modal .modal__content .forBorder {
+  border: 2px solid blue;
+  width: 200px;
+  height: 50px;
+  border-radius: 20px;
+  display: flex;
+  align-content: center;
+} */
 #line1,
 #line2 {
   height: 33%;
@@ -158,4 +257,77 @@ footer {
   height: 130px;
   position: absolute;
   bottom: 0;
+}
+/* 메뉴 css 부분 */
+/* 메뉴 버튼 css */
+@import url("https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css");
+
+/* 크기 400 x 600 기준 */
+
+.menu-modal {
+  position: fixed;
+  display: none;
+  background: #fff;
+  z-index: 100;
+  top: 15%;
+  left: 250px;
+  border: 4px solid black;
+  width: 400px;
+  height: 600px;
+  border-radius: 20px;
+}
+
+.menu-modal.show {
+  display: flex;
+  border: 4px solid black;
+  width: 400px;
+  height: 600px;
+  border-radius: 20px;
+}
+
+.menu-header {
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+}
+.menu-header .title {
+  /* border: 2px solid red; */
+  flex: 3;
+}
+
+.menu-header span {
+  /* border: 2px solid red; */
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.main_info {
+  height: 550px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  text-align: center;
+  flex: 3;
+}
+
+.main_info span {
+  border: 2px solid blue;
+  width: 200px;
+  height: 50px;
+  border-radius: 20px;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+
+#buy {
+  background: palegoldenrod;
+}
+
+#sell {
+  background: palegoldenrod;
 }
