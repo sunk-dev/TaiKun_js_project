@@ -233,10 +233,6 @@ $truffle.textContent = `트러플 : ${fleeceValue}`;
 $money.textContent = `현재자산 : ${totalMoney}원`;
 
 // 판매 버튼 이벤트
-const buyButton = document.getElementById('buy');
-buyButton.addEventListener('click', () => {
-  console.log('구매버튼');
-});
 const sellButton = document.getElementById('sell');
 sellButton.addEventListener('click', () => {
   console.log('판매버튼');
