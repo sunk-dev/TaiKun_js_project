@@ -294,10 +294,5 @@ $imgFn5.addEventListener('click', () => {
     alert('소지금액이 부족합니다.\n돼지의 가격은 12,000G 입니다');
   }
 
-  // 동물 버튼 텍스트 애니메이션
-  itemPig.style.animation = 'none'; // 애니메이션 제거
-  itemPig.style.visibility = 'visible'; // 텍스트 보이기
-  setTimeout(() => {
-    itemPig.style.animation = 'fadeInAndOut 2s ease-out forwards'; // 애니메이션 다시 적용
-  }, 0);
+
 });

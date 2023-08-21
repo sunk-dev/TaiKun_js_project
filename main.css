@@ -18,7 +18,10 @@ body {
   display: none;
 }
 #box .animalBtn.visible {
-  display: block;
+  /* display: block; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 #box .lockImg {
   width: 20%;
@@ -225,6 +228,7 @@ header #request img {
   max-width: 150%;
   max-height: 150%;
 }
+
 
 .item-chicken,
 .item-cow,
