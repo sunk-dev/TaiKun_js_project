@@ -51,6 +51,24 @@ $demendBtn.addEventListener("click", showDemendModalHandler);
 // 요구사항 모달의 닫기 버튼을 눌렀을 때 닫는 기능
 $demendModalCloseBtn.addEventListener("click", demendCloseModal);
 
+// 구매 실패 모달
+const $buyFailModal = document.querySelector(".buy-fail-modal");
+// 구매 실패 모달 텍스트와 버튼
+const $buyFailModalContent = $buyFailModal.querySelector(".modal__content");
+const $buyFailModalBtn = $buyFailModal.querySelector(".modal__actions");
+const buyFailModalClose = (e) => {
+  $buyFailModal.classList.remove(CLASS_VISIBLE);
+};
+
+const buyFailModalHandler = (animalName, price) => {
+  $buyFailModal.classList.add(CLASS_VISIBLE);
+  $buyFailModalContent.textContent = `${animalName}의 가격은 ${price}입니다.`;
+};
+$buyFailModalBtn.addEventListener("click", buyFailModalClose);
+
+let animalName = "";
+let price = 0;
+
 // 판매 버튼
 const $sellBtn = document.getElementById("sell");
 
@@ -245,52 +263,62 @@ const $imgFn4 = document.querySelector(".imgFn4");
 const $imgFn5 = document.querySelector(".imgFn5");
 
 $imgFn1.addEventListener("click", (e) => {
-  if (totalMoney >= 1000) {
-    totalMoney -= 1000;
+  animalName = "소";
+  price = 1000;
+  if (totalMoney >= price) {
+    totalMoney -= price;
     $money.textContent = `현재자산 : ${totalMoney}원`;
     milk.classList.add("visible");
     $imgFn1.classList.add("invisible");
   } else {
-    alert("소지금액이 부족합니다.\n소의 가격은 1,000G 입니다");
+    buyFailModalHandler(animalName, price);
   }
 });
 $imgFn2.addEventListener("click", () => {
-  if (totalMoney >= 2000) {
-    totalMoney -= 2000;
+  animalName = "양";
+  price = 2000;
+  if (totalMoney >= price) {
+    totalMoney -= price;
     $money.textContent = `현재자산 : ${totalMoney}원`;
     fleece.classList.add("visible");
     $imgFn2.classList.add("invisible");
   } else {
-    alert("소지금액이 부족합니다.\n양의 가격은 2,000G 입니다");
+    buyFailModalHandler(animalName, price);
   }
 });
 $imgFn3.addEventListener("click", () => {
-  if (totalMoney >= 4000) {
-    totalMoney -= 4000;
+  animalName = "오리";
+  price = 4000;
+  if (totalMoney >= price) {
+    totalMoney -= price;
     $money.textContent = `현재자산 : ${totalMoney}원`;
     duckEgg.classList.add("visible");
     $imgFn3.classList.add("invisible");
   } else {
-    alert("소지금액이 부족합니다.\n오리의 가격은 4,000G 입니다");
+    buyFailModalHandler(animalName, price);
   }
 });
 $imgFn4.addEventListener("click", () => {
-  if (totalMoney >= 7200) {
-    totalMoney -= 7200;
+  animalName = "염소";
+  price = 7200;
+  if (totalMoney >= price) {
+    totalMoney -= price;
     $money.textContent = `현재자산 : ${totalMoney}원`;
     goatsMilk.classList.add("visible");
     $imgFn4.classList.add("invisible");
   } else {
-    alert("소지금액이 부족합니다.\n염소의 가격은 7,200G 입니다");
+    buyFailModalHandler(animalName, price);
   }
 });
 $imgFn5.addEventListener("click", () => {
-  if (totalMoney >= 12000) {
-    totalMoney -= 12000;
+  animalName = "돼지";
+  price = 12000;
+  if (totalMoney >= price) {
+    totalMoney -= price;
     $money.textContent = `현재자산 : ${totalMoney}원`;
     truffle.classList.add("visible");
     $imgFn5.classList.add("invisible");
   } else {
-    alert("소지금액이 부족합니다.\n돼지의 가격은 12,000G 입니다");
+    buyFailModalHandler(animalName, price);
   }
 });
