@@ -2,11 +2,18 @@
 body {
   background: url("./image_main/main_background.jpg");
 }
-/* box를 mainbox의 정가운데에 위치시켜볼 예정. 필요 없으면 제거. */
+
+/* font 가져옴. */
+@font-face {
+  font-family: 'NeoDunggeunmoPro-Regular';
+  src: url('./image_main/font_main/NeoDunggeunmoPro-Regular.ttf') format('truetype');
+}
+
+/* box를 mainbox의 정가운데에 위치시켜볼 예정. 필요 없으면 제거. 1200x950 */
 .mainbox {
   background: url("./image_main/background_white.png");
-  width: 1200px;
-  height: 950px;
+  width: 910px;
+  height: 910px;
 }
 #box {
   width: 900px;
@@ -25,7 +32,7 @@ body {
 }
 #box .lockImg {
   width: 20%;
-  height: 20%;
+  height: 30%;
 }
 #box .lockImg.invisible {
   display: none;
@@ -146,20 +153,21 @@ header #request img {
 .sell-modal {
   position: fixed;
   display: none;
-  background: #fff;
+  background: url('./image_main/sell_list.png');
+  background-size: 100%;
   z-index: 100;
   top: 15%;
   left: 250px;
   border: 4px solid black;
   width: 400px;
-  height: 600px;
+  height: 560px;
   border-radius: 20px;
 }
 .sell-modal.visible {
   display: block;
 }
 .sell-modal .sell_modal__content {
-  width: 450px;
+  width: 400px;
   height: 90%;
   align-items: center;
   justify-content: center;
@@ -168,6 +176,27 @@ header #request img {
 }
 .sell-modal .sell_modal__actions {
   width: 450px;
+}
+
+.sell-modal.visible .sell_modal__content .forBorder {
+  font-family: 'NeoDunggeunmoPro-Regular';
+  font-size: 20px;
+}
+
+.sell-modal.visible .sell_modal__content #asd {
+  font-family: 'NeoDunggeunmoPro-Regular';
+  font-size: 20px;
+  border: 2px inset #ffa53f;
+  background: white;
+  border-radius: 10px;
+  width: 100px;
+  height: 30px;
+}
+.sell-modal.visible .sell_modal__content #asd:hover {
+  background: #dddddd;
+}
+.sell-modal.visible .sell_modal__content #asd:active {
+  background: #8b8b8b;
 }
 
 .buy-fail-modal {
@@ -183,12 +212,14 @@ header #request img {
 }
 .buy-fail-modal.visible {
   display: block;
+  box-shadow: 5px 5px 5px rgb(77, 75, 75);
+  font-family: 'NeoDunggeunmoPro-Regular';
 }
 .buy-fail-modal .modal__title {
   margin: 0;
   padding: 1rem;
-  border-bottom: 1px solid #00329e;
-  background: #00329e;
+  border-bottom: 2px solid #a5aaa7;
+  background: #4a6950;
   color: white;
   border-radius: 10px 10px 0 0;
 }
@@ -203,9 +234,9 @@ header #request img {
 .btn {
   font: inherit;
   padding: 0.5rem 1.5rem;
-  border: 1px solid #00329e;
-  background: #00329e;
-  color: white;
+  border: 2px inset #ffc403;
+  background: #ffffff;
+  color: rgb(0, 0, 0);
   border-radius: 6px;
   box-shadow: 0 1px 8px rgba(0, 0, 0, 0.26);
   cursor: pointer;
@@ -213,8 +244,8 @@ header #request img {
 }
 .btn:hover,
 .btn:active {
-  background: #b6b2af;
-  border-color: #39312c;
+  background: #94877d;
+  border-color: #441a00;
 }
 
 .ip {
@@ -223,17 +254,27 @@ header #request img {
 }
 
 .sell-modal .sell_modal__actions .out-btn {
+  font-family: 'NeoDunggeunmoPro-Regular';
+  font-size: 17px;
   position: relative;
   left: 300px;
   padding: 0.5rem 1.5rem;
-  border: 1px solid #00329e;
-  background: #328cd6;
+  border: 2px outset #00329e;
+  background: #ffffff;
   color: rgb(0, 0, 0);
   border-radius: 6px;
   box-shadow: 0 1px 8px rgba(0, 0, 0, 0.26);
   cursor: pointer;
   margin: 0 0.5rem;
 }
+
+.sell-modal .sell_modal__actions .out-btn:hover {
+  background: #dddddd;
+}
+.sell-modal .sell_modal__actions .out-btn:active {
+  background: #8b8b8b;
+}
+
 /* .demend-modal .modal__content .forBorder {
   border: 2px solid blue;
   width: 200px;
@@ -242,6 +283,12 @@ header #request img {
   display: flex;
   align-content: center;
 } */
+
+.mainbox #box #money {
+  font-family: 'NeoDunggeunmoPro-Regular';
+  font-size: 30px;
+}
+
 #line1,
 #line2 {
   height: 33%;
