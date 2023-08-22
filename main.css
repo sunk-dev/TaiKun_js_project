@@ -388,3 +388,7 @@ footer:active {
   border: none;
   background: none;
 }
+
+.game-container{
+  background: wheat;
+}

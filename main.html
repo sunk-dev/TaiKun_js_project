@@ -11,6 +11,7 @@
     />
     <link rel="icon" type="image/x-icon" href="./image_main/mini_plant.ico" />
     <script src="./main.js" defer></script>
+    <script src="./miniGame.js" defer></script>
   </head>
   <body>
     <!-- 요구사항 모달 -->
@@ -62,6 +63,20 @@
       <div class="modal__actions">
         <button class="btn">확인</button>
       </div>
+    </div>
+    <!--  -->
+    <div class="game-container">
+      <h1 id="pattern">QWEASD 패턴 따라치기</h1>
+      <div id="pattern-display"></div>
+      <input
+        type="text"
+        id="input"
+        placeholder="패턴을 입력하세요"
+        autocomplete="off"
+        disabled
+      />
+      <p id="message"></p>
+      <button id="start">시작하기</button>
     </div>
 
     <div class="mainbox">
