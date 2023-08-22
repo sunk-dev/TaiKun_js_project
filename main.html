@@ -10,16 +10,13 @@
       href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css"
     />
     <link rel="icon" type="image/x-icon" href="./image_main/mini_plant.ico" />
+    <script
+      src="https://kit.fontawesome.com/4219c5f12c.js"
+      crossorigin="anonymous"
+    ></script>
     <script src="./main.js" defer></script>
   </head>
   <body>
-    <audio loop>
-      <source
-        src="./sound_main/For River  Piano Johnnys Version.mp3"
-        type="audio/mp3"
-      />
-    </audio>
-
     <!-- 요구사항 모달 -->
     <div class="demend-modal">
       <div class="modal__content">
@@ -73,6 +70,19 @@
 
     <div class="mainbox">
       <div id="box">
+        <div>
+          <audio id="bg-music" class="bg-music" loop>
+            <source
+              src="./sound_main/For River  Piano Johnnys Version.mp3"
+              type="audio/mpeg"
+            />
+            Your browser does not support the audio element.
+          </audio>
+
+          <button id="toggle-btn">
+            <i class="fa-solid fa-volume-off"></i>
+          </button>
+        </div>
         <header id="header">
           <button id="demend">
             <img src="./image_main/truck.png" alt="요구사항" />

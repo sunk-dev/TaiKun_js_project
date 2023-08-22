@@ -388,3 +388,14 @@ footer:active {
   border: none;
   background: none;
 }
+
+#toggle-btn {
+  border: none;
+  outline: none;
+  background-color: inherit;
+  cursor: pointer;
+  position: absolute;
+  z-index: 1000;
+  right: 10px;
+  top: 130px;
+}

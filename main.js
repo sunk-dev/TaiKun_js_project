@@ -322,3 +322,15 @@ $imgFn5.addEventListener("click", () => {
     buyFailModalHandler(animalName, price);
   }
 });
+const audioElement = document.getElementById("bg-music");
+const toggleButton = document.getElementById("toggle-btn");
+
+toggleButton.addEventListener("click", function () {
+  if (audioElement.paused) {
+    audioElement.play();
+    toggleButton.innerHTML = '<i class="fa-solid fa-volume-off"></i>';
+  } else {
+    audioElement.pause();
+    toggleButton.innerHTML = '<i class="fa-solid fa-volume-high"></i>';
+  }
+});
