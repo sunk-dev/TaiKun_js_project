@@ -352,3 +352,40 @@ toggleButton.addEventListener("click", function () {
     toggleButton.innerHTML = '<i class="fa-solid fa-volume-high"></i>';
   }
 });
+
+// 슬롯머신
+document.getElementById("startButton").addEventListener("click", startGame);
+
+function startGame() {
+  const numbers = generateRandomNumbers();
+  const isAllSame = checkAllSame(numbers);
+
+  if (isAllSame) {
+    console.log("같을 때");
+  } else {
+    console.log("다를 때");
+  }
+
+  const randomNumbersHTML = numbers
+    .map(
+      (number) =>
+        `<img class="number-image" src="./image_slotMachine/${number}.png" alt="${number}">`
+    )
+    .join("");
+
+  document.getElementById("randomNumbers").innerHTML = `${randomNumbersHTML}`;
+}
+
+function generateRandomNumbers() {
+  const randomNumbers = [];
+  for (let i = 0; i < 3; i++) {
+    const randomNumber = Math.floor(Math.random() * 9) + 1;
+    randomNumbers.push(randomNumber);
+  }
+  return randomNumbers;
+}
+
+function checkAllSame(numbers) {
+  const firstNumber = numbers[0];
+  return numbers.every((number) => number === firstNumber);
+}

@@ -5,8 +5,9 @@ body {
 
 /* font 가져옴. */
 @font-face {
-  font-family: 'NeoDunggeunmoPro-Regular';
-  src: url('./image_main/font_main/NeoDunggeunmoPro-Regular.ttf') format('truetype');
+  font-family: "NeoDunggeunmoPro-Regular";
+  src: url("./image_main/font_main/NeoDunggeunmoPro-Regular.ttf")
+    format("truetype");
 }
 
 /* box를 mainbox의 정가운데에 위치시켜볼 예정. 필요 없으면 제거. 1200x950 */
@@ -153,7 +154,7 @@ header #request img {
 .sell-modal {
   position: fixed;
   display: none;
-  background: url('./image_main/sell_list.png');
+  background: url("./image_main/sell_list.png");
   background-size: 100%;
   z-index: 100;
   top: 15%;
@@ -179,12 +180,12 @@ header #request img {
 }
 
 .sell-modal.visible .sell_modal__content .forBorder {
-  font-family: 'NeoDunggeunmoPro-Regular';
+  font-family: "NeoDunggeunmoPro-Regular";
   font-size: 20px;
 }
 
 .sell-modal.visible .sell_modal__content #asd {
-  font-family: 'NeoDunggeunmoPro-Regular';
+  font-family: "NeoDunggeunmoPro-Regular";
   font-size: 20px;
   border: 2px inset #ffa53f;
   background: white;
@@ -213,7 +214,7 @@ header #request img {
 .buy-fail-modal.visible {
   display: block;
   box-shadow: 5px 5px 5px rgb(77, 75, 75);
-  font-family: 'NeoDunggeunmoPro-Regular';
+  font-family: "NeoDunggeunmoPro-Regular";
 }
 .buy-fail-modal .modal__title {
   margin: 0;
@@ -254,7 +255,7 @@ header #request img {
 }
 
 .sell-modal .sell_modal__actions .out-btn {
-  font-family: 'NeoDunggeunmoPro-Regular';
+  font-family: "NeoDunggeunmoPro-Regular";
   font-size: 17px;
   position: relative;
   left: 300px;
@@ -285,7 +286,7 @@ header #request img {
 } */
 
 .mainbox #box #money {
-  font-family: 'NeoDunggeunmoPro-Regular';
+  font-family: "NeoDunggeunmoPro-Regular";
   font-size: 30px;
 }
 
@@ -431,11 +432,12 @@ footer:active {
   background: palegoldenrod;
 }
 
-#sell, #miniGame {
+#sell,
+#miniGame,
+#slotMachine {
   border: none;
   background: none;
 }
-
 
 #toggle-btn {
   border: none;
@@ -476,5 +478,36 @@ footer:active {
   margin: 0 0.5rem;
   right: 5px;
   bottom: 10px;
-
+}
+.slot-Machine {
+  padding-left: 50px;
+  padding-top: 30px;
+  position: fixed;
+  display: block;
+  background: #fff;
+  z-index: 100;
+  top: 15%;
+  left: 250px;
+  border: 4px solid black;
+  width: 350px;
+  height: 200px;
+  border-radius: 20px;
+}
+.slot-Machine .number-image {
+  width: 50px;
+  height: 50px;
+  margin: 5px;
+}
+.slot-Machine #startButton {
+  position: absolute;
+  font: inherit;
+  padding: 0.5rem 1.5rem;
+  border: 1px solid #00329e;
+  background: #00329e;
+  color: white;
+  border-radius: 6px;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.26);
+  cursor: pointer;
+  right: 10px;
+  bottom: 10px;
 }

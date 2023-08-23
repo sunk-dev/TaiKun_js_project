@@ -30,9 +30,12 @@
         const numbers = generateRandomNumbers();
         const isAllSame = checkAllSame(numbers);
 
-        const resultText = isAllSame
-          ? "모든 숫자가 같습니다!"
-          : "모든 숫자가 같지 않습니다.";
+        let resultText;
+        if (isAllSame) {
+          resultText = "모든 숫자가 같습니다!";
+        } else {
+          resultText = "모든 숫자가 같지 않습니다.";
+        }
 
         const randomNumbersHTML = numbers
           .map(
@@ -44,7 +47,7 @@
         document.getElementById("result").textContent = resultText;
         document.getElementById(
           "randomNumbers"
-        ).innerHTML = `생성된 숫자: ${randomNumbersHTML}`;
+        ).innerHTML = `${randomNumbersHTML}`;
       }
 
       function generateRandomNumbers() {
