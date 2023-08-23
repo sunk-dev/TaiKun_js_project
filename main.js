@@ -307,3 +307,15 @@ $imgFn5.addEventListener("click", () => {
     alert("소지금액이 부족합니다.\n돼지의 가격은 12,000G 입니다");
   }
 });
+const audioElement = document.getElementById("bg-music");
+const toggleButton = document.getElementById("toggle-btn");
+
+toggleButton.addEventListener("click", function () {
+  if (audioElement.paused) {
+    audioElement.play();
+    toggleButton.innerHTML = '<i class="fa-solid fa-volume-off"></i>';
+  } else {
+    audioElement.pause();
+    toggleButton.innerHTML = '<i class="fa-solid fa-volume-high"></i>';
+  }
+});

@@ -389,6 +389,16 @@ footer:active {
   background: none;
 }
 
+
+#toggle-btn {
+  border: none;
+  outline: none;
+  background-color: inherit;
+  cursor: pointer;
+  position: absolute;
+  z-index: 1000;
+  right: 10px;
+  top: 130px;
 .game-container {
   position: fixed;
   display: none;
@@ -418,4 +428,5 @@ footer:active {
   margin: 0 0.5rem;
   right: 5px;
   bottom: 10px;
+
 }
