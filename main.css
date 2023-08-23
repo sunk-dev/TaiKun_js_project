@@ -431,7 +431,7 @@ footer:active {
   background: palegoldenrod;
 }
 
-#sell {
+#sell, #miniGame {
   border: none;
   background: none;
 }
