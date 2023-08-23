@@ -478,3 +478,13 @@ footer:active {
   bottom: 10px;
 
 }
+/* 타자게임 css */
+.pattern-char {
+  display: inline-block;
+  margin: 5px;
+  padding: 5px;
+  background-color: white;
+}
+.wrong-char {
+  background-color: red;
+}

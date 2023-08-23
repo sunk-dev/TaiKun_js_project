@@ -3,11 +3,15 @@ const patterns = ["q", "w", "e", "a", "s", "d"];
     const messageElement = document.getElementById("message");
     const startButton = document.getElementById("start");
     const retryButton = document.getElementById("retry");
+    const timerElement = document.getElementById("timer");
 
     let isGameStarted = false;
     let currentPattern = [];
     let userInput = "";
-    let gameTimeout; // 타임아웃을 저장하기 위한 변수
+    let gameTimeout;
+    let timerInterval;
+    let currentInputIndex = 0;
+    let timerValue = 0;
 
     startButton.addEventListener("click", startGame);
     retryButton.addEventListener("click", retryGame);
@@ -20,14 +24,22 @@ const patterns = ["q", "w", "e", "a", "s", "d"];
       isGameStarted = true;
       messageElement.textContent = "";
       userInput = "";
+      currentInputIndex = 0;
       generatePattern();
       displayPattern();
       retryButton.disabled = true;
 
       window.addEventListener("keydown", handleKey);
 
-      // 5초 후에 게임 종료
-      clearTimeout(gameTimeout); // 이전의 타임아웃 제거
+      clearTimeout(gameTimeout);
+      clearInterval(timerInterval);
+      timerValue = 0;
+      updateTimerDisplay();
+      timerInterval = setInterval(() => {
+        timerValue++;
+        updateTimerDisplay();
+      }, 1000);
+
       gameTimeout = setTimeout(() => {
         endGame();
         messageElement.textContent = "시간 초과!";
@@ -43,7 +55,16 @@ const patterns = ["q", "w", "e", "a", "s", "d"];
     }
 
     function displayPattern() {
-      patternDisplay.textContent = currentPattern.join(" ");
+      patternDisplay.innerHTML = "";
+      currentPattern.forEach((char, index) => {
+        const charElement = document.createElement("div");
+        charElement.textContent = char;
+        charElement.classList.add("pattern-char");
+        if (index === currentInputIndex && userInput.length === index) {
+          charElement.classList.add("wrong-char");
+        }
+        patternDisplay.appendChild(charElement);
+      });
     }
 
     function handleKey(event) {
@@ -61,37 +82,85 @@ const patterns = ["q", "w", "e", "a", "s", "d"];
         checkMatch();
       } else if (userInput.length > 0 && !patterns.includes(userInput[userInput.length - 1])) {
         endGame();
-      } else if (userInput.length === patternDisplay.textContent.length && userInput !== patternDisplay.textContent) {
+      } else if (userInput.length === currentPattern.length) {
+        if (userInput !== currentPattern.join("")) {
+          markWrongInput();
+        }
         endGame();
+      } else if (userInput.length === currentInputIndex + 1) {
+        currentInputIndex++;
+        displayPattern();
       }
     }
 
+    function markWrongInput() {
+      const patternChars = patternDisplay.querySelectorAll(".pattern-char");
+      patternChars[currentInputIndex].classList.add("wrong-char");
+    }
+
     function endGame() {
-      clearTimeout(gameTimeout); // 타임아웃 제거
+      clearTimeout(gameTimeout);
+      clearInterval(timerInterval);
       messageElement.textContent = "일치하지 않습니다!";
+      startButton.disabled = true;
       retryButton.disabled = false;
       isGameStarted = false;
       window.removeEventListener("keydown", handleKey);
     }
 
     function retryGame() {
-      clearTimeout(gameTimeout); // 타임아웃 제거
+      clearTimeout(gameTimeout);
+      clearInterval(timerInterval);
       messageElement.textContent = "";
       userInput = "";
+      currentInputIndex = 0;
+      resetPatternDisplay();
       retryButton.disabled = true;
+      startButton.disabled = false;
 
       generatePattern();
       displayPattern();
-      startGame(); // 문제를 다시 시작
+      startGame();
+    }
+
+    function resetPatternDisplay() {
+      const patternChars = patternDisplay.querySelectorAll(".pattern-char");
+      patternChars.forEach(charElement => {
+        charElement.classList.remove("wrong-char");
+      });
     }
 
     function checkMatch() {
       if (userInput === currentPattern.join("")) {
+        clearTimeout(gameTimeout);
+        clearInterval(timerInterval);
         messageElement.textContent = "일치합니다!";
-        isGameStarted = false; // 문제 풀이 성공 시 게임 종료
+        isGameStarted = false;
         startButton.textContent = "다음 문제";
         retryButton.disabled = false;
       } else {
+        markWrongInput();
         endGame();
       }
     }
+
+    function updateTimerDisplay() {
+      timerElement.textContent = `타이머: ${timerValue}초`;
+    }
+
+    document.querySelector(".game-container .out-btn").addEventListener("click", () => {
+      if (isGameStarted) {
+        endGame();
+      }
+      messageElement.textContent = "";
+      userInput = "";
+      currentInputIndex = 0;
+      resetPatternDisplay();
+      retryButton.disabled = true;
+      startButton.disabled = false;
+      clearTimeout(gameTimeout);
+      clearInterval(timerInterval);
+      timerValue = 0;
+      updateTimerDisplay();
+      patternDisplay.innerHTML = ""; // pattern-display 초기화
+    });
