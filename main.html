@@ -10,7 +10,12 @@
       href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css"
     />
     <link rel="icon" type="image/x-icon" href="./image_main/mini_plant.ico" />
+    <script
+      src="https://kit.fontawesome.com/4219c5f12c.js"
+      crossorigin="anonymous"
+    ></script>
     <script src="./main.js" defer></script>
+    <script src="./miniGame.js" defer></script>
   </head>
   <body>
     <!-- 요구사항 모달 -->
@@ -63,9 +68,33 @@
         <button class="btn">확인</button>
       </div>
     </div>
+    <!-- 타자게임 모달 -->
+    <div class="game-container">
+      <h1>패턴</h1>
+      <p id="pattern-display"></p>
+      <p id="message"></p>
+      <button id="start">게임 시작</button>
+      <button id="retry" disabled>다시 시도</button>
+      <div class="game_modal__actions">
+        <button class="out-btn">닫기</button>
+      </div>
+    </div>
 
     <div class="mainbox">
       <div id="box">
+        <div>
+          <audio id="bg-music" class="bg-music" loop>
+            <source
+              src="./sound_main/For River  Piano Johnnys Version.mp3"
+              type="audio/mpeg"
+            />
+            Your browser does not support the audio element.
+          </audio>
+
+          <button id="toggle-btn">
+            <i class="fa-solid fa-volume-off"></i>
+          </button>
+        </div>
         <header id="header">
           <button id="demend">
             <img src="./image_main/truck.png" alt="요구사항" />
@@ -119,6 +148,7 @@
 
         <footer>
           <button id="sell"><img src="./image_main/Sell.png" alt="" /></button>
+          <button id="miniGame">미니게임</button>
         </footer>
       </div>
     </div>
