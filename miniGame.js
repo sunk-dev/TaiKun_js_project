@@ -4,6 +4,7 @@ const patterns = ["q", "w", "e", "a", "s", "d"];
     const startButton = document.getElementById("start");
     const retryButton = document.getElementById("retry");
     const timerElement = document.getElementById("timer");
+    const score = document.getElementById("score");
 
     let isGameStarted = false;
     let currentPattern = [];
@@ -12,6 +13,7 @@ const patterns = ["q", "w", "e", "a", "s", "d"];
     let timerInterval;
     let currentInputIndex = 0;
     let timerValue = 0;
+    let totalPoint = 0;
 
     startButton.addEventListener("click", startGame);
     retryButton.addEventListener("click", retryGame);
@@ -117,6 +119,8 @@ const patterns = ["q", "w", "e", "a", "s", "d"];
       resetPatternDisplay();
       retryButton.disabled = true;
       startButton.disabled = false;
+      totalPoint = 0;
+      score.textContent = `현재점수: ${totalPoint}점`;
 
       generatePattern();
       displayPattern();
@@ -138,6 +142,8 @@ const patterns = ["q", "w", "e", "a", "s", "d"];
         isGameStarted = false;
         startButton.textContent = "다음 문제";
         retryButton.disabled = false;
+        totalPoint += 1;
+        score.textContent = `현재점수: ${totalPoint}점`;
       } else {
         markWrongInput();
         endGame();
@@ -161,6 +167,9 @@ const patterns = ["q", "w", "e", "a", "s", "d"];
       clearTimeout(gameTimeout);
       clearInterval(timerInterval);
       timerValue = 0;
+      totalPoint = 0;
+      score.textContent = `현재점수: ${totalPoint}점`;
+      startButton.textContent = "게임 시작";
       updateTimerDisplay();
       patternDisplay.innerHTML = ""; // pattern-display 초기화
     });
