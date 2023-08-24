@@ -1,24 +1,25 @@
-@import url("https://fonts.googleapis.com/css2?family=Bagel+Fat+One&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Bagel+Fat+One&display=swap');
 body {
-  background: url("./image_main/main_background.jpg");
+  background: url('./image_main/main_background.jpg');
 }
 
 /* font 가져옴. */
 @font-face {
   font-family: 'NeoDunggeunmoPro-Regular';
-  src: url('./image_main/font_main/NeoDunggeunmoPro-Regular.ttf') format('truetype');
+  src: url('./image_main/font_main/NeoDunggeunmoPro-Regular.ttf')
+    format('truetype');
 }
 
 /* box를 mainbox의 정가운데에 위치시켜볼 예정. 필요 없으면 제거. 1200x950 */
 .mainbox {
-  background: url("./image_main/background_white.png");
+  background: url('./image_main/background_white.png');
   width: 910px;
   height: 910px;
 }
 #box {
   width: 900px;
   height: 900px;
-  background: url("./image_main/grass.jpg");
+  background: url('./image_main/grass.jpg');
   position: relative;
 }
 #box .animalBtn {
@@ -50,7 +51,7 @@ body {
 }
 
 header {
-  background: url("/image_main/header_background.jpg");
+  background: url('/image_main/header_background.jpg');
   width: 100%;
   height: 13%;
   display: flex;
@@ -59,7 +60,7 @@ header {
 }
 /* 제목이 정해졌을 때 변경이 필요한 곳. start 화면 포함. */
 header #main_title {
-  font-family: "Bagel Fat One", cursive;
+  font-family: 'Bagel Fat One', cursive;
   color: rgba(220, 250, 149, 0.952);
   font-size: 50px;
   text-shadow: 0px 5px 0px #25502e;
@@ -150,7 +151,8 @@ header #request img {
 }
 /* 현재자산 css */
 
-.sell-modal {
+.sell-modal,
+.market-modal {
   position: fixed;
   display: none;
   background: url('./image_main/sell_list.png');
@@ -163,9 +165,22 @@ header #request img {
   height: 560px;
   border-radius: 20px;
 }
+.force_item {
+  display: flex;
+  flex-direction: row;
+}
+.force_item p {
+  margin-right: 20px;
+}
+.force_item button {
+  margin-top: 15px;
+}
+
+.market-modal.visible,
 .sell-modal.visible {
   display: block;
 }
+.market-modal .market_modal__content,
 .sell-modal .sell_modal__content {
   width: 400px;
   height: 90%;
@@ -174,15 +189,17 @@ header #request img {
   flex-direction: column;
   display: flex;
 }
+.market-modal .sell_modal__actions,
 .sell-modal .sell_modal__actions {
   width: 450px;
 }
 
+.market-modal.visible .market_modal__content .forBorder,
 .sell-modal.visible .sell_modal__content .forBorder {
   font-family: 'NeoDunggeunmoPro-Regular';
   font-size: 20px;
 }
-
+.market-modal.visible .market_modal__content .asd,
 .sell-modal.visible .sell_modal__content #asd {
   font-family: 'NeoDunggeunmoPro-Regular';
   font-size: 20px;
@@ -192,9 +209,11 @@ header #request img {
   width: 100px;
   height: 30px;
 }
+.market-modal.visible .market_modal__content .asd:hover,
 .sell-modal.visible .sell_modal__content #asd:hover {
   background: #dddddd;
 }
+.market-modal.visible .market_modal__content .asd:active,
 .sell-modal.visible .sell_modal__content #asd:active {
   background: #8b8b8b;
 }
@@ -364,7 +383,7 @@ footer:active {
 }
 /* 메뉴 css 부분 */
 /* 메뉴 버튼 css */
-@import url("https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css");
+@import url('https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css');
 
 /* 크기 400 x 600 기준 */
 
@@ -431,11 +450,11 @@ footer:active {
   background: palegoldenrod;
 }
 
-#sell, #miniGame {
+#sell,
+#miniGame {
   border: none;
   background: none;
 }
-
 
 #toggle-btn {
   border: none;
@@ -476,5 +495,4 @@ footer:active {
   margin: 0 0.5rem;
   right: 5px;
   bottom: 10px;
-
 }

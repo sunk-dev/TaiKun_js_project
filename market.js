@@ -3,18 +3,22 @@ const price = {
 };
 const level = {
   chicken: 1,
+  cow:1,
+  sheep:1,
+  duck:1,
+  goat:1,
+  pig:1,
 };
 
 const $forceBtns = document.querySelector('.sell_modal__content');
 $forceBtns.addEventListener('click', (e) => {
   if (e.target.tagName === 'BUTTON') {
-    // const ask = alert(confirm(`강화 하시겠습니까?`));
-    const target = e.targrt;
-    console.log(`버튼 눌림 `, target.tagName);
-    if (target.id === `chick-force-btn`) {
-      //   console.log(ask);
+    
+  
+    if (e.target.id === `chick-force-btn`) {
+   
       if (level.chicken === 5) {
-        target.disabled = 'disabled';
+        e.target.disabled = 'disabled';
         alert(`5단계전부 강화 완료`);
         return;
       } else {
@@ -23,11 +27,11 @@ $forceBtns.addEventListener('click', (e) => {
         alert(`닭강화레벨 ${level.chicken}`);
       }
       price.egg += 20;
-    } else if (target.id === `cow-force-btn`) {
-    } else if (target.id === `sheep-force-btn`) {
-    } else if (target.id === `duck-force-btn`) {
-    } else if (target.id === `goat-force-btn`) {
-    } else if (target.id === `pig-force-btn`) {
+    } else if (e.target.id === `cow-force-btn`) {
+    } else if (e.target.id === `sheep-force-btn`) {
+    } else if (e.target.id === `duck-force-btn`) {
+    } else if (e.target.id === `goat-force-btn`) {
+    } else if (e.target.id === `pig-force-btn`) {
     }
   }
 });

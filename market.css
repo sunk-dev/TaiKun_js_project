@@ -25,7 +25,12 @@
 .force_item {
   display: flex;
   flex-direction: row;
- 
+}
+.force_item p {
+  margin-right: 20px;
+}
+.force_item button {
+  margin-top: 15px;
 }
 
 .sell-modal.visible {
