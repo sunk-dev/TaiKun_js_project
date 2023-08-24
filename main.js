@@ -227,7 +227,7 @@ duckEggPrice = 180;
 goatsMilkPrice = 300;
 trufflePrice = 500000;
 
-let totalMoney = 0;
+let totalMoney = 1000000000;
 
 const sellBtn = document.getElementById("asd");
 sellBtn.addEventListener("click", () => {
