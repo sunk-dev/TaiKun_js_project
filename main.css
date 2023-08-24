@@ -59,10 +59,10 @@ header {
 }
 /* 제목이 정해졌을 때 변경이 필요한 곳. start 화면 포함. */
 header #main_title {
-  font-family: "Bagel Fat One", cursive;
-  color: rgba(220, 250, 149, 0.952);
+  font-family: 'NeoDunggeunmoPro-Regular';
+  color: rgba(244, 252, 225, 0.952);
   font-size: 50px;
-  text-shadow: 0px 5px 0px #25502e;
+  text-shadow: 0px 5px 2px #073612;
 }
 header button {
   width: 30%;
@@ -348,7 +348,8 @@ header #request img {
   }
 }
 
-footer {
+/* footer 부분 */
+.footer_main {
   background: rgba(238, 130, 238, 0);
   width: 100%;
   height: 130px;
@@ -359,9 +360,31 @@ footer {
   justify-content: center;
 }
 
-footer:active {
-  top: 772px;
+.footer_main .custom-btn {
+  width: 30%;
+  height: 110%;
+  color: #fde9db;
+  text-shadow: 0px 5px 2px #000;
+  padding: 10px 25px;
+  font-family: 'NeoDunggeunmoPro-Regular';
+  font-size: 50px;
+  font-weight: 500;
+  cursor: pointer;
+  position: relative;
+  outline: none;
+  bottom: 20px;
 }
+.footer_main .btn-15 {
+  background: url('./image_main/wood_patmal.png') no-repeat;
+  background-size: 100%;
+  border: none;
+  z-index: 1;
+}
+
+.footer_main .btn-15:active {
+  top: 1px;
+}
+
 /* 메뉴 css 부분 */
 /* 메뉴 버튼 css */
 @import url("https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css");
@@ -430,12 +453,6 @@ footer:active {
 #buy {
   background: palegoldenrod;
 }
-
-#sell, #miniGame {
-  border: none;
-  background: none;
-}
-
 
 #toggle-btn {
   border: none;
