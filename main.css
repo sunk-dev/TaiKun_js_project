@@ -189,7 +189,7 @@ header #request img {
   flex-direction: column;
   display: flex;
 }
-.market-modal .sell_modal__actions,
+.market-modal .market_modal__actions,
 .sell-modal .sell_modal__actions {
   width: 450px;
 }
@@ -271,7 +271,7 @@ header #request img {
   width: 30px;
   margin-right: 10px;
 }
-
+.market-modal .market_modal__actions .out-btn,
 .sell-modal .sell_modal__actions .out-btn {
   font-family: 'NeoDunggeunmoPro-Regular';
   font-size: 17px;

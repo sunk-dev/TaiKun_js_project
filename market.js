@@ -3,20 +3,17 @@ const price = {
 };
 const level = {
   chicken: 1,
-  cow:1,
-  sheep:1,
-  duck:1,
-  goat:1,
-  pig:1,
+  cow: 1,
+  sheep: 1,
+  duck: 1,
+  goat: 1,
+  pig: 1,
 };
 
-const $forceBtns = document.querySelector('.sell_modal__content');
+const $forceBtns = document.querySelector('.market_modal__content');
 $forceBtns.addEventListener('click', (e) => {
   if (e.target.tagName === 'BUTTON') {
-    
-  
     if (e.target.id === `chick-force-btn`) {
-   
       if (level.chicken === 5) {
         e.target.disabled = 'disabled';
         alert(`5단계전부 강화 완료`);
@@ -24,7 +21,6 @@ $forceBtns.addEventListener('click', (e) => {
       } else {
         price.egg += 20;
         level.chicken++;
-        alert(`닭강화레벨 ${level.chicken}`);
       }
       price.egg += 20;
     } else if (e.target.id === `cow-force-btn`) {

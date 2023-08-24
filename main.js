@@ -371,7 +371,36 @@ toggleButton.addEventListener('click', function () {
 
 // 마켓모달띄우기
 const $marketBtn = document.getElementById('market');
-const marketModal=document.querySelector('.market-modal');
+const marketModal = document.querySelector('.market-modal');
 $marketBtn.addEventListener('click', (e) => {
   marketModal.classList.add('visible');
+});
+const $marketCloseBtn = document.querySelector(
+  '.market-modal .market_modal__actions .out-btn'
+);
+$marketCloseBtn.addEventListener('click', (e) => {
+  marketModal.classList.remove('visible');
+});
+
+const $forceBtns = document.querySelector('.market_modal__content');
+$forceBtns.addEventListener('click', (e) => {
+  if (e.target.tagName === 'BUTTON') {
+    if (e.target.id === `chick-force-btn`) {
+      if (itemLevel.chicken === 5) {
+        e.target.disabled = 'disabled';
+        alert(`5단계전부 강화 완료`);
+        return;
+      } else {
+        alert(`닭 레벨업`);
+        price.egg += 20;
+        itemLevel.chicken++;
+      }
+      price.egg += 20;
+    } else if (e.target.id === `cow-force-btn`) {
+    } else if (e.target.id === `sheep-force-btn`) {
+    } else if (e.target.id === `duck-force-btn`) {
+    } else if (e.target.id === `goat-force-btn`) {
+    } else if (e.target.id === `pig-force-btn`) {
+    }
+  }
 });
