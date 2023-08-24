@@ -1,3 +1,4 @@
+
 //menu 버튼
 //헤더에 menu 버튼
 const $menuBtn = document.getElementById("menu");
@@ -346,4 +347,10 @@ toggleButton.addEventListener("click", function () {
     audioElement.pause();
     toggleButton.innerHTML = '<i class="fa-solid fa-volume-high"></i>';
   }
+});
+
+// 마켓모달띄우기
+const $marketBtn=document.getElementById('market');
+
+$marketBtn.addEventListener('click',e=>{
 });
