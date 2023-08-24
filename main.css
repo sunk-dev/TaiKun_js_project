@@ -502,6 +502,11 @@ footer:active {
   border-radius: 10px;
   padding: 10px;
 }
+.slot-Machine h1 {
+  font-family: sans-serif;
+  font-size: 26px;
+  font-weight: bold;
+}
 .slot-Machine .out-line #randomNumbers {
   display: flex;
   justify-content: center;
