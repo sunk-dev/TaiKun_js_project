@@ -1,12 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Bagel+Fat+One&display=swap');
-body {
-  background: url('./image_main/main_background.jpg');
-}
+
 body {
   -ms-overflow-style: none;
 }
 ::-webkit-scrollbar {
   display: none;
+
+  background: url("./image_main/main_background.jpg");
+  cursor: url('./image_main/mouse_cursor/one-finger.png'), auto;
+
 }
 
 /* font 가져옴. */
@@ -38,8 +40,9 @@ body {
   align-items: center;
 }
 #box .lockImg {
-  width: 20%;
-  height: 30%;
+  height: 45%;
+  width: 13.5%;
+  padding: 30px;
 }
 #box .lockImg.invisible {
   display: none;
@@ -66,10 +69,12 @@ header {
 }
 /* 제목이 정해졌을 때 변경이 필요한 곳. start 화면 포함. */
 header #main_title {
-  font-family: 'Bagel Fat One', cursive;
-  color: rgba(220, 250, 149, 0.952);
+
+  font-family: 'NeoDunggeunmoPro-Regular';
+  color: rgba(244, 252, 225, 0.952);
+
   font-size: 50px;
-  text-shadow: 0px 5px 0px #25502e;
+  text-shadow: 0px 5px 2px #073612;
 }
 header button {
   width: 30%;
@@ -86,10 +91,12 @@ header button:active {
 header #demend img {
   max-width: 100%;
   max-height: 100%;
+  cursor: url('./image_main/mouse_cursor/money-bag.png'), auto;
 }
-header #request img {
+header #menu img {
   max-width: 100%;
   max-height: 100%;
+  cursor: url('./image_main/mouse_cursor/support.png'), auto;
 }
 .demend-modal {
   position: fixed;
@@ -128,6 +135,7 @@ header #request img {
   border-radius: 6px;
   box-shadow: 0 1px 8px rgba(0, 0, 0, 0.26);
   cursor: pointer;
+  cursor: url('./image_main/mouse_cursor/money-bag.png'), auto;
   margin: 0 0.5rem;
   width: 200px;
   height: 100px;
@@ -236,6 +244,7 @@ header #request img {
   border-radius: 10px;
   width: 100px;
   height: 30px;
+  cursor: url('./image_main/mouse_cursor/expense.png'), auto;
 }
 .menu-modal.visible .menu_modal__content .asd:hover,
 .market-modal.visible .market_modal__content .asd:hover,
@@ -315,6 +324,7 @@ header #request img {
   border-radius: 6px;
   box-shadow: 0 1px 8px rgba(0, 0, 0, 0.26);
   cursor: pointer;
+  cursor: url('./image_main/mouse_cursor/one-finger.png'), auto;
   margin: 0 0.5rem;
 }
 .game-info-modal .game-info_modal__actions .out-btn,
@@ -356,7 +366,7 @@ header #request img {
 
 #line1,
 #line2 {
-  height: 33%;
+  height: 30%;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -373,6 +383,7 @@ header #request img {
   cursor: pointer;
   padding: 0;
   position: relative;
+  cursor: url('./image_main/mouse_cursor/income.png'), auto;
 }
 #line1 button:active {
   top: 2px;
@@ -413,8 +424,9 @@ header #request img {
   }
 }
 
-footer {
-  background: rgba(238, 130, 238, 0);
+/* footer 부분 */
+.footer_main {
+  background:url('./image_main/header_background.jpg');
   width: 100%;
   height: 130px;
   position: absolute;
@@ -424,9 +436,39 @@ footer {
   justify-content: center;
 }
 
-footer:active {
-  top: 772px;
+.footer_main .custom-btn {
+  bottom: -15px;
+  width: 30%;
+  height: 110%;
+  color: #fde9db;
+  text-shadow: 0px 5px 2px #000;
+  padding: 10px 25px;
+  font-family: 'NeoDunggeunmoPro-Regular';
+  font-size: 40px;
+  font-weight: 500;
+  cursor: pointer;
+  position: relative;
+  outline: none;
+  cursor: url('./image_main/mouse_cursor/money-bag.png'), auto;
 }
+.footer_main .btn-15 {
+  background: url('./image_main/wood_btn.png') no-repeat;
+  background-size: 100%;
+  border: none;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.asd{
+  position: absolute;
+  bottom: 35px;
+}
+
+.footer_main .btn-15:active {
+  top: -5px;
+}
+
 /* 메뉴 css 부분 */
 /* 메뉴 버튼 css */
 @import url('https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css');
@@ -474,6 +516,7 @@ footer:active {
 #buy {
   background: palegoldenrod;
 }
+
 
 #sell,
 #miniGame {

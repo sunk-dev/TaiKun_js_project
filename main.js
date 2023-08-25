@@ -66,7 +66,10 @@ const $demendBtn = document.getElementById('demend');
 // console.log($demendBtn);
 
 // 요구사항 모달엘리먼트
-const $demendModal = document.querySelector('.demend-modal');
+
+const $demendModal = document.querySelector(".demend-modal");
+const $buyBtn = $demendModal.querySelector(".buy-btn");
+
 // console.log($demendModal);
 
 // 구매 실패 모달
@@ -101,10 +104,14 @@ const demendCloseModal = (e) => {
 const showDemendModalHandler = (e) => {
   $demendModal.classList.add(CLASS_VISIBLE);
 };
-
+const finishGameHandler = (e) => {
+  location.href = "end.html";
+};
 // 요구사항 버튼을 눌렀을 때 모달을 띄움
 $demendBtn.addEventListener('click', showDemendModalHandler);
 
+// 구매 버튼 클릭시 게임 종료
+$buyBtn.addEventListener("click", finishGameHandler);
 // 요구사항 모달의 닫기 버튼을 눌렀을 때 닫는 기능
 $demendModalCloseBtn.addEventListener('click', demendCloseModal);
 
@@ -272,7 +279,7 @@ const itemLevel = {
   pig: +1,
 };
 
-let totalMoney = 0;
+let totalMoney = 1000000000;
 
 const sellBtn = document.getElementById('asd');
 sellBtn.addEventListener('click', () => {
