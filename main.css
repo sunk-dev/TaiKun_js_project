@@ -540,6 +540,7 @@ header #menu img {
   outline: none;
   background-color: inherit;
   cursor: pointer;
+  cursor: url('./image_main/mouse_cursor/one-finger.png'), auto;
   position: absolute;
   z-index: 1000;
   right: 10px;
