@@ -269,12 +269,12 @@ truffle.addEventListener("click", () => {
 
 // 상품가격 지정
 const itemPrice = {
-  aggPrice: +30,
-  milkPrice: +50,
-  fleecePrice: +100,
-  duckEggPrice: +180,
-  goatsMilkPrice: +300,
-  trufflePrice: +500000,
+  aggPrice: +5,
+  milkPrice: +30,
+  fleecePrice: +70,
+  duckEggPrice: +200,
+  goatsMilkPrice: +800,
+  trufflePrice: +5000,
 };
 
 const itemLevel = {
@@ -284,6 +284,24 @@ const itemLevel = {
   duck: +1,
   goat: +1,
   pig: +1,
+};
+
+//단계별로 필요한 코인
+const needToCoin = {
+  1: 10,
+  2: 20,
+  3: 30,
+  4: 40,
+  5: 50,
+};
+//동물들 단계별로 증가되는 돈
+const moneyByLevel = {
+  chicken: [5, 10, 20, 35, 60],
+  cow: [30, 50, 80, 110, 170],
+  sheep: [70, 130, 200, 350, 450],
+  duck: [200, 320, 470, 850, 1500],
+  goat: [800, 1200, 2000, 4000, 9000],
+  pig: [5000, 15000, 30000, 50000, 200000],
 };
 
 let totalMoney = 1000000000;
@@ -421,6 +439,54 @@ $marketCloseBtn.addEventListener("click", (e) => {
 });
 
 //마켓 동물 강화 텍스트 가져오기
+const $chickenP = document.querySelector('.force_item .egg.forBorder');
+const $cowP = document.querySelector('.milk.forBorder');
+const $sheepP = document.querySelector('.fleece.forBorder');
+const $duckP = document.querySelector('.duckegg.forBorder');
+const $goatP = document.querySelector('.goatMilk.forBorder');
+const $pigP = document.querySelector('.truffle.forBorder');
+
+/*
+//단계별로 필요한 코인
+const needToCoin={
+  1:10,
+  2:20,
+  3:30,
+  4:40,
+  5:50
+};
+//동물들 단계별로 증가되는 돈
+const moneyByLevel={
+  chicken: [5,10,20,35,60],
+  cow: [30,50,80,110,170],
+  sheep: [70,130,200,350,450],
+  duck:[200,320,470,850,1500],
+  goat: [800,1200,2000,4000,9000],
+  pig: [5000,15000,30000,50000,200000],
+  
+};
+
+let totalCoin;
+*/
+let totalCoin = 1;
+const $forceBtns = document.querySelector('.market_modal__content');
+$forceBtns.addEventListener('click', (e) => {
+  if (e.target.tagName === 'BUTTON') {
+    if (e.target.id === `chick-force-btn`) {
+      if (totalCoin >= needToCoin[itemLevel.chicken]) {
+        totalCoin -= needToCoin[itemLevel.chicken];
+        if (itemLevel.chicken === 5) {
+          e.target.disabled = 'disabled';
+          alert(`5단계전부 강화 완료`);
+          return;
+        } else {
+          alert(`닭 강화완료`);
+          console.log(itemPrice.aggPrice);
+          itemLevel.chicken++;
+          itemPrice.aggPrice = moneyByLevel.chicken[itemLevel.chicken - 1];
+          $chickenP.textContent = `닭 ${itemLevel.chicken}단계`;
+        }
+
 const $chickenP = document.querySelector(".force_item .egg.forBorder");
 const $cowP = document.querySelector(".milk.forBorder");
 const $sheepP = document.querySelector(".fleece.forBorder");
@@ -437,67 +503,97 @@ $forceBtns.addEventListener("click", (e) => {
         alert(`5단계전부 강화 완료`);
         return;
       } else {
-        alert(`닭 강화완료`);
-        itemPrice.aggPrice += 20;
-        itemLevel.chicken++;
-        $chickenP.textContent = `닭 ${itemLevel.chicken}단계`;
+        alert(`코인이 부족합니다! 다른 게임을 통해 코인을 얻으세요 \n 현재보유 코인:${totalCoin}`);
       }
     } else if (e.target.id === `cow-force-btn`) {
+      if (totalCoin >= needToCoin[itemLevel.cow]) {
+        totalCoin -= needToCoin[itemLevel.cow];
+        if (itemLevel.cow === 5) {
+          e.target.disabled = 'disabled';
+          alert(`5단계전부 강화 완료`);
+          return;
+        } else {
+          alert(`소 강화완료`);
+          itemLevel.cow++;
+          itemPrice.milkPrice = moneyByLevel.cow[itemLevel.cow - 1];
+          $cowP.textContent = `소 ${itemLevel.cow}단계`;
+        }
       if (itemLevel.cow === 5) {
         e.target.disabled = "disabled";
         alert(`5단계전부 강화 완료`);
         return;
       } else {
-        alert(`소 강화완료`);
-        itemPrice.milkPrice += 20;
-        itemLevel.cow++;
-        $cowP.textContent = `소 ${itemLevel.cow}단계`;
+        alert(`코인이 부족합니다! 다른 게임을 통해 코인을 얻으세요 \n 현재보유 코인:${totalCoin}`);
       }
     } else if (e.target.id === `sheep-force-btn`) {
+      if (totalCoin >= needToCoin[itemLevel.sheep]) {
+        if (itemLevel.sheep === 5) {
+          e.target.disabled = 'disabled';
+          alert(`5단계전부 강화 완료`);
+          return;
+        } else {
+          alert(`양 강화 완료`);
+          itemLevel.sheep++;
+          itemPrice.fleecePrice = moneyByLevel.sheep[itemLevel.sheep - 1];
+          $sheepP.textContent = `양 ${itemLevel.sheep}단계`;
+        }
       if (itemLevel.sheep === 5) {
         e.target.disabled = "disabled";
         alert(`5단계전부 강화 완료`);
         return;
       } else {
-        alert(`양 강화 완료`);
-        itemPrice.fleecePrice += 20;
-        itemLevel.sheep++;
-        $sheepP.textContent = `양 ${itemLevel.sheep}단계`;
+        alert(`코인이 부족합니다! 다른 게임을 통해 코인을 얻으세요 \n 현재보유 코인:${totalCoin}`);
       }
-      price.egg += 20;
     } else if (e.target.id === `duck-force-btn`) {
+      if (totalCoin >= needToCoin[itemLevel.duck]) {
+        if (itemLevel.duck === 5) {
+          e.target.disabled = 'disabled';
+          alert(`5단계전부 강화 완료`);
+          return;
+        } else {
+          alert(`오리 강화 완료`);
+          itemLevel.duck++;
+          itemPrice.duckEggPrice = moneyByLevel.duck[itemLevel.duck - 1];
+          $duckP.textContent = `오리 ${itemLevel.duck}단계`;
+        }
       if (itemLevel.duck === 5) {
         e.target.disabled = "disabled";
         alert(`5단계전부 강화 완료`);
         return;
       } else {
-        alert(`오리 강화 완료`);
-        itemPrice.duckEggPrice += 20;
-        itemLevel.duck++;
-        $duckP.textContent = `오리 ${itemLevel.duck}단계`;
+        alert(`코인이 부족합니다! 다른 게임을 통해 코인을 얻으세요 \n 현재보유 코인:${totalCoin}`);
       }
     } else if (e.target.id === `goat-force-btn`) {
+      if (totalCoin >= needToCoin[itemLevel.goat]) {
       if (itemLevel.goat === 5) {
         e.target.disabled = "disabled";
         alert(`5단계전부 강화 완료`);
         return;
       } else {
         alert(`염소 강화완료`);
-        itemPrice.goatsMilkPrice += 20;
         itemLevel.goat++;
+        itemPrice.goatsMilkPrice = moneyByLevel.goat[itemLevel.goat - 1];
         $goatP.textContent = `염소 ${itemLevel.goat}단계`;
+      }} else {
+        alert(`코인이 부족합니다! 다른 게임을 통해 코인을 얻으세요 \n 현재보유 코인:${totalCoin}`);
       }
+
     } else if (e.target.id === `pig-force-btn`) {
+      if (totalCoin >= needToCoin[itemLevel.pig]) {
       if (itemLevel.pig === 5) {
         e.target.disabled = "disabled";
         alert(`5단계전부 강화 완료`);
         return;
       } else {
         alert(`돼지 강화 완료`);
-        itemPrice.trufflePrice += 20;
         itemLevel.pig++;
+        itemPrice.trufflePrice = moneyByLevel.pig[itemLevel.pig - 1];
         $pigP.textContent = `돼지 ${itemLevel.pig}단계`;
+      }}
+      else {
+        alert(`코인이 부족합니다! 다른 게임을 통해 코인을 얻으세요 \n 현재보유 코인:${totalCoin}`);
       }
+
     }
   }
 });
