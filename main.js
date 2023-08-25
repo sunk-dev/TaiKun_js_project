@@ -13,12 +13,17 @@ const $exitBtn = document.querySelector('body .menu-modal .out-btn');
 const $howToPlayBtn = document.getElementById('how-to-play-btn');
 // 게임방법 모달
 const $howToPlayModal = document.querySelector('.how-to-paly-modal');
-const $howToPlayExit=document.querySelector('.how-to-paly-modal .how-to-paly_modal__actions .out-btn');
+const $howToPlayExit = document.querySelector(
+  '.how-to-paly-modal .how-to-paly_modal__actions .out-btn'
+);
 //게임정보모달
 const $gameInfoBtn = document.getElementById('game-info-btn');
-const $gameInfoModal=document.querySelector('.game-info-modal');
-const $gameInfoExit=document.querySelector('.game-info-modal .game-info_modal__actions .out-btn');
-
+const $gameInfoModal = document.querySelector('.game-info-modal');
+const $gameInfoExit = document.querySelector(
+  '.game-info-modal .game-info_modal__actions .out-btn'
+);
+//end-game-btn
+const $endGameBtn = document.getElementById('end-game-btn');
 
 //메뉴 모달을 사라지게 하는
 const exitMenuModalHandler = (e) => {
@@ -29,7 +34,6 @@ const exitMenuModalHandler = (e) => {
 
 //메뉴 모달을 보여주는 showMenuModalHandler
 const showMenuModalHandler = (e) => {
-
   $menuModal.classList.add('visible');
 };
 
@@ -37,24 +41,21 @@ const showHandler = (e) => {
   const id = e.target.id;
   if (id === 'how-to-play-btn') {
     $howToPlayModal.classList.add('visible');
-  }else if(id==='game-info-btn'){
+  } else if (id === 'game-info-btn') {
     console.log(`게임 정보버튼 눌림`);
     $gameInfoModal.classList.add('visible');
-
   }
 };
 const hideHandler = (e) => {
   const exitBtnClass = e.target.closest('div').className;
-  if(exitBtnClass==='how-to-paly_modal__actions'){
+  if (exitBtnClass === 'how-to-paly_modal__actions') {
     $howToPlayModal.classList.remove('visible');
-
-  }
-  else if(exitBtnClass==='game-info_modal__actions'){
+  } else if (exitBtnClass === 'game-info_modal__actions') {
     $gameInfoModal.classList.remove('visible');
   }
-
-
-
+};
+const exitHandler = (e) => {
+  location.href = './start.html';
 };
 
 //menu 버튼에 클릭이벤트
@@ -64,6 +65,7 @@ $howToPlayBtn.addEventListener('click', showHandler);
 $howToPlayExit.addEventListener('click', hideHandler);
 $gameInfoBtn.addEventListener('click', showHandler);
 $gameInfoExit.addEventListener('click', hideHandler);
+$endGameBtn.addEventListener('click', exitHandler);
 // 요구사항 버튼
 // 헤더에 요구사항 버튼
 const $demendBtn = document.getElementById('demend');
@@ -289,7 +291,6 @@ const sellBtn = document.getElementById('asd');
 sellBtn.addEventListener('click', () => {
   // 각 상품의 개수와 가격을 이용하여 해당 상품들의 가격을 총 수익에 추가
   totalMoney +=
-
     aggValue * itemPrice.aggPrice +
     milkValue * itemPrice.milkPrice +
     fleeceValue * itemPrice.fleecePrice +
@@ -297,7 +298,6 @@ sellBtn.addEventListener('click', () => {
     goatsMilkValue * itemPrice.goatsMilkPrice +
     truffleValue * itemPrice.trufflePrice;
   console.log(typeof aggPrice);
-
 
   // 모든 value 값을 0으로 초기화
   aggValue = 0;
@@ -507,20 +507,20 @@ $forceBtns.addEventListener('click', (e) => {
 });
 
 // 슬롯머신
-const $slotMachine = document.querySelector(".slot-Machine");
-const $footerslotMachine = document.getElementById("slotMachine");
-const $startButton = document.getElementById("startButton");
-const $outButton = document.getElementById("outButton");
+const $slotMachine = document.querySelector('.slot-Machine');
+const $footerslotMachine = document.getElementById('slotMachine');
+const $startButton = document.getElementById('startButton');
+const $outButton = document.getElementById('outButton');
 
 function startGame() {
   if (totalMoney < 10) {
-    alert("소지금액이 부족합니다.");
+    alert('소지금액이 부족합니다.');
   } else {
     const numbers = generateRandomNumbers();
     const isAllSame = checkAllSame(numbers);
 
     if (isAllSame) {
-      alert("당첨!");
+      alert('당첨!');
       totalMoney = totalMoney * 2;
       $money.textContent = `현재자산 : ${totalMoney}원`;
     } else {
@@ -533,9 +533,9 @@ function startGame() {
         (number) =>
           `<img class="number-image" src="./image_slotMachine/${number}.png" alt="${number}">`
       )
-      .join("");
+      .join('');
 
-    document.getElementById("randomNumbers").innerHTML = `${randomNumbersHTML}`;
+    document.getElementById('randomNumbers').innerHTML = `${randomNumbersHTML}`;
   }
 
   function generateRandomNumbers() {
@@ -560,9 +560,9 @@ const openSlotHandler = () => {
   const startNum = `<img class="number-image" src="./image_slotMachine/7.png" alt="7" />
   <img class="number-image" src="./image_slotMachine/7.png" alt="7" />
   <img class="number-image" src="./image_slotMachine/7.png" alt="7" />`;
-  document.getElementById("randomNumbers").innerHTML = `${startNum}`;
+  document.getElementById('randomNumbers').innerHTML = `${startNum}`;
 };
 
-$startButton.addEventListener("click", startGame);
-$outButton.addEventListener("click", closeSlotHandler);
-$footerslotMachine.addEventListener("click", openSlotHandler);
+$startButton.addEventListener('click', startGame);
+$outButton.addEventListener('click', closeSlotHandler);
+$footerslotMachine.addEventListener('click', openSlotHandler);

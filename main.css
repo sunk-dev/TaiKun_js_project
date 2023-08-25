@@ -3,10 +3,10 @@
 
 body {
   -ms-overflow-style: none;
+  background: url('./image_main/main_background.jpg') no-repeat;
 }
 ::-webkit-scrollbar {
   display: none;
-
   background: url('./image_main/main_background.jpg');
   cursor: url('./image_main/mouse_cursor/one-finger.png'), auto;
 
