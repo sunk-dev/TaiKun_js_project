@@ -166,14 +166,31 @@
     </div>
     <!-- 타자게임 모달 -->
     <div class="game-container">
-      <h1>패턴</h1>
+      <p id="message">미니게임 타자연습!</p>
       <p id="pattern-display"></p>
-      <p id="message"></p>
       <button id="start">게임 시작</button>
       <button id="retry" disabled>다시 시도</button>
+      <div id="timer">타이머: 0초</div>
+      <div id="score">현재점수: 0점</div>
       <div class="game_modal__actions">
-        <button class="out-btn">닫기</button>
+      <button class="out-btn">닫기</button>
       </div>
+    </div>
+    <!-- 슬롯머신 모달 -->
+    <div class="slot-Machine">
+      <div class="out-line">
+        <h1>SLOT MACHINE</h1>
+        <p id="result"></p>
+        <p id="randomNumbers">
+          <img class="number-image" src="./image_slotMachine/7.png" alt="7" />
+          <img class="number-image" src="./image_slotMachine/7.png" alt="7" />
+          <img class="number-image" src="./image_slotMachine/7.png" alt="7" />
+        </p>
+      </div>
+      <button id="startButton">
+        <img src="./image_slotMachine/stick.png" alt="" />
+      </button>
+      <button id="outButton"><i class="fa-solid fa-xmark fa-2xl"></i></button>
     </div>
 
     <div class="mainbox">
@@ -206,71 +223,54 @@
         <div id="line1">
           <button id="animal1">
             <img src="./image_main/chicken.png" alt="닭" />
-            <div class="item-chicken">+1</div>
+            <div class="item-chicken"><img src="/image_main/Large_Egg.png" alt=""></div>
           </button>
 
           <button id="animal2" class="animalBtn">
             <img src="./image_main/milk_cow.png" alt="젖소" />
-            <div class="item-cow">+1</div>
+            <div class="item-cow"><img src="/image_main/Large_Milk.png" alt=""></div>
           </button>
 
-          <!--           <img
-            src="./image_main/wood_patmal.png"
-            id="locked_animal"
-            class="lockImg imgFn1"
-          /> -->
 
           <img
             src="./image_main/image_button_click/milk_cow2.png"
             id="locked_animal"
             class="lockImg imgFn1"
+
           />
 
           <button id="animal3" class="animalBtn">
             <img src="./image_main/sheep.png" alt="양" />
-            <div class="item-sheep">+1</div>
+            <div class="item-sheep"><img src="/image_main/Wool.png" alt=""></div>
           </button>
 
-          <!--           <img
-            src="./image_main/wood_patmal.png"
-            id="locked_animal"
-            class="lockImg imgFn2"
-          /> -->
 
           <img
             src="./image_main/image_button_click/sheep2.png"
             id="locked_animal"
             class="lockImg imgFn2"
+
           />
         </div>
 
         <div id="line2">
           <button id="animal4" class="animalBtn">
             <img src="./image_main/duck.png" alt="오리" />
-            <div class="item-duck">+1</div>
+            <div class="item-duck"><img src="/image_main/Duck_egg.png" alt=""></div>
           </button>
-
-          <!--           <img
-            src="./image_main/wood_patmal.png"
-            id="locked_animal"
-            class="lockImg imgFn3"
-          /> -->
 
           <img
             src="./image_main/image_button_click/duck2.png"
             id="locked_animal"
             class="lockImg imgFn3"
+
           />
 
           <button id="animal5" class="animalBtn">
             <img src="./image_main/goat.png" alt="염소" />
-            <div class="item-goat">+1</div>
+            <div class="item-goat"><img src="/image_main/Large_Goat_Milk.png" alt=""></div>
           </button>
-          <!--           <img
-            src="./image_main/wood_patmal.png"
-            id="locked_animal"
-            class="lockImg imgFn4"
-          /> -->
+
           <img
             src="./image_main/image_button_click/goat2.png"
             id="locked_animal"
@@ -279,11 +279,12 @@
 
           <button id="animal6" class="animalBtn">
             <img src="./image_main/pig.png" alt="돼지" />
-            <div class="item-pig">+1</div>
+            <div class="item-pig"><img src="/image_main/Truffle.png" alt=""></div>
           </button>
 
           <img
             src="./image_main/image_button_click/pig2.png"
+
             id="locked_animal"
             class="lockImg imgFn5"
           />
@@ -301,6 +302,7 @@
           </button>
           <button class="custom-btn btn-15" id="miniGame">
             <p class="asd">슬롯머신</p>
+
           </button>
         </footer>
       </div>

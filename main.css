@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Bagel+Fat+One&display=swap');
 
+
 body {
   -ms-overflow-style: none;
 }
@@ -8,10 +9,12 @@ body {
 
   background: url('./image_main/main_background.jpg');
   cursor: url('./image_main/mouse_cursor/one-finger.png'), auto;
+
 }
 
 /* font 가져옴. */
 @font-face {
+
   font-family: 'NeoDunggeunmoPro-Regular';
   src: url('./image_main/font_main/NeoDunggeunmoPro-Regular.ttf')
     format('truetype');
@@ -68,6 +71,7 @@ header {
 }
 /* 제목이 정해졌을 때 변경이 필요한 곳. start 화면 포함. */
 header #main_title {
+
   font-family: 'NeoDunggeunmoPro-Regular';
   color: rgba(244, 252, 225, 0.952);
 
@@ -169,7 +173,7 @@ header #menu img {
 .market-modal {
   position: fixed;
   display: none;
-  background: url('./image_main/sell_list.png');
+  background: url("./image_main/sell_list.png");
   background-size: 100%;
   z-index: 100;
   top: 15%;
@@ -219,7 +223,7 @@ header #menu img {
 .menu-modal.visible .menu_modal__content .forBorder,
 .market-modal.visible .market_modal__content .forBorder,
 .sell-modal.visible .sell_modal__content .forBorder {
-  font-family: 'NeoDunggeunmoPro-Regular';
+  font-family: "NeoDunggeunmoPro-Regular";
   font-size: 20px;
 }
 
@@ -235,7 +239,7 @@ header #menu img {
 .menu-modal.visible .menu_modal__content .asdbtn,
 .market-modal.visible .market_modal__content .asdbtn,
 .sell-modal.visible .sell_modal__content #asd {
-  font-family: 'NeoDunggeunmoPro-Regular';
+  font-family: "NeoDunggeunmoPro-Regular";
   font-size: 20px;
   border: 2px inset #ffa53f;
   background: white;
@@ -268,7 +272,7 @@ header #menu img {
 .buy-fail-modal.visible {
   display: block;
   box-shadow: 5px 5px 5px rgb(77, 75, 75);
-  font-family: 'NeoDunggeunmoPro-Regular';
+  font-family: "NeoDunggeunmoPro-Regular";
 }
 .buy-fail-modal .modal__title {
   margin: 0;
@@ -311,7 +315,7 @@ header #menu img {
 .menu-modal .menu_modal__actions .out-btn,
 .market-modal .market_modal__actions .out-btn,
 .sell-modal .sell_modal__actions .out-btn {
-  font-family: 'NeoDunggeunmoPro-Regular';
+  font-family: "NeoDunggeunmoPro-Regular";
   font-size: 17px;
   position: relative;
   left: 300px;
@@ -358,7 +362,7 @@ header #menu img {
 } */
 
 .mainbox #box #money {
-  font-family: 'NeoDunggeunmoPro-Regular';
+  font-family: "NeoDunggeunmoPro-Regular";
   font-size: 30px;
 }
 
@@ -402,7 +406,8 @@ header #menu img {
 .item-sheep,
 .item-duck,
 .item-goat,
-.item-pig {
+.item-pig
+ {
   opacity: 0;
   font-size: 16px;
   font-weight: bold;
@@ -533,10 +538,13 @@ header #menu img {
   top: 15%;
   left: 250px;
   border: 4px solid black;
-  width: 340px;
-  height: 200px;
+  width: 300px;
+  height: 250px;
   border-radius: 20px;
   padding: 30px;
+  text-align: center;
+  font-family: 'NeoDunggeunmoPro-Regular';
+  font-size: 1.2em;
 }
 .game-container.visible {
   display: block;
@@ -554,4 +562,110 @@ header #menu img {
   margin: 0 0.5rem;
   right: 5px;
   bottom: 10px;
+}
+.slot-Machine {
+  padding-left: 50px;
+  padding-top: 30px;
+  position: fixed;
+  display: none;
+  background: #fff;
+  z-index: 100;
+  top: 15%;
+  left: 280px;
+  border: 4px solid black;
+  width: 300px;
+  height: 200px;
+  border-radius: 20px;
+}
+.slot-Machine.visible {
+  display: block;
+}
+.slot-Machine .out-line {
+  width: 200px;
+  border: 3px solid black;
+  border-radius: 10px;
+  padding: 10px;
+}
+.slot-Machine h1 {
+  font-family: sans-serif;
+  font-size: 26px;
+  font-weight: bold;
+}
+.slot-Machine .out-line #randomNumbers {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 195px;
+  border: 3px solid black;
+  border-radius: 10px;
+}
+
+.slot-Machine .number-image {
+  width: 50px;
+  height: 50px;
+  margin: 5px;
+  border: 3px solid black;
+}
+.slot-Machine #startButton {
+  height: 200px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  cursor: pointer;
+  right: 25px;
+  top: 1px;
+  transition: 0.001s linear;
+}
+.slot-Machine #startButton:active {
+  transform: rotateX(-180deg);
+  top: 60px;
+}
+.slot-Machine #startButton img {
+  height: 100px;
+}
+.slot-Machine #outButton {
+  position: absolute;
+  background: none;
+  border: none;
+  cursor: pointer;
+  left: 5px;
+  top: 10px;
+}
+/* 타자게임 css */
+.pattern-char {
+  display: inline-block;
+  margin: 5px;
+  padding: 5px;
+  background-color: white;
+}
+.wrong-char {
+  /* background-color: #ff1d1d; */
+  border: 1px solid #000;
+  width: 20px;
+  border-radius: 130px;
+}
+
+.game-container #timer, #score{
+  margin: 3px;
+  margin-top: 10px;
+  font-size: 1.2em;
+}
+#pattern-display{
+  border-radius: 10px;
+  border: 3px solid #000;
+  height: 40px;
+}
+#message{
+  height: 20px;
+}
+
+#start, #retry{
+  border: none;
+  border-radius: 10px;
+  background: #bdbdbd;
+  width: 80px;
+  height: 30px;
+  font-family: 'NeoDunggeunmoPro-Regular';
+  font-weight: 700;
 }

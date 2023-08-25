@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>빠칭코 게임</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+      .number-image {
+        width: 50px;
+        height: 50px;
+        margin: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>빠칭코 게임</h1>
+    <button id="startButton">시작</button>
+    <p id="result"></p>
+    <p id="randomNumbers"></p>
+
+    <script>
+      document
+        .getElementById("startButton")
+        .addEventListener("click", startGame);
+
+      function startGame() {
+        const numbers = generateRandomNumbers();
+        const isAllSame = checkAllSame(numbers);
+
+        let resultText;
+        if (isAllSame) {
+          resultText = "모든 숫자가 같습니다!";
+        } else {
+          resultText = "모든 숫자가 같지 않습니다.";
+        }
+
+        const randomNumbersHTML = numbers
+          .map(
+            (number) =>
+              `<img class="number-image" src="./image_slotMachine/${number}.png" alt="${number}">`
+          )
+          .join("");
+
+        document.getElementById("result").textContent = resultText;
+        document.getElementById(
+          "randomNumbers"
+        ).innerHTML = `${randomNumbersHTML}`;
+      }
+
+      function generateRandomNumbers() {
+        const randomNumbers = [];
+        for (let i = 0; i < 3; i++) {
+          const randomNumber = Math.floor(Math.random() * 9) + 1;
+          randomNumbers.push(randomNumber);
+        }
+        return randomNumbers;
+      }
+
+      function checkAllSame(numbers) {
+        const firstNumber = numbers[0];
+        return numbers.every((number) => number === firstNumber);
+      }
+    </script>
+  </body>
+</html>
