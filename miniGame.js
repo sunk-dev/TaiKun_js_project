@@ -103,7 +103,7 @@ const patterns = ["q", "w", "e", "a", "s", "d"];
     function endGame() {
       clearTimeout(gameTimeout);
       clearInterval(timerInterval);
-      messageElement.textContent = "일치하지 않습니다!";
+      messageElement.textContent = "틀렸습니다!";
       startButton.disabled = true;
       retryButton.disabled = false;
       isGameStarted = false;
@@ -121,7 +121,6 @@ const patterns = ["q", "w", "e", "a", "s", "d"];
       startButton.disabled = false;
       totalPoint = 0;
       score.textContent = `현재점수: ${totalPoint}점`;
-
       generatePattern();
       displayPattern();
       startGame();
@@ -170,6 +169,7 @@ const patterns = ["q", "w", "e", "a", "s", "d"];
       totalPoint = 0;
       score.textContent = `현재점수: ${totalPoint}점`;
       startButton.textContent = "게임 시작";
+      messageElement.textContent = "미니게임 타자연습!"
       updateTimerDisplay();
       patternDisplay.innerHTML = ""; // pattern-display 초기화
     });
