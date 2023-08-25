@@ -4,17 +4,14 @@
 body {
   -ms-overflow-style: none;
   background: url('./image_main/main_background.jpg') no-repeat;
+  cursor: url('./image_main/mouse_cursor/one-finger.png'), auto;
 }
 ::-webkit-scrollbar {
   display: none;
-  background: url('./image_main/main_background.jpg');
-  cursor: url('./image_main/mouse_cursor/one-finger.png'), auto;
-
 }
 
 /* font 가져옴. */
 @font-face {
-
   font-family: 'NeoDunggeunmoPro-Regular';
   src: url('./image_main/font_main/NeoDunggeunmoPro-Regular.ttf')
     format('truetype');
@@ -156,6 +153,7 @@ header #menu img {
   border-radius: 6px;
   box-shadow: 0 1px 8px rgba(0, 0, 0, 0.26);
   cursor: pointer;
+  cursor: url('./image_main/mouse_cursor/one-finger.png'), auto;
   margin: 0 0.5rem;
 }
 .demend-modal .modal__content .forBorder {
@@ -236,7 +234,18 @@ header #menu img {
   line-height: 1.5em;
   overflow: auto;
 }
-.menu-modal.visible .menu_modal__content .asdbtn,
+
+/* [menu]와 [market & sell]버튼은 일부러 분리했습니다. */
+.menu-modal.visible .menu_modal__content .asdbtn {
+  font-family: "NeoDunggeunmoPro-Regular";
+  font-size: 20px;
+  border: 2px inset #ffa53f;
+  background: white;
+  border-radius: 10px;
+  width: 100px;
+  height: 30px;
+  cursor: url('./image_main/mouse_cursor/support.png'), auto;
+}
 .market-modal.visible .market_modal__content .asdbtn,
 .sell-modal.visible .sell_modal__content #asd {
   font-family: "NeoDunggeunmoPro-Regular";
@@ -249,12 +258,13 @@ header #menu img {
   cursor: url('./image_main/mouse_cursor/expense.png'), auto;
 }
 .menu-modal.visible .menu_modal__content .asdbtn:hover,
-.market-modal.visible .market_modal__content .asdbtn:hover,
-.sell-modal.visible .sell_modal__content #asd:hover {
+.sell-modal.visible .sell_modal__content #asd:hover,
+.market-modal.visible .market_modal__content .asdbtn:hover{
   background: #dddddd;
 }
-.market-modal.visible .market_modal__content .asdbtn:active,
-.sell-modal.visible .sell_modal__content #asd:active {
+.menu-modal.visible .menu_modal__content .asdbtn:active,
+.sell-modal.visible .sell_modal__content #asd:active,
+.market-modal.visible .market_modal__content .asdbtn:active {
   background: #8b8b8b;
 }
 
@@ -329,6 +339,7 @@ header #menu img {
   cursor: url('./image_main/mouse_cursor/one-finger.png'), auto;
   margin: 0 0.5rem;
 }
+
 .game-info-modal .game-info_modal__actions .out-btn,
 .how-to-paly-modal .how-to-paly_modal__actions .out-btn {
   font-family: 'NeoDunggeunmoPro-Regular';
@@ -344,10 +355,13 @@ header #menu img {
   cursor: pointer;
   margin: 0 0.5rem;
 }
-
+.menu-modal .menu_modal__actions .out-btn:hover,
+.market-modal .market_modal__actions .out-btn:hover,
 .sell-modal .sell_modal__actions .out-btn:hover {
   background: #dddddd;
 }
+.menu-modal .menu_modal__actions .out-btn:active,
+.market-modal .market_modal__actions .out-btn:active,
 .sell-modal .sell_modal__actions .out-btn:active {
   background: #8b8b8b;
 }
@@ -361,6 +375,7 @@ header #menu img {
   align-content: center;
 } */
 
+/* Mainbox 화면 */
 .mainbox #box #money {
   font-family: "NeoDunggeunmoPro-Regular";
   font-size: 30px;
@@ -559,6 +574,7 @@ header #menu img {
   border-radius: 6px;
   box-shadow: 0 1px 8px rgba(0, 0, 0, 0.26);
   cursor: pointer;
+  cursor: url('./image_main/mouse_cursor/one-finger.png'), auto;
   margin: 0 0.5rem;
   right: 5px;
   bottom: 10px;
@@ -613,6 +629,7 @@ header #menu img {
   cursor: pointer;
   position: absolute;
   cursor: pointer;
+  cursor: url('./image_main/mouse_cursor/coin.png'), auto;
   right: 25px;
   top: 1px;
   transition: 0.001s linear;
@@ -629,6 +646,7 @@ header #menu img {
   background: none;
   border: none;
   cursor: pointer;
+  cursor: url('./image_main/mouse_cursor/one-finger.png'), auto;
   left: 5px;
   top: 10px;
 }
@@ -668,4 +686,5 @@ header #menu img {
   height: 30px;
   font-family: 'NeoDunggeunmoPro-Regular';
   font-weight: 700;
+  cursor: url('./image_main/mouse_cursor/one-finger.png'), auto;
 }
