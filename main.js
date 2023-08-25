@@ -150,6 +150,7 @@ const $goatMilk = $sell_modal__content.querySelector('.goatMilk');
 const $truffle = $sell_modal__content.querySelector('.truffle');
 // 판매버튼 선언
 const $money = document.getElementById('money');
+const $coin = document.getElementById('coin');
 
 const closeModal = (e) => {
   $sellModal.classList.remove(CLASS_VISIBLE);
@@ -284,8 +285,25 @@ const itemLevel = {
   goat: +1,
   pig: +1,
 };
+const needToCoin = {
+  1: 10,
+  2: 20,
+  3: 30,
+  4: 40,
+  5: 50,
+};
+//동물들 단계별로 증가되는 돈
+const moneyByLevel = {
+  chicken: [5, 10, 20, 35, 60],
+  cow: [30, 50, 80, 110, 170],
+  sheep: [70, 130, 200, 350, 450],
+  duck: [200, 320, 470, 850, 1500],
+  goat: [800, 1200, 2000, 4000, 9000],
+  pig: [5000, 15000, 30000, 50000, 200000],
+};
 
 let totalMoney = 1000000000;
+let totalCoin = 1000000;
 
 const sellBtn = document.getElementById('asd');
 sellBtn.addEventListener('click', () => {
@@ -317,14 +335,8 @@ sellBtn.addEventListener('click', () => {
   $money.textContent = `현재자산 : ${totalMoney}원`;
 });
 
-$egg.textContent = `계란 : ${aggValue}`;
-$milk.textContent = `우유 : ${milkValue}`;
-$fleece.textContent = `양털 : ${fleeceValue}`;
-$duckegg.textContent = `오리알 : ${fleeceValue}`;
-$goatMilk.textContent = `염소젖 : ${fleeceValue}`;
-$truffle.textContent = `트러플 : ${fleeceValue}`;
-
 $money.textContent = `현재자산 : ${totalMoney}원`;
+$coin.textContent = `현재코인 : ${totalCoin}개`;
 
 // 판매 버튼 이벤트
 const sellButton = document.getElementById('sell');
@@ -436,71 +448,118 @@ const $forceBtns = document.querySelector('.market_modal__content');
 $forceBtns.addEventListener('click', (e) => {
   if (e.target.tagName === 'BUTTON') {
     if (e.target.id === `chick-force-btn`) {
-      if (itemLevel.chicken === 5) {
-        e.target.disabled = 'disabled';
-        alert(`5단계전부 강화 완료`);
-        return;
+      if (totalCoin >= needToCoin[itemLevel.chicken]) {
+        if (itemLevel.chicken === 5) {
+          e.target.disabled = 'disabled';
+          alert(`5단계전부 강화 완료`);
+          return;
+        } else {
+          alert(`닭 강화완료`);
+          totalCoin -= needToCoin[itemLevel.chicken];
+          coin.textContent = `현재코인 : ${totalCoin}개`;
+          itemLevel.chicken++;
+          itemPrice.aggPrice = moneyByLevel.chicken[itemLevel.chicken - 1];
+          $chickenP.textContent = `닭 ${itemLevel.chicken}단계`;
+        }
       } else {
-        alert(`닭 강화완료`);
-        itemPrice.aggPrice += 20;
-        itemLevel.chicken++;
-        $chickenP.textContent = `닭 ${itemLevel.chicken}단계`;
+        alert(
+          `코인이 부족합니다! 다른 게임을 통해 코인을 얻으세요 \n 현재보유 코인:${totalCoin}`
+        );
       }
     } else if (e.target.id === `cow-force-btn`) {
-      if (itemLevel.cow === 5) {
-        e.target.disabled = 'disabled';
-        alert(`5단계전부 강화 완료`);
-        return;
+      if (totalCoin >= needToCoin[itemLevel.cow]) {
+        if (itemLevel.cow === 5) {
+          e.target.disabled = 'disabled';
+          alert(`5단계전부 강화 완료`);
+          return;
+        } else {
+          alert(`소 강화완료`);
+          totalCoin -= needToCoin[itemLevel.cow];
+          coin.textContent = `현재코인 : ${totalCoin}개`;
+          itemLevel.cow++;
+          itemPrice.milkPrice = moneyByLevel.cow[itemLevel.cow - 1];
+          $cowP.textContent = `소 ${itemLevel.cow}단계`;
+        }
       } else {
-        alert(`소 강화완료`);
-        itemPrice.milkPrice += 20;
-        itemLevel.cow++;
-        $cowP.textContent = `소 ${itemLevel.cow}단계`;
+        alert(
+          `코인이 부족합니다! 다른 게임을 통해 코인을 얻으세요 \n 현재보유 코인:${totalCoin}`
+        );
       }
     } else if (e.target.id === `sheep-force-btn`) {
-      if (itemLevel.sheep === 5) {
-        e.target.disabled = 'disabled';
-        alert(`5단계전부 강화 완료`);
-        return;
+      if (totalCoin >= needToCoin[itemLevel.sheep]) {
+        if (itemLevel.sheep === 5) {
+          e.target.disabled = 'disabled';
+          alert(`5단계전부 강화 완료`);
+          return;
+        } else {
+          alert(`양 강화완료`);
+          totalCoin -= needToCoin[itemLevel.sheep];
+          coin.textContent = `현재코인 : ${totalCoin}개`;
+          itemLevel.sheep++;
+          itemPrice.fleecePrice = moneyByLevel.sheep[itemLevel.sheep - 1];
+          $sheepP.textContent = `양 ${itemLevel.sheep}단계`;
+        }
       } else {
-        alert(`양 강화 완료`);
-        itemPrice.fleecePrice += 20;
-        itemLevel.sheep++;
-        $sheepP.textContent = `양 ${itemLevel.sheep}단계`;
+        alert(
+          `코인이 부족합니다! 다른 게임을 통해 코인을 얻으세요 \n 현재보유 코인:${totalCoin}`
+        );
       }
-      price.egg += 20;
     } else if (e.target.id === `duck-force-btn`) {
-      if (itemLevel.duck === 5) {
-        e.target.disabled = 'disabled';
-        alert(`5단계전부 강화 완료`);
-        return;
+      if (totalCoin >= needToCoin[itemLevel.duck]) {
+        if (itemLevel.duck === 5) {
+          e.target.disabled = 'disabled';
+          alert(`5단계전부 강화 완료`);
+          return;
+        } else {
+          alert(`오리 강화완료`);
+          totalCoin -= needToCoin[itemLevel.duck];
+          coin.textContent = `현재코인 : ${totalCoin}개`;
+          itemLevel.duck++;
+          itemPrice.duckEggPrice = moneyByLevel.duck[itemLevel.duck - 1];
+          $duckP.textContent = `오리 ${itemLevel.duck}단계`;
+        }
       } else {
-        alert(`오리 강화 완료`);
-        itemPrice.duckEggPrice += 20;
-        itemLevel.duck++;
-        $duckP.textContent = `오리 ${itemLevel.duck}단계`;
+        alert(
+          `코인이 부족합니다! 다른 게임을 통해 코인을 얻으세요 \n 현재보유 코인:${totalCoin}`
+        );
       }
     } else if (e.target.id === `goat-force-btn`) {
-      if (itemLevel.goat === 5) {
-        e.target.disabled = 'disabled';
-        alert(`5단계전부 강화 완료`);
-        return;
+      if (totalCoin >= needToCoin[itemLevel.goat]) {
+        if (itemLevel.goat === 5) {
+          e.target.disabled = 'disabled';
+          alert(`5단계전부 강화 완료`);
+          return;
+        } else {
+          alert(`염소 강화완료`);
+          totalCoin -= needToCoin[itemLevel.goat];
+          coin.textContent = `현재코인 : ${totalCoin}개`;
+          itemLevel.goat++;
+          itemPrice.goatsMilkPrice = moneyByLevel.goat[itemLevel.goat - 1];
+          $goatP.textContent = `염소 ${itemLevel.goat}단계`;
+        }
       } else {
-        alert(`염소 강화완료`);
-        itemPrice.goatsMilkPrice += 20;
-        itemLevel.goat++;
-        $goatP.textContent = `염소 ${itemLevel.goat}단계`;
+        alert(
+          `코인이 부족합니다! 다른 게임을 통해 코인을 얻으세요 \n 현재보유 코인:${totalCoin}`
+        );
       }
     } else if (e.target.id === `pig-force-btn`) {
-      if (itemLevel.pig === 5) {
-        e.target.disabled = 'disabled';
-        alert(`5단계전부 강화 완료`);
-        return;
+      if (totalCoin >= needToCoin[itemLevel.pig]) {
+        if (itemLevel.pig === 5) {
+          e.target.disabled = 'disabled';
+          alert(`5단계전부 강화 완료`);
+          return;
+        } else {
+          alert(`돼지 강화완료`);
+          totalCoin -= needToCoin[itemLevel.pig];
+          coin.textContent = `현재코인 : ${totalCoin}개`;
+          itemLevel.pig++;
+          itemPrice.trufflePrice = moneyByLevel.pig[itemLevel.pig - 1];
+          $pigP.textContent = `돼지 ${itemLevel.pig}단계`;
+        }
       } else {
-        alert(`돼지 강화 완료`);
-        itemPrice.trufflePrice += 20;
-        itemLevel.pig++;
-        $pigP.textContent = `돼지 ${itemLevel.pig}단계`;
+        alert(
+          `코인이 부족합니다! 다른 게임을 통해 코인을 얻으세요 \n 현재보유 코인:${totalCoin}`
+        );
       }
     }
   }
@@ -511,21 +570,22 @@ const $slotMachine = document.querySelector('.slot-Machine');
 const $footerslotMachine = document.getElementById('slotMachine');
 const $startButton = document.getElementById('startButton');
 const $outButton = document.getElementById('outButton');
+$coin.textContent = `현재코인 : ${totalCoin}`;
 
-function startGame() {
-  if (totalMoney < 10) {
-    alert('소지금액이 부족합니다.');
+function startSlotMachine() {
+  if (totalCoin < 1) {
+    alert('소지코인이 부족합니다.');
   } else {
     const numbers = generateRandomNumbers();
     const isAllSame = checkAllSame(numbers);
 
     if (isAllSame) {
       alert('당첨!');
-      totalMoney = totalMoney * 2;
-      $money.textContent = `현재자산 : ${totalMoney}원`;
+      totalCoin += 30;
+      $coin.textContent = `현재코인 : ${totalCoin}원`;
     } else {
-      totalMoney -= 10;
-      $money.textContent = `현재자산 : ${totalMoney}원`;
+      totalCoin -= 1;
+      $coin.textContent = `현재코인 : ${totalCoin}원`;
     }
 
     const randomNumbersHTML = numbers
@@ -562,7 +622,193 @@ const openSlotHandler = () => {
   <img class="number-image" src="./image_slotMachine/7.png" alt="7" />`;
   document.getElementById('randomNumbers').innerHTML = `${startNum}`;
 };
-
-$startButton.addEventListener('click', startGame);
+$startButton.addEventListener('click', startSlotMachine);
 $outButton.addEventListener('click', closeSlotHandler);
 $footerslotMachine.addEventListener('click', openSlotHandler);
+
+// 미니게임 js
+const patterns = ['q', 'w', 'e', 'a', 's', 'd'];
+const patternDisplay = document.getElementById('pattern-display');
+const messageElement = document.getElementById('message');
+const startBtn = document.getElementById('start');
+const retryButton = document.getElementById('retry');
+const timerElement = document.getElementById('timer');
+const score = document.getElementById('score');
+const coin = document.getElementById('coin');
+
+let isGameStarted = false;
+let currentPattern = [];
+let userInput = '';
+let gameTimeout;
+let timerInterval;
+let currentInputIndex = 0;
+let timerValue = 0;
+let totalPoint = 0;
+
+startBtn.addEventListener('click', startGame);
+retryButton.addEventListener('click', retryGame);
+
+function startGame() {
+  totalMoney -= 500;
+  $money.textContent = `현재자산 : ${totalMoney}원`;
+  if (isGameStarted) {
+    return;
+  }
+
+  isGameStarted = true;
+  messageElement.textContent = '';
+  userInput = '';
+  currentInputIndex = 0;
+  generatePattern();
+  displayPattern();
+  retryButton.disabled = true;
+
+  window.addEventListener('keydown', handleKey);
+
+  clearTimeout(gameTimeout);
+  clearInterval(timerInterval);
+  timerValue = 0;
+  updateTimerDisplay();
+  timerInterval = setInterval(() => {
+    timerValue++;
+    updateTimerDisplay();
+  }, 1000);
+
+  gameTimeout = setTimeout(() => {
+    endGame();
+    messageElement.textContent = '시간 초과!';
+  }, 5000);
+}
+
+function generatePattern() {
+  currentPattern = [];
+  for (let i = 0; i < 7; i++) {
+    const randomIndex = Math.floor(Math.random() * patterns.length);
+    currentPattern.push(patterns[randomIndex]);
+  }
+}
+
+function displayPattern() {
+  patternDisplay.innerHTML = '';
+  currentPattern.forEach((char, index) => {
+    const charElement = document.createElement('div');
+    charElement.textContent = char;
+    charElement.classList.add('pattern-char');
+    if (index === currentInputIndex && userInput.length === index) {
+      charElement.classList.add('wrong-char');
+    }
+    patternDisplay.appendChild(charElement);
+  });
+}
+
+function handleKey(event) {
+  const pressedKey = event.key.toLowerCase();
+  if (isGameStarted && patterns.includes(pressedKey)) {
+    userInput += pressedKey;
+    checkInput();
+  } else if (isGameStarted) {
+    endGame();
+  }
+}
+
+function checkInput() {
+  if (userInput.length === 7) {
+    checkMatch();
+  } else if (
+    userInput.length > 0 &&
+    !patterns.includes(userInput[userInput.length - 1])
+  ) {
+    endGame();
+  } else if (userInput.length === currentPattern.length) {
+    if (userInput !== currentPattern.join('')) {
+      markWrongInput();
+    }
+    endGame();
+  } else if (userInput.length === currentInputIndex + 1) {
+    currentInputIndex++;
+    displayPattern();
+  }
+}
+
+function markWrongInput() {
+  const patternChars = patternDisplay.querySelectorAll('.pattern-char');
+  patternChars[currentInputIndex].classList.add('wrong-char');
+}
+
+function endGame() {
+  clearTimeout(gameTimeout);
+  clearInterval(timerInterval);
+  messageElement.textContent = '틀렸습니다!';
+  startBtn.disabled = true;
+  retryButton.disabled = false;
+  isGameStarted = false;
+  window.removeEventListener('keydown', handleKey);
+}
+
+function retryGame() {
+  clearTimeout(gameTimeout);
+  clearInterval(timerInterval);
+  messageElement.textContent = '';
+  userInput = '';
+  currentInputIndex = 0;
+  resetPatternDisplay();
+  retryButton.disabled = true;
+  startBtn.disabled = false;
+  totalPoint = 0;
+  score.textContent = `현재점수: ${totalPoint}점`;
+  generatePattern();
+  displayPattern();
+  startGame();
+}
+
+function resetPatternDisplay() {
+  const patternChars = patternDisplay.querySelectorAll('.pattern-char');
+  patternChars.forEach((charElement) => {
+    charElement.classList.remove('wrong-char');
+  });
+}
+
+function checkMatch() {
+  if (userInput === currentPattern.join('')) {
+    clearTimeout(gameTimeout);
+    clearInterval(timerInterval);
+    messageElement.textContent = '일치합니다!';
+    isGameStarted = false;
+    startBtn.textContent = '다음 문제';
+    retryButton.disabled = false;
+    totalPoint += 1;
+    score.textContent = `현재점수: ${totalPoint}점`;
+    totalCoin += 1;
+    coin.textContent = `현재코인 : ${totalCoin}개`;
+  } else {
+    markWrongInput();
+    endGame();
+  }
+}
+
+function updateTimerDisplay() {
+  timerElement.textContent = `타이머: ${timerValue}초`;
+}
+
+document
+  .querySelector('.game-container .out-btn')
+  .addEventListener('click', () => {
+    if (isGameStarted) {
+      endGame();
+    }
+    messageElement.textContent = '';
+    userInput = '';
+    currentInputIndex = 0;
+    resetPatternDisplay();
+    retryButton.disabled = true;
+    startBtn.disabled = false;
+    clearTimeout(gameTimeout);
+    clearInterval(timerInterval);
+    timerValue = 0;
+    totalPoint = 0;
+    score.textContent = `현재점수: ${totalPoint}점`;
+    startBtn.textContent = '게임 시작';
+    messageElement.textContent = '미니게임 타자연습!';
+    updateTimerDisplay();
+    patternDisplay.innerHTML = ''; // pattern-display 초기화
+  });
