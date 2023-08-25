@@ -109,7 +109,8 @@ header #menu img {
 .demend-modal {
   position: fixed;
   display: none;
-  background: #fff;
+  background: url('./image_main/sell_list.png');
+  background-size: 100%;
   z-index: 100;
   top: 15%;
   left: 250px;
@@ -130,7 +131,7 @@ header #menu img {
   display: flex;
 }
 .demend-modal .modal__content .demend-main-img {
-  width: 350px;
+  width: 320px;
   right: 10px;
 }
 .demend-modal .modal__content .buy-btn {
@@ -488,11 +489,11 @@ header #menu img {
 }
 .asd {
   position: absolute;
-  bottom: 35px;
+  padding-bottom: 45px;
 }
 
 .footer_main .btn-15:active {
-  top: -5px;
+  top: 12px;
 }
 
 /* 메뉴 css 부분 */
