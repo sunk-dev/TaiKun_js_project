@@ -505,3 +505,64 @@ $forceBtns.addEventListener('click', (e) => {
     }
   }
 });
+
+// 슬롯머신
+const $slotMachine = document.querySelector(".slot-Machine");
+const $footerslotMachine = document.getElementById("slotMachine");
+const $startButton = document.getElementById("startButton");
+const $outButton = document.getElementById("outButton");
+
+function startGame() {
+  if (totalMoney < 10) {
+    alert("소지금액이 부족합니다.");
+  } else {
+    const numbers = generateRandomNumbers();
+    const isAllSame = checkAllSame(numbers);
+
+    if (isAllSame) {
+      alert("당첨!");
+      totalMoney = totalMoney * 2;
+      $money.textContent = `현재자산 : ${totalMoney}원`;
+    } else {
+      totalMoney -= 10;
+      $money.textContent = `현재자산 : ${totalMoney}원`;
+    }
+
+    const randomNumbersHTML = numbers
+      .map(
+        (number) =>
+          `<img class="number-image" src="./image_slotMachine/${number}.png" alt="${number}">`
+      )
+      .join("");
+
+    document.getElementById("randomNumbers").innerHTML = `${randomNumbersHTML}`;
+  }
+
+  function generateRandomNumbers() {
+    const randomNumbers = [];
+    for (let i = 0; i < 3; i++) {
+      const randomNumber = Math.floor(Math.random() * 9) + 1;
+      randomNumbers.push(randomNumber);
+    }
+    return randomNumbers;
+  }
+
+  function checkAllSame(numbers) {
+    const firstNumber = numbers[0];
+    return numbers.every((number) => number === firstNumber);
+  }
+}
+const closeSlotHandler = () => {
+  $slotMachine.classList.remove(CLASS_VISIBLE);
+};
+const openSlotHandler = () => {
+  $slotMachine.classList.add(CLASS_VISIBLE);
+  const startNum = `<img class="number-image" src="./image_slotMachine/7.png" alt="7" />
+  <img class="number-image" src="./image_slotMachine/7.png" alt="7" />
+  <img class="number-image" src="./image_slotMachine/7.png" alt="7" />`;
+  document.getElementById("randomNumbers").innerHTML = `${startNum}`;
+};
+
+$startButton.addEventListener("click", startGame);
+$outButton.addEventListener("click", closeSlotHandler);
+$footerslotMachine.addEventListener("click", openSlotHandler);
