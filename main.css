@@ -6,9 +6,8 @@ body {
 ::-webkit-scrollbar {
   display: none;
 
-  background: url("./image_main/main_background.jpg");
+  background: url('./image_main/main_background.jpg');
   cursor: url('./image_main/mouse_cursor/one-finger.png'), auto;
-
 }
 
 /* font 가져옴. */
@@ -69,7 +68,6 @@ header {
 }
 /* 제목이 정해졌을 때 변경이 필요한 곳. start 화면 포함. */
 header #main_title {
-
   font-family: 'NeoDunggeunmoPro-Regular';
   color: rgba(244, 252, 225, 0.952);
 
@@ -223,7 +221,6 @@ header #menu img {
   font-family: 'NeoDunggeunmoPro-Regular';
   font-size: 20px;
 }
-
 
 .game-info-modal .game-info_modal__content .force_item.content,
 .how-to-paly-modal .how-to-paly_modal__content .force_item.content {
@@ -426,7 +423,7 @@ header #menu img {
 
 /* footer 부분 */
 .footer_main {
-  background:url('./image_main/header_background.jpg');
+  background: url('./image_main/header_background.jpg');
   width: 100%;
   height: 130px;
   position: absolute;
@@ -460,7 +457,7 @@ header #menu img {
   justify-content: center;
   align-items: center;
 }
-.asd{
+.asd {
   position: absolute;
   bottom: 35px;
 }
@@ -515,13 +512,6 @@ header #menu img {
 
 #buy {
   background: palegoldenrod;
-}
-
-
-#sell,
-#miniGame {
-  border: none;
-  background: none;
 }
 
 #toggle-btn {
