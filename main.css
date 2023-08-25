@@ -361,7 +361,7 @@ header #menu img {
   align-content: center;
 } */
 
-.mainbox #box #money {
+.mainbox #box #money, #coin{
   font-family: "NeoDunggeunmoPro-Regular";
   font-size: 30px;
 }
