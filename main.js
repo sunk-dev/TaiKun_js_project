@@ -404,6 +404,10 @@ const closeSlotHandler = () => {
 };
 const openSlotHandler = () => {
   $slotMachine.classList.add(CLASS_VISIBLE);
+  const startNum = `<img class="number-image" src="./image_slotMachine/7.png" alt="7" />
+  <img class="number-image" src="./image_slotMachine/7.png" alt="7" />
+  <img class="number-image" src="./image_slotMachine/7.png" alt="7" />`;
+  document.getElementById("randomNumbers").innerHTML = `${startNum}`;
 };
 
 $startButton.addEventListener("click", startGame);
