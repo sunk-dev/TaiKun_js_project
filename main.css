@@ -369,6 +369,7 @@ header #menu img {
 }
 
 .footer_main .custom-btn {
+  bottom: -15px;
   width: 30%;
   height: 110%;
   color: #fde9db;
