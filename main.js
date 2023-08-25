@@ -1,3 +1,5 @@
+// 자산 nan으로 뜨는거 해결하기
+
 //menu 버튼
 //헤더에 menu 버튼
 const $menuBtn = document.getElementById('menu');
@@ -216,21 +218,21 @@ truffle.addEventListener('click', () => {
 
 // 상품가격 지정
 const itemPrice = {
-  aggPrice: 30,
-  milkPrice: 50,
-  fleecePrice: 100,
-  duckEggPrice: 180,
-  goatsMilkPrice: 300,
-  trufflePrice: 500000,
+  aggPrice: +30,
+  milkPrice: +50,
+  fleecePrice: +100,
+  duckEggPrice: +180,
+  goatsMilkPrice: +300,
+  trufflePrice: +500000,
 };
 
 const itemLevel = {
-  chicken: 1,
-  cow: 1,
-  sheep: 1,
-  duck: 1,
-  goat: 1,
-  pig: 1,
+  chicken: +1,
+  cow: +1,
+  sheep: +1,
+  duck: +1,
+  goat: +1,
+  pig: +1,
 };
 
 let totalMoney = 0;
@@ -238,14 +240,8 @@ let totalMoney = 0;
 const sellBtn = document.getElementById('asd');
 sellBtn.addEventListener(
   'click',
-  ({
-    aggPrice,
-    milkPrice,
-    fleecePrice,
-    duckEggPrice,
-    goatsMilkPrice,
-    trufflePrice,
-  }) => {
+  () => {
+    const [aggPrice,milkPrice,fleecePrice,duckEggPrice,goatsMilkPrice,trufflePrice]=itemPrice;
     // 각 상품의 개수와 가격을 이용하여 해당 상품들의 가격을 총 수익에 추가
     totalMoney +=
       aggValue * aggPrice +
@@ -254,7 +250,7 @@ sellBtn.addEventListener(
       duckEggValue * duckEggPrice +
       goatsMilkValue * goatsMilkPrice +
       truffleValue * trufflePrice;
-    console.log('현재 자산: ', totalMoney);
+    console.log(typeof aggPrice);
 
     // 모든 value 값을 0으로 초기화
     aggValue = 0;
@@ -382,6 +378,14 @@ $marketCloseBtn.addEventListener('click', (e) => {
   marketModal.classList.remove('visible');
 });
 
+//마켓 동물 강화 텍스트 가져오기
+const $chickenP = document.querySelector('.force_item .egg.forBorder');
+const $cowP = document.querySelector('.milk.forBorder');
+const $sheepP = document.querySelector('.fleece.forBorder');
+const $duckP = document.querySelector('.duckegg.forBorder');
+const $goatP = document.querySelector('.goatMilk.forBorder');
+const $pigP = document.querySelector('.truffle.forBorder');
+
 const $forceBtns = document.querySelector('.market_modal__content');
 $forceBtns.addEventListener('click', (e) => {
   if (e.target.tagName === 'BUTTON') {
@@ -391,16 +395,67 @@ $forceBtns.addEventListener('click', (e) => {
         alert(`5단계전부 강화 완료`);
         return;
       } else {
-        alert(`닭 레벨업`);
-        price.egg += 20;
+        alert(`닭 강화완료`);
+        itemPrice.aggPrice += 20;
         itemLevel.chicken++;
+        $chickenP.textContent = `닭 ${itemLevel.chicken}단계`;
+      }
+    } else if (e.target.id === `cow-force-btn`) {
+      if (itemLevel.cow === 5) {
+        e.target.disabled = 'disabled';
+        alert(`5단계전부 강화 완료`);
+        return;
+      } else {
+        alert(`소 강화완료`);
+        itemPrice.milkPrice += 20;
+        itemLevel.cow++;
+        $cowP.textContent = `소 ${itemLevel.cow}단계`;
+      }
+    } else if (e.target.id === `sheep-force-btn`) {
+      if (itemLevel.sheep === 5) {
+        e.target.disabled = 'disabled';
+        alert(`5단계전부 강화 완료`);
+        return;
+      } else {
+        alert(`양 강화 완료`);
+        itemPrice.fleecePrice += 20;
+        itemLevel.sheep++;
+        $sheepP.textContent = `양 ${itemLevel.sheep}단계`;
       }
       price.egg += 20;
-    } else if (e.target.id === `cow-force-btn`) {
-    } else if (e.target.id === `sheep-force-btn`) {
     } else if (e.target.id === `duck-force-btn`) {
+      if (itemLevel.duck === 5) {
+        e.target.disabled = 'disabled';
+        alert(`5단계전부 강화 완료`);
+        return;
+      } else {
+        alert(`오리 강화 완료`);
+        itemPrice.duckEggPrice += 20;
+        itemLevel.duck++;
+        $duckP.textContent = `오리 ${itemLevel.duck}단계`;
+      }
     } else if (e.target.id === `goat-force-btn`) {
+      if (itemLevel.goat === 5) {
+        e.target.disabled = 'disabled';
+        alert(`5단계전부 강화 완료`);
+        return;
+      } else {
+        alert(`염소 강화완료`);
+        itemPrice.goatsMilkPrice += 20;
+        itemLevel.goat++;
+        $goatP.textContent = `염소 ${itemLevel.goat}단계`;
+      }
     } else if (e.target.id === `pig-force-btn`) {
+      if (itemLevel.pig === 5) {
+        e.target.disabled = 'disabled';
+        alert(`5단계전부 강화 완료`);
+        return;
+      } else {
+        alert(`돼지 강화 완료`);
+        itemPrice.trufflePrice += 20;
+        itemLevel.pig++;
+        $pigP.textContent = `돼지 ${itemLevel.pig}단계`;
+      }
     }
   }
 });
