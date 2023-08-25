@@ -1,0 +1,65 @@
+/* 게임 방법 css */
+/* 크기 300 x 500 기준 */
+/* 전체 스크롤바 가림-> 스크롤바 기능은 작동 */
+body{
+    -ms-overflow-style: none;
+    }
+   ::-webkit-scrollbar {
+     display: none;
+   }
+  
+  button{
+    /* 버튼 기본 스타일 전부 제거함. */
+    border: 0;
+    background-color: transparent;
+  }
+  button:hover{
+    color: green;
+  }
+  .help-modal {
+    position: fixed;
+    visibility: hidden;
+    background: #fff;
+    z-index: 100;
+    top: 15%;
+    left: 250px;
+    border: 4px solid black;
+    width: 300px;
+    height: 500px;
+    border-radius: 20px;
+  }
+  
+  .help-modal.show {
+    visibility: visible;
+    border: 4px solid black;
+    width: 400px;
+    height: 600px;
+    border-radius: 20px;
+  }
+  
+  .help-modal.show .header{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    position: relative;
+    margin-top: 3%;
+  
+  }
+  .help-modal.show .header h1{
+    width: 350px;
+    font-size: 25px;
+    font-weight: 700;
+    text-align: center;
+  }
+  
+  .help-modal.show .header span{
+    font-size: 2em;
+  }
+  
+  .help-modal.show .content{
+    height: 450px;
+    line-height: 1.5em; /* 글자간격 조정 */
+    margin-top: 30px;
+    padding: 20px;
+    overflow: auto;
+  }
