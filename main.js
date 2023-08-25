@@ -6,23 +6,60 @@ const $menuBtn = document.getElementById('menu');
 // 메뉴 모달
 const $menuModal = document.querySelector('body .menu-modal');
 //메뉴 모달 안에서 x 버튼
-const $exitBtn = document.getElementById('exit-btn');
+const $exitBtn = document.querySelector('body .menu-modal .out-btn');
+
+// 게임방법 버튼
+const $howToPlayBtn = document.getElementById('how-to-play-btn');
+// 게임방법 모달
+const $howToPlayModal = document.querySelector('.how-to-paly-modal');
+const $howToPlayExit=document.querySelector('.how-to-paly-modal .how-to-paly_modal__actions .out-btn');
+//게임정보모달
+const $gameInfoBtn = document.getElementById('game-info-btn');
+const $gameInfoModal=document.querySelector('.game-info-modal');
+const $gameInfoExit=document.querySelector('.game-info-modal .game-info_modal__actions .out-btn');
 
 //메뉴 모달을 사라지게 하는
 const exitMenuModalHandler = (e) => {
   console.log(`취소 버튼 눌림`);
-  $menuModal.classList.remove('show');
+  $menuModal.classList.remove('visible');
 };
 
 //메뉴 모달을 보여주는 showMenuModalHandler
 const showMenuModalHandler = (e) => {
-  $menuModal.classList.add('show');
+  $menuModal.classList.add('visible');
+};
+
+const showHandler = (e) => {
+  const id = e.target.id;
+  if (id === 'how-to-play-btn') {
+    $howToPlayModal.classList.add('visible');
+  }else if(id==='game-info-btn'){
+    console.log(`게임 정보버튼 눌림`);
+    $gameInfoModal.classList.add('visible');
+
+  }
+};
+const hideHandler = (e) => {
+  const exitBtnClass = e.target.closest('div').className;
+  if(exitBtnClass==='how-to-paly_modal__actions'){
+    $howToPlayModal.classList.remove('visible');
+
+  }
+  else if(exitBtnClass==='game-info_modal__actions'){
+    $gameInfoModal.classList.remove('visible');
+  }
+
+
+
 };
 
 //menu 버튼에 클릭이벤트
 $menuBtn.addEventListener('click', showMenuModalHandler);
 $exitBtn.addEventListener('click', exitMenuModalHandler);
-
+$howToPlayBtn.addEventListener('click', showHandler);
+$howToPlayExit.addEventListener('click', hideHandler);
+$gameInfoBtn.addEventListener('click', showHandler);
+$gameInfoExit.addEventListener('click', hideHandler);
 // 요구사항 버튼
 // 헤더에 요구사항 버튼
 const $demendBtn = document.getElementById('demend');
@@ -238,38 +275,34 @@ const itemLevel = {
 let totalMoney = 0;
 
 const sellBtn = document.getElementById('asd');
-sellBtn.addEventListener(
-  'click',
-  () => {
-   
-    // 각 상품의 개수와 가격을 이용하여 해당 상품들의 가격을 총 수익에 추가
-    totalMoney +=
-      aggValue * itemPrice.aggPrice +
-      milkValue * itemPrice.milkPrice +
-      fleeceValue * itemPrice.fleecePrice +
-      duckEggValue * itemPrice.duckEggPrice +
-      goatsMilkValue * itemPrice.goatsMilkPrice +
-      truffleValue * itemPrice.trufflePrice;
-    console.log(typeof aggPrice);
+sellBtn.addEventListener('click', () => {
+  // 각 상품의 개수와 가격을 이용하여 해당 상품들의 가격을 총 수익에 추가
+  totalMoney +=
+    aggValue * itemPrice.aggPrice +
+    milkValue * itemPrice.milkPrice +
+    fleeceValue * itemPrice.fleecePrice +
+    duckEggValue * itemPrice.duckEggPrice +
+    goatsMilkValue * itemPrice.goatsMilkPrice +
+    truffleValue * itemPrice.trufflePrice;
+  console.log(typeof aggPrice);
 
-    // 모든 value 값을 0으로 초기화
-    aggValue = 0;
-    milkValue = 0;
-    fleeceValue = 0;
-    duckEggValue = 0;
-    goatsMilkValue = 0;
-    truffleValue = 0;
+  // 모든 value 값을 0으로 초기화
+  aggValue = 0;
+  milkValue = 0;
+  fleeceValue = 0;
+  duckEggValue = 0;
+  goatsMilkValue = 0;
+  truffleValue = 0;
 
-    $egg.textContent = `계란 : ${aggValue}`;
-    $milk.textContent = `우유 : ${milkValue}`;
-    $fleece.textContent = `양털 : ${fleeceValue}`;
-    $duckegg.textContent = `오리알 : ${fleeceValue}`;
-    $goatMilk.textContent = `염소젖 : ${fleeceValue}`;
-    $truffle.textContent = `트러플 : ${fleeceValue}`;
+  $egg.textContent = `계란 : ${aggValue}`;
+  $milk.textContent = `우유 : ${milkValue}`;
+  $fleece.textContent = `양털 : ${fleeceValue}`;
+  $duckegg.textContent = `오리알 : ${fleeceValue}`;
+  $goatMilk.textContent = `염소젖 : ${fleeceValue}`;
+  $truffle.textContent = `트러플 : ${fleeceValue}`;
 
-    $money.textContent = `현재자산 : ${totalMoney}원`;
-  }
-);
+  $money.textContent = `현재자산 : ${totalMoney}원`;
+});
 
 $egg.textContent = `계란 : ${aggValue}`;
 $milk.textContent = `우유 : ${milkValue}`;
