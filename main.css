@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Bagel+Fat+One&display=swap');
 
+
 body {
   -ms-overflow-style: none;
 }
@@ -8,6 +9,7 @@ body {
 
   background: url('./image_main/main_background.jpg');
   cursor: url('./image_main/mouse_cursor/one-finger.png'), auto;
+
 }
 
 /* font 가져옴. */
@@ -68,6 +70,7 @@ header {
 }
 /* 제목이 정해졌을 때 변경이 필요한 곳. start 화면 포함. */
 header #main_title {
+
   font-family: 'NeoDunggeunmoPro-Regular';
   color: rgba(244, 252, 225, 0.952);
 
@@ -401,7 +404,8 @@ header #menu img {
 .item-sheep,
 .item-duck,
 .item-goat,
-.item-pig {
+.item-pig
+ {
   opacity: 0;
   font-size: 16px;
   font-weight: bold;
@@ -532,10 +536,13 @@ header #menu img {
   top: 15%;
   left: 250px;
   border: 4px solid black;
-  width: 340px;
-  height: 200px;
+  width: 300px;
+  height: 250px;
   border-radius: 20px;
   padding: 30px;
+  text-align: center;
+  font-family: 'NeoDunggeunmoPro-Regular';
+  font-size: 1.2em;
 }
 .game-container.visible {
   display: block;
@@ -553,4 +560,42 @@ header #menu img {
   margin: 0 0.5rem;
   right: 5px;
   bottom: 10px;
+
+}
+/* 타자게임 css */
+.pattern-char {
+  display: inline-block;
+  margin: 5px;
+  padding: 5px;
+  background-color: white;
+}
+.wrong-char {
+  /* background-color: #ff1d1d; */
+  border: 1px solid #000;
+  width: 20px;
+  border-radius: 130px;
+}
+
+.game-container #timer, #score{
+  margin: 3px;
+  margin-top: 10px;
+  font-size: 1.2em;
+}
+#pattern-display{
+  border-radius: 10px;
+  border: 3px solid #000;
+  height: 40px;
+}
+#message{
+  height: 20px;
+}
+
+#start, #retry{
+  border: none;
+  border-radius: 10px;
+  background: #bdbdbd;
+  width: 80px;
+  height: 30px;
+  font-family: 'NeoDunggeunmoPro-Regular';
+  font-weight: 700;
 }

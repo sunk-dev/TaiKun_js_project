@@ -6,6 +6,7 @@ const $menuBtn = document.getElementById('menu');
 // 메뉴 모달
 const $menuModal = document.querySelector('body .menu-modal');
 //메뉴 모달 안에서 x 버튼
+
 const $exitBtn = document.querySelector('body .menu-modal .out-btn');
 
 // 게임방법 버튼
@@ -18,14 +19,17 @@ const $gameInfoBtn = document.getElementById('game-info-btn');
 const $gameInfoModal=document.querySelector('.game-info-modal');
 const $gameInfoExit=document.querySelector('.game-info-modal .game-info_modal__actions .out-btn');
 
+
 //메뉴 모달을 사라지게 하는
 const exitMenuModalHandler = (e) => {
   console.log(`취소 버튼 눌림`);
+
   $menuModal.classList.remove('visible');
 };
 
 //메뉴 모달을 보여주는 showMenuModalHandler
 const showMenuModalHandler = (e) => {
+
   $menuModal.classList.add('visible');
 };
 
@@ -67,8 +71,8 @@ const $demendBtn = document.getElementById('demend');
 
 // 요구사항 모달엘리먼트
 
-const $demendModal = document.querySelector(".demend-modal");
-const $buyBtn = $demendModal.querySelector(".buy-btn");
+const $demendModal = document.querySelector('.demend-modal');
+const $buyBtn = $demendModal.querySelector('.buy-btn');
 
 // console.log($demendModal);
 
@@ -105,13 +109,13 @@ const showDemendModalHandler = (e) => {
   $demendModal.classList.add(CLASS_VISIBLE);
 };
 const finishGameHandler = (e) => {
-  location.href = "end.html";
+  location.href = 'end.html';
 };
 // 요구사항 버튼을 눌렀을 때 모달을 띄움
 $demendBtn.addEventListener('click', showDemendModalHandler);
 
 // 구매 버튼 클릭시 게임 종료
-$buyBtn.addEventListener("click", finishGameHandler);
+$buyBtn.addEventListener('click', finishGameHandler);
 // 요구사항 모달의 닫기 버튼을 눌렀을 때 닫는 기능
 $demendModalCloseBtn.addEventListener('click', demendCloseModal);
 
@@ -153,10 +157,10 @@ const showSellModalHandler = (e) => {
   $sellModal.classList.add(CLASS_VISIBLE);
 };
 
-// 요구사항 버튼을 눌렀을 때 모달을 띄움
+// 판매 버튼을 눌렀을 때 모달을 띄움
 $sellBtn.addEventListener('click', showSellModalHandler);
 
-// 요구사항 모달의 닫기 버튼을 눌렀을 때 닫는 기능
+// 판매의 닫기 버튼을 눌렀을 때 닫는 기능
 $sellModalCloseBtn.addEventListener('click', closeModal);
 
 // 동물 버튼 누를 때 +1 되는 애니메이션 선언
@@ -285,6 +289,7 @@ const sellBtn = document.getElementById('asd');
 sellBtn.addEventListener('click', () => {
   // 각 상품의 개수와 가격을 이용하여 해당 상품들의 가격을 총 수익에 추가
   totalMoney +=
+
     aggValue * itemPrice.aggPrice +
     milkValue * itemPrice.milkPrice +
     fleeceValue * itemPrice.fleecePrice +
@@ -292,6 +297,7 @@ sellBtn.addEventListener('click', () => {
     goatsMilkValue * itemPrice.goatsMilkPrice +
     truffleValue * itemPrice.trufflePrice;
   console.log(typeof aggPrice);
+
 
   // 모든 value 값을 0으로 초기화
   aggValue = 0;
@@ -398,10 +404,10 @@ const toggleButton = document.getElementById('toggle-btn');
 toggleButton.addEventListener('click', function () {
   if (audioElement.paused) {
     audioElement.play();
-    toggleButton.innerHTML = '<i class="fa-solid fa-volume-off"></i>';
+    toggleButton.innerHTML = '<i class="fa-solid fa-volume-high"></i>';
   } else {
     audioElement.pause();
-    toggleButton.innerHTML = '<i class="fa-solid fa-volume-high"></i>';
+    toggleButton.innerHTML = '<i class="fa-solid fa-volume-off"></i>';
   }
 });
 
