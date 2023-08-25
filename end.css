@@ -1,0 +1,57 @@
+/* font 가져옴. */
+@font-face {
+    font-family: 'Ramche';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2307-1@1.1/Ramche.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'NeoDunggeunmoPro-Regular';
+    src: url('./image_main/font_main/NeoDunggeunmoPro-Regular.ttf') format('truetype');
+}
+body {
+    background: url("./image_end/background_end.jpg");
+}
+#wrapper{
+    width: 1500px;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    background: url("./image_start/background_milk.png");
+}
+    
+#title{
+    width:fit-content;
+    margin:auto;
+    font-size: 80px;
+    font-family: 'Ramche';
+    text-shadow: 5px 5px 0px #b2ffc3;
+    color: #010e53;
+}
+    
+.image-wrapper {
+    margin: 10px;
+}
+
+h2 {
+    font-family: 'NeoDunggeunmoPro-Regular';
+    font-size: 30px;
+}
+p {
+    font-family: 'NeoDunggeunmoPro-Regular';
+    font-size: 25px;
+    margin-bottom: 0px;
+}
+
+img.newhome {
+    width: auto;
+    height: 550px;
+    margin-bottom: 5px;
+    margin-top: 20px;
+}
+.restart-btn {
+    margin: 10px;
+}

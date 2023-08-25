@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Bagel+Fat+One&display=swap');
+
+/* font 가져옴. */
+@font-face {
+  font-family: 'NeoDunggeunmoPro-Regular';
+  src: url('./image_main/font_main/NeoDunggeunmoPro-Regular.ttf')
+    format('truetype');
+}
+
+/* 현재자산 css */
+
+.sell-modal {
+  position: fixed;
+  /* display: none; */
+  background: url('./image_main/sell_list.png');
+  background-size: 100%;
+  z-index: 100;
+  top: 15%;
+  left: 250px;
+  border: 4px solid black;
+  width: 400px;
+  height: 560px;
+  border-radius: 20px;
+}
+.force_item {
+  display: flex;
+  flex-direction: row;
+}
+.force_item p {
+  margin-right: 20px;
+}
+.force_item button {
+  margin-top: 15px;
+}
+
+.sell-modal.visible {
+  display: block;
+}
+.sell-modal .sell_modal__content {
+  width: 400px;
+  height: 90%;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  display: flex;
+}
+.sell-modal .sell_modal__actions {
+  width: 450px;
+}
+
+.sell-modal.visible .sell_modal__content .forBorder {
+  font-family: 'NeoDunggeunmoPro-Regular';
+  font-size: 20px;
+}
+
+.sell-modal.visible .sell_modal__content .asd {
+  font-family: 'NeoDunggeunmoPro-Regular';
+  font-size: 20px;
+  border: 2px inset #ffa53f;
+  background: white;
+  border-radius: 10px;
+  width: 100px;
+  height: 30px;
+}
+.sell-modal.visible .sell_modal__content .asd:hover {
+  background: #dddddd;
+}
+.sell-modal.visible .sell_modal__content .asd:active {
+  background: #8b8b8b;
+}
+
+.sell-modal .sell_modal__actions .out-btn {
+  font-family: 'NeoDunggeunmoPro-Regular';
+  font-size: 17px;
+  position: relative;
+  left: 300px;
+  padding: 0.5rem 1.5rem;
+  border: 2px outset #00329e;
+  background: #ffffff;
+  color: rgb(0, 0, 0);
+  border-radius: 6px;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.26);
+  cursor: pointer;
+  margin: 0 0.5rem;
+}
+
+.sell-modal .sell_modal__actions .out-btn:hover {
+  background: #dddddd;
+}
+.sell-modal .sell_modal__actions .out-btn:active {
+  background: #8b8b8b;
+}

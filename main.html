@@ -18,6 +18,40 @@
     <script src="./miniGame.js" defer></script>
   </head>
   <body>
+    <!-- 마켓 모달 -->
+    <div class="market-modal">
+      <div class="market_modal__content">
+        <p class="egg forBorder">강화 상점</p>
+        <div class="force_item">
+          <p class="egg forBorder">닭 1단계</p>
+          <button class="asd" id="chick-force-btn">강화</button>
+        </div>
+        <div class="force_item">
+          <p class="milk forBorder">소 1단계</p>
+          <button class="asd" id="cow-force-btn">강화</button>
+        </div>
+        <div class="force_item">
+          <p class="fleece forBorder">양 1단계</p>
+          <button class="asd" id="sheep-force-btn">강화</button>
+        </div>
+        <div class="force_item">
+          <p class="duckegg forBorder">오리 1단계</p>
+          <button class="asd" id="duck-force-btn">강화</button>
+        </div>
+        <div class="force_item">
+          <p class="goatMilk forBorder">염소 1단계</p>
+          <button class="asd" id="goat-force-btn">강화</button>
+        </div>
+        <div class="force_item">
+          <p class="truffle forBorder">돼지 1단계</p>
+          <button class="asd" id="pig-force-btn">강화</button>
+        </div>
+      </div>
+      <div class="market_modal__actions">
+        <button class="out-btn">닫기</button>
+      </div>
+    </div>
+
     <!-- 요구사항 모달 -->
     <div class="demend-modal">
       <div class="modal__content">
@@ -47,16 +81,78 @@
     </div>
     <!--메뉴 모달  -->
     <div class="menu-modal">
-      <div class="menu-header">
-        <h1 class="title">INFO</h1>
-        <button>
-          <span id="exit-btn" class="lnr lnr-cross-circle"></span>
-        </button>
+      <div class="menu_modal__content">
+        <p class="egg forBorder">Info</p>
+        <div class="force_item">
+          <button class="asd" id="how-to-play-btn">게임방법</button>
+        </div>
+        <div class="force_item">
+          <button class="asd" id="game-info-btn">게임정보</button>
+        </div>
+        <div class="force_item">
+          <button class="asd" id="end-game-btn">게임종료</button>
+        </div>
       </div>
-      <div class="main_info">
-        <span> 게임 방법 </span>
-        <span> 게임 종료 </span>
-        <span> 제작정보 </span>
+      <div class="menu_modal__actions">
+        <button class="out-btn">닫기</button>
+      </div>
+    </div>
+
+    <!-- 메뉴 모달중 게임방법 모달 -->
+    <div class="how-to-paly-modal">
+      <div class="how-to-paly_modal__content">
+        <p class="forBorder">게임방법</p>
+        <div class="force_item content">
+          <p>
+            이 헌법중 공무원의 임기 또는 중임제한에 관한 규정은 이 헌법에 의하여
+            그 공무원이 최초로 선출 또는 임명된 때로부터 적용한다. 국토와 자원은
+            국가의 보호를 받으며, 국가는 그 균형있는 개발과 이용을 위하여 필요한
+            계획을 수립한다. 모든 국민은 양심의 자유를 가진다. 국가는 여자의
+            복지와 권익의 향상을 위하여 노력하여야 한다. 제2항의 재판관중 3인은
+            국회에서 선출하는 자를, 3인은 대법원장이 지명하는 자를 임명한다.
+            모든 국민은 건강하고 쾌적한 환경에서 생활할 권리를 가지며, 국가와
+            국민은 환경보전을 위하여 이 헌법중 공무원의 임기 또는 중임제한에
+            관한 규정은 이 헌법에 의하여 그 공무원이 최초로 선출 또는 임명된
+            때로부터 적용한다. 국토와 자원은 국가의 보호를 받으며, 국가는 그
+            균형있는 개발과 이용을 위하여 필요한 계획을 수립한다. 모든 국민은
+            양심의 자유를 가진다. 국가는 여자의 복지와 권익의 향상을 위하여
+            노력하여야 한다. 제2항의 재판관중 3인은 국회에서 선출하는 자를,
+            3인은 대법원장이 지명하는 자를 임명한다. 모든 국민은 건강하고 쾌적한
+            환경에서 생활할 권리를 가지며, 국가와 국민은 환경보전을 위하여
+          </p>
+        </div>
+        <div class="how-to-paly_modal__actions">
+          <button class="out-btn">닫기</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 메뉴모달줄 게임 정보 모달 -->
+    <div class="game-info-modal">
+      <div class="game-info_modal__content">
+        <p class="forBorder">게임정보</p>
+        <div class="force_item content">
+          <p>
+            이 헌법중 공무원의 임기 또는 중임제한에 관한 규정은 이 헌법에 의하여
+            그 공무원이 최초로 선출 또는 임명된 때로부터 적용한다. 국토와 자원은
+            국가의 보호를 받으며, 국가는 그 균형있는 개발과 이용을 위하여 필요한
+            계획을 수립한다. 모든 국민은 양심의 자유를 가진다. 국가는 여자의
+            복지와 권익의 향상을 위하여 노력하여야 한다. 제2항의 재판관중 3인은
+            국회에서 선출하는 자를, 3인은 대법원장이 지명하는 자를 임명한다.
+            모든 국민은 건강하고 쾌적한 환경에서 생활할 권리를 가지며, 국가와
+            국민은 환경보전을 위하여 이 헌법중 공무원의 임기 또는 중임제한에
+            관한 규정은 이 헌법에 의하여 그 공무원이 최초로 선출 또는 임명된
+            때로부터 적용한다. 국토와 자원은 국가의 보호를 받으며, 국가는 그
+            균형있는 개발과 이용을 위하여 필요한 계획을 수립한다. 모든 국민은
+            양심의 자유를 가진다. 국가는 여자의 복지와 권익의 향상을 위하여
+            노력하여야 한다. 제2항의 재판관중 3인은 국회에서 선출하는 자를,
+            3인은 대법원장이 지명하는 자를 임명한다. 모든 국민은 건강하고 쾌적한
+            환경에서 생활할 권리를 가지며, 국가와 국민은 환경보전을 위하여
+          </p>
+        </div>
+        <div class="game-info_modal__actions">
+          <button class="out-btn">닫기</button>
+        </div>
       </div>
     </div>
 
@@ -118,13 +214,35 @@
             <img src="./image_main/milk_cow.png" alt="젖소" />
             <div class="item-cow"><img src="/image_main/Large_Milk.png" alt=""></div>
           </button>
-          <img src="./image_main/wood_patmal.png" id="locked_animal" class="lockImg imgFn1" />
+
+          <!--           <img
+            src="./image_main/wood_patmal.png"
+            id="locked_animal"
+            class="lockImg imgFn1"
+          /> -->
+
+          <img
+            src="./image_main/image_button_click/milk_cow2.png"
+            id="locked_animal"
+            class="lockImg imgFn1"
+          />
 
           <button id="animal3" class="animalBtn">
             <img src="./image_main/sheep.png" alt="양" />
             <div class="item-sheep"><img src="/image_main/Wool.png" alt=""></div>
           </button>
-          <img src="./image_main/wood_patmal.png" id="locked_animal" class="lockImg imgFn2" />
+
+          <!--           <img
+            src="./image_main/wood_patmal.png"
+            id="locked_animal"
+            class="lockImg imgFn2"
+          /> -->
+
+          <img
+            src="./image_main/image_button_click/sheep2.png"
+            id="locked_animal"
+            class="lockImg imgFn2"
+          />
         </div>
 
         <div id="line2">
@@ -132,24 +250,59 @@
             <img src="./image_main/duck.png" alt="오리" />
             <div class="item-duck"><img src="/image_main/Duck_egg.png" alt=""></div>
           </button>
-          <img src="./image_main/wood_patmal.png" id="locked_animal" class="lockImg imgFn3" />
+
+          <!--           <img
+            src="./image_main/wood_patmal.png"
+            id="locked_animal"
+            class="lockImg imgFn3"
+          /> -->
+
+          <img
+            src="./image_main/image_button_click/duck2.png"
+            id="locked_animal"
+            class="lockImg imgFn3"
+          />
 
           <button id="animal5" class="animalBtn">
             <img src="./image_main/goat.png" alt="염소" />
             <div class="item-goat"><img src="/image_main/Large_Goat_Milk.png" alt=""></div>
           </button>
-          <img src="./image_main/wood_patmal.png" id="locked_animal" class="lockImg imgFn4" />
+          <!--           <img
+            src="./image_main/wood_patmal.png"
+            id="locked_animal"
+            class="lockImg imgFn4"
+          /> -->
+          <img
+            src="./image_main/image_button_click/goat2.png"
+            id="locked_animal"
+            class="lockImg imgFn4"
+          />
 
           <button id="animal6" class="animalBtn">
             <img src="./image_main/pig.png" alt="돼지" />
             <div class="item-pig"><img src="/image_main/Truffle.png" alt=""></div>
           </button>
-          <img src="./image_main/wood_patmal.png" id="locked_animal" class="lockImg imgFn5" />
+
+          <img
+            src="./image_main/image_button_click/pig2.png"
+            id="locked_animal"
+            class="lockImg imgFn5"
+          />
         </div>
 
-        <footer>
-          <button id="sell"><img src="./image_main/Sell.png" alt="" /></button>
-          <button id="miniGame"><img src="./image_main/game.png" alt="" /></button>
+        <footer class="footer_main">
+          <button class="custom-btn btn-15" id="market">
+            <p class="asd">레벨업</p>
+          </button>
+          <button class="custom-btn btn-15" id="sell">
+            <p class="asd">판매</p>
+          </button>
+          <button class="custom-btn btn-15" id="miniGame">
+            <p class="asd">미니게임</p>
+          </button>
+          <button class="custom-btn btn-15" id="miniGame">
+            <p class="asd">슬롯머신</p>
+          </button>
         </footer>
       </div>
     </div>
