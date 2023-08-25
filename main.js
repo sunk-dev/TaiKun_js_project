@@ -352,3 +352,4 @@ toggleButton.addEventListener("click", function () {
     toggleButton.innerHTML = '<i class="fa-solid fa-volume-high"></i>';
   }
 });
+

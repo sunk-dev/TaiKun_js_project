@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Bagel+Fat+One&display=swap");
 body {
   background: url("./image_main/main_background.jpg");
+  cursor: url('./image_main/mouse_cursor/one-finger.png'), auto;
 }
 
 /* font 가져옴. */
@@ -31,8 +32,9 @@ body {
   align-items: center;
 }
 #box .lockImg {
-  height: 46%;
-  width: 14%;
+  height: 45%;
+  width: 13.5%;
+  padding: 30px;
 }
 #box .lockImg.invisible {
   display: none;
@@ -79,10 +81,12 @@ header button:active {
 header #demend img {
   max-width: 100%;
   max-height: 100%;
+  cursor: url('./image_main/mouse_cursor/money-bag.png'), auto;
 }
-header #request img {
+header #menu img {
   max-width: 100%;
   max-height: 100%;
+  cursor: url('./image_main/mouse_cursor/support.png'), auto;
 }
 .demend-modal {
   position: fixed;
@@ -121,6 +125,7 @@ header #request img {
   border-radius: 6px;
   box-shadow: 0 1px 8px rgba(0, 0, 0, 0.26);
   cursor: pointer;
+  cursor: url('./image_main/mouse_cursor/money-bag.png'), auto;
   margin: 0 0.5rem;
   width: 200px;
   height: 100px;
@@ -191,6 +196,7 @@ header #request img {
   border-radius: 10px;
   width: 100px;
   height: 30px;
+  cursor: url('./image_main/mouse_cursor/expense.png'), auto;
 }
 .sell-modal.visible .sell_modal__content #asd:hover {
   background: #dddddd;
@@ -265,6 +271,7 @@ header #request img {
   border-radius: 6px;
   box-shadow: 0 1px 8px rgba(0, 0, 0, 0.26);
   cursor: pointer;
+  cursor: url('./image_main/mouse_cursor/one-finger.png'), auto;
   margin: 0 0.5rem;
 }
 
@@ -308,6 +315,7 @@ header #request img {
   cursor: pointer;
   padding: 0;
   position: relative;
+  cursor: url('./image_main/mouse_cursor/income.png'), auto;
 }
 #line1 button:active {
   top: 2px;
@@ -350,7 +358,7 @@ header #request img {
 
 /* footer 부분 */
 .footer_main {
-  background: rgba(238, 130, 238, 0);
+  background:url('./image_main/header_background.jpg');
   width: 100%;
   height: 130px;
   position: absolute;
@@ -372,7 +380,7 @@ header #request img {
   cursor: pointer;
   position: relative;
   outline: none;
-  bottom: 20px;
+  cursor: url('./image_main/mouse_cursor/money-bag.png'), auto;
 }
 .footer_main .btn-15 {
   background: url('./image_main/wood_btn.png') no-repeat;
@@ -389,7 +397,7 @@ header #request img {
 }
 
 .footer_main .btn-15:active {
-  top: -16px;
+  top: -5px;
 }
 
 /* 메뉴 css 부분 */
@@ -500,5 +508,4 @@ header #request img {
   margin: 0 0.5rem;
   right: 5px;
   bottom: 10px;
-
 }
