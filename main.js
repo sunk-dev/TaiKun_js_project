@@ -268,12 +268,12 @@ truffle.addEventListener('click', () => {
 
 // 상품가격 지정
 const itemPrice = {
-  aggPrice: +30,
-  milkPrice: +50,
-  fleecePrice: +100,
-  duckEggPrice: +180,
-  goatsMilkPrice: +300,
-  trufflePrice: +500000,
+  aggPrice: +5,
+  milkPrice: +30,
+  fleecePrice: +70,
+  duckEggPrice: +200,
+  goatsMilkPrice: +800,
+  trufflePrice: +5000,
 };
 
 const itemLevel = {
@@ -283,6 +283,25 @@ const itemLevel = {
   duck: +1,
   goat: +1,
   pig: +1,
+};
+
+//단계별로 필요한 코인
+const needToCoin={
+  1:10,
+  2:20,
+  3:30,
+  4:40,
+  5:50
+};
+//동물들 단계별로 증가되는 돈
+const moneyByLevel={
+  chicken: [5,10,20,35,60],
+  cow: [30,50,80,110,170],
+  sheep: [70,130,200,350,450],
+  duck:[200,320,470,850,1500],
+  goat: [800,1200,2000,4000,9000],
+  pig: [5000,15000,30000,50000,200000],
+  
 };
 
 let totalMoney = 1000000000;
@@ -432,6 +451,26 @@ const $duckP = document.querySelector('.duckegg.forBorder');
 const $goatP = document.querySelector('.goatMilk.forBorder');
 const $pigP = document.querySelector('.truffle.forBorder');
 
+/*
+//단계별로 필요한 코인
+const needToCoin={
+  1:10,
+  2:20,
+  3:30,
+  4:40,
+  5:50
+};
+//동물들 단계별로 증가되는 돈
+const moneyByLevel={
+  chicken: [5,10,20,35,60],
+  cow: [30,50,80,110,170],
+  sheep: [70,130,200,350,450],
+  duck:[200,320,470,850,1500],
+  goat: [800,1200,2000,4000,9000],
+  pig: [5000,15000,30000,50000,200000],
+  
+};
+*/ 
 const $forceBtns = document.querySelector('.market_modal__content');
 $forceBtns.addEventListener('click', (e) => {
   if (e.target.tagName === 'BUTTON') {
@@ -442,8 +481,9 @@ $forceBtns.addEventListener('click', (e) => {
         return;
       } else {
         alert(`닭 강화완료`);
-        itemPrice.aggPrice += 20;
+        console.log(itemPrice.aggPrice);
         itemLevel.chicken++;
+        itemPrice.aggPrice =moneyByLevel.chicken[itemLevel.chicken-1];
         $chickenP.textContent = `닭 ${itemLevel.chicken}단계`;
       }
     } else if (e.target.id === `cow-force-btn`) {
@@ -453,8 +493,8 @@ $forceBtns.addEventListener('click', (e) => {
         return;
       } else {
         alert(`소 강화완료`);
-        itemPrice.milkPrice += 20;
         itemLevel.cow++;
+        itemPrice.milkPrice =moneyByLevel.cow[itemLevel.cow-1];;
         $cowP.textContent = `소 ${itemLevel.cow}단계`;
       }
     } else if (e.target.id === `sheep-force-btn`) {
@@ -464,8 +504,8 @@ $forceBtns.addEventListener('click', (e) => {
         return;
       } else {
         alert(`양 강화 완료`);
-        itemPrice.fleecePrice += 20;
         itemLevel.sheep++;
+        itemPrice.fleecePrice=moneyByLevel.sheep[itemLevel.sheep-1];
         $sheepP.textContent = `양 ${itemLevel.sheep}단계`;
       }
       price.egg += 20;
@@ -476,8 +516,8 @@ $forceBtns.addEventListener('click', (e) => {
         return;
       } else {
         alert(`오리 강화 완료`);
-        itemPrice.duckEggPrice += 20;
         itemLevel.duck++;
+        itemPrice.duckEggPrice =moneyByLevel.duck[itemLevel.duck-1];
         $duckP.textContent = `오리 ${itemLevel.duck}단계`;
       }
     } else if (e.target.id === `goat-force-btn`) {
@@ -487,8 +527,8 @@ $forceBtns.addEventListener('click', (e) => {
         return;
       } else {
         alert(`염소 강화완료`);
-        itemPrice.goatsMilkPrice += 20;
         itemLevel.goat++;
+        itemPrice.goatsMilkPrice=moneyByLevel.goat[itemLevel.goat-1];
         $goatP.textContent = `염소 ${itemLevel.goat}단계`;
       }
     } else if (e.target.id === `pig-force-btn`) {
@@ -498,8 +538,8 @@ $forceBtns.addEventListener('click', (e) => {
         return;
       } else {
         alert(`돼지 강화 완료`);
-        itemPrice.trufflePrice += 20;
         itemLevel.pig++;
+        itemPrice.trufflePrice =moneyByLevel.pig[itemLevel.pig-1];
         $pigP.textContent = `돼지 ${itemLevel.pig}단계`;
       }
     }
