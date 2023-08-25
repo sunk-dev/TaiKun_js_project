@@ -241,15 +241,15 @@ const sellBtn = document.getElementById('asd');
 sellBtn.addEventListener(
   'click',
   () => {
-    const [aggPrice,milkPrice,fleecePrice,duckEggPrice,goatsMilkPrice,trufflePrice]=itemPrice;
+   
     // 각 상품의 개수와 가격을 이용하여 해당 상품들의 가격을 총 수익에 추가
     totalMoney +=
-      aggValue * aggPrice +
-      milkValue * milkPrice +
-      fleeceValue * fleecePrice +
-      duckEggValue * duckEggPrice +
-      goatsMilkValue * goatsMilkPrice +
-      truffleValue * trufflePrice;
+      aggValue * itemPrice.aggPrice +
+      milkValue * itemPrice.milkPrice +
+      fleeceValue * itemPrice.fleecePrice +
+      duckEggValue * itemPrice.duckEggPrice +
+      goatsMilkValue * itemPrice.goatsMilkPrice +
+      truffleValue * itemPrice.trufflePrice;
     console.log(typeof aggPrice);
 
     // 모든 value 값을 0으로 초기화
