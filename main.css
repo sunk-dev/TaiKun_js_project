@@ -183,6 +183,7 @@ header #menu img {
   height: 560px;
   border-radius: 20px;
 }
+
 .force_item {
   display: flex;
   flex-direction: row;
@@ -235,8 +236,8 @@ header #menu img {
   line-height: 1.5em;
   overflow: auto;
 }
-.menu-modal.visible .menu_modal__content .asd,
-.market-modal.visible .market_modal__content .asd,
+.menu-modal.visible .menu_modal__content .asdbtn,
+.market-modal.visible .market_modal__content .asdbtn,
 .sell-modal.visible .sell_modal__content #asd {
   font-family: "NeoDunggeunmoPro-Regular";
   font-size: 20px;
@@ -247,12 +248,12 @@ header #menu img {
   height: 30px;
   cursor: url('./image_main/mouse_cursor/expense.png'), auto;
 }
-.menu-modal.visible .menu_modal__content .asd:hover,
-.market-modal.visible .market_modal__content .asd:hover,
+.menu-modal.visible .menu_modal__content .asdbtn:hover,
+.market-modal.visible .market_modal__content .asdbtn:hover,
 .sell-modal.visible .sell_modal__content #asd:hover {
   background: #dddddd;
 }
-.market-modal.visible .market_modal__content .asd:active,
+.market-modal.visible .market_modal__content .asdbtn:active,
 .sell-modal.visible .sell_modal__content #asd:active {
   background: #8b8b8b;
 }
