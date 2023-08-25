@@ -17,7 +17,6 @@ body {
     format('truetype');
 }
 
-/* box를 mainbox의 정가운데에 위치시켜볼 예정. 필요 없으면 제거. 1200x950 */
 .mainbox {
   background: url('./image_main/background_white.png');
   width: 910px;
@@ -75,10 +74,20 @@ header #main_title {
   font-size: 50px;
   text-shadow: 0px 5px 2px #073612;
 }
-header button {
+header #demend {
   width: 30%;
   height: 100%;
   background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  position: relative;
+}
+header #menu {
+  width: 10%;
+  height: 100%;
+  background: none;
+  margin-right: 80px;
   border: none;
   cursor: pointer;
   padding: 0;
@@ -235,7 +244,6 @@ header #menu img {
   overflow: auto;
 }
 
-/* [menu]와 [market & sell]버튼은 일부러 분리했습니다. */
 .menu-modal.visible .menu_modal__content .asdbtn {
   font-family: "NeoDunggeunmoPro-Regular";
   font-size: 20px;
