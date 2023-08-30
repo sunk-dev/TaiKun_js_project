@@ -32,7 +32,6 @@ body {
   display: none;
 }
 #box .animalBtn.visible {
-  /* display: block; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -67,14 +66,13 @@ header {
 }
 /* 제목이 정해졌을 때 변경이 필요한 곳. start 화면 포함. */
 header #main_title {
-
   font-family: 'NeoDunggeunmoPro-Regular';
   color: rgba(244, 252, 225, 0.952);
 
   font-size: 50px;
   text-shadow: 0px 5px 2px #073612;
 }
-header #demend {
+header #demend, #menu{
   width: 30%;
   height: 100%;
   background: none;
@@ -83,16 +81,7 @@ header #demend {
   padding: 0;
   position: relative;
 }
-header #menu {
-  width: 10%;
-  height: 100%;
-  background: none;
-  margin-right: 80px;
-  border: none;
-  cursor: pointer;
-  padding: 0;
-  position: relative;
-}
+
 header button:active {
   top: 2px;
 }
@@ -138,8 +127,8 @@ header #menu img {
   top: 30px;
   position: relative;
   padding: 0.5rem 1.5rem;
-  border: 1px solid #00329e;
-  background: #a5b7c6;
+  border: 2px inset #ffa53f;
+  background: #fff;
   color: rgb(0, 0, 0);
   border-radius: 6px;
   box-shadow: 0 1px 8px rgba(0, 0, 0, 0.26);
@@ -149,6 +138,13 @@ header #menu img {
   width: 200px;
   height: 100px;
   font-size: 30px;
+  font-family: "NeoDunggeunmoPro-Regular";
+}
+.demend-modal .modal__content .buy-btn:hover {
+  background: #dddddd;
+}
+.demend-modal .modal__content .buy-btn:active {
+  background: #8b8b8b;
 }
 .demend-modal .modal__actions {
   width: 450px;
@@ -157,14 +153,21 @@ header #menu img {
   position: relative;
   left: 300px;
   padding: 0.5rem 1.5rem;
-  border: 1px solid #00329e;
-  background: #328cd6;
+  border: 2px outset #00329e;
+  background: #ffffff;
   color: rgb(0, 0, 0);
   border-radius: 6px;
   box-shadow: 0 1px 8px rgba(0, 0, 0, 0.26);
   cursor: pointer;
   cursor: url('./image_main/mouse_cursor/one-finger.png'), auto;
   margin: 0 0.5rem;
+  font-family: "NeoDunggeunmoPro-Regular";
+}
+.demend-modal .modal__actions .out-btn:hover{
+  background: #dddddd;
+}
+.demend-modal .modal__actions .out-btn:active{
+  background: #8b8b8b;
 }
 .demend-modal .modal__content .forBorder {
   width: 200px;
@@ -578,7 +581,7 @@ header #menu img {
   position: absolute;
   font: inherit;
   padding: 0.5rem 1.5rem;
-  border: 1px solid #00329e;
+  border: 2px outset #427eff;
   background: #00329e;
   color: white;
   border-radius: 6px;
@@ -588,6 +591,12 @@ header #menu img {
   margin: 0 0.5rem;
   right: 5px;
   bottom: 10px;
+}
+.game-container .game_modal__actions .out-btn:hover {
+  background: #010caf;
+}
+.game-container .game_modal__actions .out-btn:active {
+  background: #00065e;
 }
 .slot-Machine {
   padding-left: 50px;
