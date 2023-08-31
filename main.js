@@ -302,8 +302,8 @@ const moneyByLevel = {
   pig: [5000, 15000, 30000, 50000, 200000],
 };
 
-let totalMoney = 1000000000;
-let totalCoin = 1000000;
+let totalMoney = 0;
+let totalCoin = 0;
 
 const sellBtn = document.getElementById('asd');
 sellBtn.addEventListener('click', () => {
