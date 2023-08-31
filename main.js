@@ -32,13 +32,13 @@ const $endGameBtn = document.getElementById("end-game-btn");
 const exitMenuModalHandler = (e) => {
   console.log(`취소 버튼 눌림`);
 
-  $menuModal.classList.remove("visible");
+  $menuModal.classList.remove(CLASS_VISIBLE);
   $backdrop.classList.remove(CLASS_VISIBLE);
 };
 
 //메뉴 모달을 보여주는 showMenuModalHandler
 const showMenuModalHandler = (e) => {
-  $menuModal.classList.add("visible");
+  $menuModal.classList.add(CLASS_VISIBLE);
   $backdrop.classList.add(CLASS_VISIBLE);
 };
 
@@ -64,6 +64,13 @@ const exitHandler = (e) => {
 };
 const backdropHandler = (e) => {
   $backdrop.classList.remove(CLASS_VISIBLE);
+  $menuModal.classList.remove(CLASS_VISIBLE);
+  $buyFailModal.classList.remove(CLASS_VISIBLE);
+  $demendModal.classList.remove(CLASS_VISIBLE);
+  $gameContainer.classList.remove(CLASS_VISIBLE);
+  $sellModal.classList.remove(CLASS_VISIBLE);
+  $slotMachine.classList.remove(CLASS_VISIBLE);
+  marketModal.classList.remove("visible");
 };
 
 //menu 버튼에 클릭이벤트
@@ -94,10 +101,12 @@ const $buyFailModalContent = $buyFailModal.querySelector(".modal__content");
 const $buyFailModalBtn = $buyFailModal.querySelector(".modal__actions");
 const buyFailModalClose = (e) => {
   $buyFailModal.classList.remove(CLASS_VISIBLE);
+  $backdrop.classList.remove(CLASS_VISIBLE);
 };
 
 const buyFailModalHandler = (animalName, price) => {
   $buyFailModal.classList.add(CLASS_VISIBLE);
+  $backdrop.classList.add(CLASS_VISIBLE);
   $buyFailModalContent.textContent = `${animalName}의 가격은 ${price}입니다.`;
 };
 $buyFailModalBtn.addEventListener("click", buyFailModalClose);
@@ -113,10 +122,12 @@ const $modal__content = document.querySelector(".modal__content");
 
 const demendCloseModal = (e) => {
   $demendModal.classList.remove(CLASS_VISIBLE);
+  $backdrop.classList.remove(CLASS_VISIBLE);
 };
 
 const showDemendModalHandler = (e) => {
   $demendModal.classList.add(CLASS_VISIBLE);
+  $backdrop.classList.add(CLASS_VISIBLE);
 };
 const finishGameHandler = (e) => {
   location.href = "end.html";
@@ -136,9 +147,11 @@ const $outBtn = $gameContainer.querySelector(".out-btn");
 
 const showGameHandler = () => {
   $gameContainer.classList.add(CLASS_VISIBLE);
+  $backdrop.classList.add(CLASS_VISIBLE);
 };
 const closeGameHandler = () => {
   $gameContainer.classList.remove(CLASS_VISIBLE);
+  $backdrop.classList.remove(CLASS_VISIBLE);
 };
 $miniGameBtn.addEventListener("click", showGameHandler);
 $outBtn.addEventListener("click", closeGameHandler);
@@ -162,10 +175,12 @@ const $coin = document.getElementById("coin");
 
 const closeModal = (e) => {
   $sellModal.classList.remove(CLASS_VISIBLE);
+  $backdrop.classList.remove(CLASS_VISIBLE);
 };
 
 const showSellModalHandler = (e) => {
   $sellModal.classList.add(CLASS_VISIBLE);
+  $backdrop.classList.add(CLASS_VISIBLE);
 };
 
 // 판매 버튼을 눌렀을 때 모달을 띄움
@@ -436,12 +451,14 @@ const $marketBtn = document.getElementById("market");
 const marketModal = document.querySelector(".market-modal");
 $marketBtn.addEventListener("click", (e) => {
   marketModal.classList.add("visible");
+  $backdrop.classList.add(CLASS_VISIBLE);
 });
 const $marketCloseBtn = document.querySelector(
   ".market-modal .market_modal__actions .out-btn"
 );
 $marketCloseBtn.addEventListener("click", (e) => {
   marketModal.classList.remove("visible");
+  $backdrop.classList.remove(CLASS_VISIBLE);
 });
 
 //마켓 동물 강화 텍스트 가져오기
@@ -622,9 +639,11 @@ function startSlotMachine() {
 }
 const closeSlotHandler = () => {
   $slotMachine.classList.remove(CLASS_VISIBLE);
+  $backdrop.classList.remove(CLASS_VISIBLE);
 };
 const openSlotHandler = () => {
   $slotMachine.classList.add(CLASS_VISIBLE);
+  $backdrop.classList.add(CLASS_VISIBLE);
   const startNum = `<img class="number-image" src="./image_slotMachine/7.png" alt="7" />
   <img class="number-image" src="./image_slotMachine/7.png" alt="7" />
   <img class="number-image" src="./image_slotMachine/7.png" alt="7" />`;
