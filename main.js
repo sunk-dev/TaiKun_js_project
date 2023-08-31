@@ -298,12 +298,12 @@ truffle.addEventListener('click', () => {
 
 // 상품가격 지정
 const itemPrice = {
-  aggPrice: +30,
-  milkPrice: +50,
-  fleecePrice: +100,
-  duckEggPrice: +180,
-  goatsMilkPrice: +300,
-  trufflePrice: +500000,
+  aggPrice: +5,
+  milkPrice: +30,
+  fleecePrice: +70,
+  duckEggPrice: +200,
+  goatsMilkPrice: +800,
+  trufflePrice: +5000,
 };
 
 const itemLevel = {
@@ -315,11 +315,11 @@ const itemLevel = {
   pig: +1,
 };
 const needToCoin = {
-  1: 10,
-  2: 20,
-  3: 30,
-  4: 40,
-  5: 50,
+  1: 5,
+  2: 10,
+  3: 15,
+  4: 20,
+  5: 25,
 };
 //동물들 단계별로 증가되는 돈
 const moneyByLevel = {
@@ -612,7 +612,7 @@ function startSlotMachine() {
 
     if (isAllSame) {
       alert('당첨!');
-      totalCoin += 200;
+      totalCoin += 100;
       $coin.textContent = `현재코인 : ${totalCoin}개`;
     } else {
       totalCoin -= 1;
@@ -682,11 +682,11 @@ startBtn.addEventListener('click', startGame);
 retryButton.addEventListener('click', retryGame);
 
 function startGame() {
-  if (totalMoney <= 500) {
+  if (totalMoney <= 50) {
     alert('현재 금액이 부족합니다!');
     return;
   }
-  totalMoney -= 500;
+  totalMoney -= 50;
   $money.textContent = `현재자산 : ${totalMoney}원`;
   if (isGameStarted) {
     return;
