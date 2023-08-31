@@ -146,17 +146,13 @@ header #menu img {
   width: 450px;
 }
 .demend-modal .modal__actions .out-btn {
-  position: relative;
-  left: 300px;
-  padding: 0.5rem 1.5rem;
-  border: 1px solid #00329e;
-  background: #328cd6;
-  color: rgb(0, 0, 0);
-  border-radius: 6px;
-  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.26);
+  position: absolute;
+  background: none;
+  border: none;
   cursor: pointer;
   cursor: url("./image_main/mouse_cursor/one-finger.png"), auto;
-  margin: 0 0.5rem;
+  left: 5px;
+  top: 10px;
 }
 .demend-modal .modal__content .forBorder {
   width: 200px;
@@ -327,7 +323,7 @@ header #menu img {
 .menu-modal .menu_modal__actions .out-btn,
 .market-modal .market_modal__actions .out-btn,
 .sell-modal .sell_modal__actions .out-btn {
-  font-family: "NeoDunggeunmoPro-Regular";
+  /* font-family: "NeoDunggeunmoPro-Regular";
   font-size: 17px;
   position: relative;
   left: 300px;
@@ -339,12 +335,19 @@ header #menu img {
   box-shadow: 0 1px 8px rgba(0, 0, 0, 0.26);
   cursor: pointer;
   cursor: url("./image_main/mouse_cursor/one-finger.png"), auto;
-  margin: 0 0.5rem;
+  margin: 0 0.5rem; */
+  position: absolute;
+  background: none;
+  border: none;
+  cursor: pointer;
+  cursor: url("./image_main/mouse_cursor/one-finger.png"), auto;
+  left: 50px;
+  top: 50px;
 }
 
 .game-info-modal .game-info_modal__actions .out-btn,
 .how-to-paly-modal .how-to-paly_modal__actions .out-btn {
-  font-family: "NeoDunggeunmoPro-Regular";
+  /* font-family: "NeoDunggeunmoPro-Regular";
   font-size: 17px;
   position: relative;
   top: 25px;
@@ -355,9 +358,16 @@ header #menu img {
   border-radius: 6px;
   box-shadow: 0 1px 8px rgba(0, 0, 0, 0.26);
   cursor: pointer;
-  margin: 0 0.5rem;
+  margin: 0 0.5rem; */
+  position: absolute;
+  background: none;
+  border: none;
+  cursor: pointer;
+  cursor: url("./image_main/mouse_cursor/one-finger.png"), auto;
+  left: 50px;
+  top: 50px;
 }
-.menu-modal .menu_modal__actions .out-btn:hover,
+/* .menu-modal .menu_modal__actions .out-btn:hover,
 .market-modal .market_modal__actions .out-btn:hover,
 .sell-modal .sell_modal__actions .out-btn:hover {
   background: #dddddd;
@@ -366,7 +376,7 @@ header #menu img {
 .market-modal .market_modal__actions .out-btn:active,
 .sell-modal .sell_modal__actions .out-btn:active {
   background: #8b8b8b;
-}
+} */
 
 /* .demend-modal .modal__content .forBorder {
   border: 2px solid blue;
@@ -568,7 +578,7 @@ header #menu img {
   display: block;
 }
 .game-container .game_modal__actions .out-btn {
-  position: absolute;
+  /* position: absolute;
   font: inherit;
   padding: 0.5rem 1.5rem;
   border: 1px solid #00329e;
@@ -580,7 +590,14 @@ header #menu img {
   cursor: url("./image_main/mouse_cursor/one-finger.png"), auto;
   margin: 0 0.5rem;
   right: 5px;
-  bottom: 10px;
+  bottom: 10px; */
+  position: absolute;
+  background: none;
+  border: none;
+  cursor: pointer;
+  cursor: url("./image_main/mouse_cursor/one-finger.png"), auto;
+  left: 10px;
+  top: 15px;
 }
 .slot-Machine {
   padding-left: 50px;
