@@ -1,7 +1,7 @@
 body {
   -ms-overflow-style: none;
-  background: url('./image_main/main_background.jpg') no-repeat;
-  cursor: url('./image_main/mouse_cursor/one-finger.png'), auto;
+  background: url("./image_main/main_background.jpg") no-repeat;
+  cursor: url("./image_main/mouse_cursor/one-finger.png"), auto;
 }
 ::-webkit-scrollbar {
   display: none;
@@ -9,20 +9,20 @@ body {
 
 /* font 가져옴. */
 @font-face {
-  font-family: 'NeoDunggeunmoPro-Regular';
-  src: url('./image_main/font_main/NeoDunggeunmoPro-Regular.ttf')
-    format('truetype');
+  font-family: "NeoDunggeunmoPro-Regular";
+  src: url("./image_main/font_main/NeoDunggeunmoPro-Regular.ttf")
+    format("truetype");
 }
 
 .mainbox {
-  background: url('./image_main/background_white.png');
+  background: url("./image_main/background_white.png");
   width: 910px;
   height: 910px;
 }
 #box {
   width: 900px;
   height: 900px;
-  background: url('./image_main/grass.jpg');
+  background: url("./image_main/grass.jpg");
   position: relative;
 }
 #box .animalBtn {
@@ -52,9 +52,13 @@ body {
   pointer-events: none;
   display: none;
 }
+#backdrop.visible {
+  display: block;
+  pointer-events: all;
+}
 
 header {
-  background: url('/image_main/header_background.jpg');
+  background: url("/image_main/header_background.jpg");
   width: 100%;
   height: 13%;
   display: flex;
@@ -63,13 +67,13 @@ header {
 }
 /* 제목이 정해졌을 때 변경이 필요한 곳. start 화면 포함. */
 header #main_title {
-  font-family: 'NeoDunggeunmoPro-Regular';
+  font-family: "NeoDunggeunmoPro-Regular";
   color: rgba(244, 252, 225, 0.952);
-
   font-size: 50px;
   text-shadow: 0px 5px 2px #073612;
 }
-header #demend, #menu{
+header #demend,
+#menu {
   width: 30%;
   height: 100%;
   background: none;
@@ -85,12 +89,12 @@ header button:active {
 header #demend img {
   max-width: 100%;
   max-height: 100%;
-  cursor: url('./image_main/mouse_cursor/money-bag.png'), auto;
+  cursor: url("./image_main/mouse_cursor/money-bag.png"), auto;
 }
 header #menu img {
   max-width: 100%;
   max-height: 100%;
-  cursor: url('./image_main/mouse_cursor/support.png'), auto;
+  cursor: url("./image_main/mouse_cursor/support.png"), auto;
 }
 .demend-modal {
   position: fixed;
@@ -130,12 +134,12 @@ header #menu img {
   border-radius: 6px;
   box-shadow: 0 1px 8px rgba(0, 0, 0, 0.26);
   cursor: pointer;
-  cursor: url('./image_main/mouse_cursor/money-bag.png'), auto;
+  cursor: url("./image_main/mouse_cursor/money-bag.png"), auto;
   margin: 0 0.5rem;
   width: 200px;
   height: 100px;
   font-size: 30px;
-  font-family: "NeoDunggeunmoPro-Regular";
+  font-family: 'NeoDunggeunmoPro-Regular';
 }
 .demend-modal .modal__content .buy-btn:hover {
   background: #dddddd;
@@ -147,24 +151,14 @@ header #menu img {
   width: 450px;
 }
 .demend-modal .modal__actions .out-btn {
-  position: relative;
-  left: 300px;
-  padding: 0.5rem 1.5rem;
-  border: 2px outset #00329e;
-  background: #ffffff;
-  color: rgb(0, 0, 0);
-  border-radius: 6px;
-  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.26);
+
+  position: absolute;
+  background: none;
+  border: none;
   cursor: pointer;
-  cursor: url('./image_main/mouse_cursor/one-finger.png'), auto;
-  margin: 0 0.5rem;
-  font-family: "NeoDunggeunmoPro-Regular";
-}
-.demend-modal .modal__actions .out-btn:hover{
-  background: #dddddd;
-}
-.demend-modal .modal__actions .out-btn:active{
-  background: #8b8b8b;
+  cursor: url("./image_main/mouse_cursor/one-finger.png"), auto;
+  left: 5px;
+  top: 10px;
 }
 .demend-modal .modal__content .forBorder {
   width: 200px;
@@ -181,7 +175,7 @@ header #menu img {
 .market-modal {
   position: fixed;
   display: none;
-  background: url("./image_main/sell_list.png");
+  background: url('./image_main/sell_list.png');
   background-size: 100%;
   z-index: 100;
   top: 15%;
@@ -197,8 +191,11 @@ header #menu img {
   flex-direction: row;
 }
 .force_item p {
+  width: 100%;
   margin-right: 20px;
+  text-align: center;
 }
+
 .force_item button {
   margin-top: 15px;
 }
@@ -231,7 +228,7 @@ header #menu img {
 .menu-modal.visible .menu_modal__content .forBorder,
 .market-modal.visible .market_modal__content .forBorder,
 .sell-modal.visible .sell_modal__content .forBorder {
-  font-family: "NeoDunggeunmoPro-Regular";
+  font-family: 'NeoDunggeunmoPro-Regular';
   font-size: 20px;
 }
 
@@ -246,29 +243,29 @@ header #menu img {
 }
 
 .menu-modal.visible .menu_modal__content .asdbtn {
-  font-family: "NeoDunggeunmoPro-Regular";
+  font-family: 'NeoDunggeunmoPro-Regular';
   font-size: 20px;
   border: 2px inset #ffa53f;
   background: white;
   border-radius: 10px;
   width: 100px;
   height: 30px;
-  cursor: url('./image_main/mouse_cursor/support.png'), auto;
+  cursor: url("./image_main/mouse_cursor/support.png"), auto;
 }
 .market-modal.visible .market_modal__content .asdbtn,
 .sell-modal.visible .sell_modal__content #asd {
-  font-family: "NeoDunggeunmoPro-Regular";
+  font-family: 'NeoDunggeunmoPro-Regular';
   font-size: 20px;
   border: 2px inset #ffa53f;
   background: white;
   border-radius: 10px;
   width: 100px;
   height: 30px;
-  cursor: url('./image_main/mouse_cursor/expense.png'), auto;
+  cursor: url("./image_main/mouse_cursor/expense.png"), auto;
 }
 .menu-modal.visible .menu_modal__content .asdbtn:hover,
 .sell-modal.visible .sell_modal__content #asd:hover,
-.market-modal.visible .market_modal__content .asdbtn:hover{
+.market-modal.visible .market_modal__content .asdbtn:hover {
   background: #dddddd;
 }
 .menu-modal.visible .menu_modal__content .asdbtn:active,
@@ -291,7 +288,7 @@ header #menu img {
 .buy-fail-modal.visible {
   display: block;
   box-shadow: 5px 5px 5px rgb(77, 75, 75);
-  font-family: "NeoDunggeunmoPro-Regular";
+  font-family: 'NeoDunggeunmoPro-Regular';
 }
 .buy-fail-modal .modal__title {
   margin: 0;
@@ -334,7 +331,7 @@ header #menu img {
 .menu-modal .menu_modal__actions .out-btn,
 .market-modal .market_modal__actions .out-btn,
 .sell-modal .sell_modal__actions .out-btn {
-  font-family: "NeoDunggeunmoPro-Regular";
+  /* font-family: "NeoDunggeunmoPro-Regular";
   font-size: 17px;
   position: relative;
   left: 300px;
@@ -345,13 +342,20 @@ header #menu img {
   border-radius: 6px;
   box-shadow: 0 1px 8px rgba(0, 0, 0, 0.26);
   cursor: pointer;
-  cursor: url('./image_main/mouse_cursor/one-finger.png'), auto;
-  margin: 0 0.5rem;
+  cursor: url("./image_main/mouse_cursor/one-finger.png"), auto;
+  margin: 0 0.5rem; */
+  position: absolute;
+  background: none;
+  border: none;
+  cursor: pointer;
+  cursor: url("./image_main/mouse_cursor/one-finger.png"), auto;
+  left: 50px;
+  top: 50px;
 }
 
 .game-info-modal .game-info_modal__actions .out-btn,
 .how-to-paly-modal .how-to-paly_modal__actions .out-btn {
-  font-family: 'NeoDunggeunmoPro-Regular';
+  /* font-family: "NeoDunggeunmoPro-Regular";
   font-size: 17px;
   position: relative;
   top: 25px;
@@ -362,9 +366,16 @@ header #menu img {
   border-radius: 6px;
   box-shadow: 0 1px 8px rgba(0, 0, 0, 0.26);
   cursor: pointer;
-  margin: 0 0.5rem;
+  margin: 0 0.5rem; */
+  position: absolute;
+  background: none;
+  border: none;
+  cursor: pointer;
+  cursor: url("./image_main/mouse_cursor/one-finger.png"), auto;
+  left: 50px;
+  top: 50px;
 }
-.menu-modal .menu_modal__actions .out-btn:hover,
+/* .menu-modal .menu_modal__actions .out-btn:hover,
 .market-modal .market_modal__actions .out-btn:hover,
 .sell-modal .sell_modal__actions .out-btn:hover {
   background: #dddddd;
@@ -373,7 +384,7 @@ header #menu img {
 .market-modal .market_modal__actions .out-btn:active,
 .sell-modal .sell_modal__actions .out-btn:active {
   background: #8b8b8b;
-}
+} */
 
 /* .demend-modal .modal__content .forBorder {
   border: 2px solid blue;
@@ -384,7 +395,8 @@ header #menu img {
   align-content: center;
 } */
 
-.mainbox #box #money, #coin{
+.mainbox #box #money,
+#coin {
   font-family: "NeoDunggeunmoPro-Regular";
   font-size: 30px;
   margin: 10px;
@@ -409,7 +421,7 @@ header #menu img {
   cursor: pointer;
   padding: 0;
   position: relative;
-  cursor: url('./image_main/mouse_cursor/income.png'), auto;
+  cursor: url("./image_main/mouse_cursor/income.png"), auto;
 }
 #line1 button:active {
   top: 2px;
@@ -430,8 +442,7 @@ header #menu img {
 .item-sheep,
 .item-duck,
 .item-goat,
-.item-pig
- {
+.item-pig {
   opacity: 0;
   font-size: 16px;
   font-weight: bold;
@@ -453,7 +464,7 @@ header #menu img {
 
 /* footer 부분 */
 .footer_main {
-  background: url('./image_main/header_background.jpg');
+  background: url("./image_main/header_background.jpg");
   width: 100%;
   height: 130px;
   position: absolute;
@@ -470,16 +481,16 @@ header #menu img {
   color: #fde9db;
   text-shadow: 0px 5px 2px #000;
   padding: 10px 25px;
-  font-family: 'NeoDunggeunmoPro-Regular';
+  font-family: "NeoDunggeunmoPro-Regular";
   font-size: 40px;
   font-weight: 500;
   cursor: pointer;
   position: relative;
   outline: none;
-  cursor: url('./image_main/mouse_cursor/money-bag.png'), auto;
+  cursor: url("./image_main/mouse_cursor/money-bag.png"), auto;
 }
 .footer_main .btn-15 {
-  background: url('./image_main/wood_btn.png') no-repeat;
+  background: url("./image_main/wood_btn.png") no-repeat;
   background-size: 100%;
   border: none;
   z-index: 1;
@@ -498,7 +509,7 @@ header #menu img {
 
 /* 메뉴 css 부분 */
 /* 메뉴 버튼 css */
-@import url('https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css');
+@import url("https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css");
 
 /* 크기 400 x 600 기준 */
 
@@ -549,7 +560,7 @@ header #menu img {
   outline: none;
   background-color: inherit;
   cursor: pointer;
-  cursor: url('./image_main/mouse_cursor/one-finger.png'), auto;
+  cursor: url("./image_main/mouse_cursor/one-finger.png"), auto;
   position: absolute;
   z-index: 1000;
   right: 10px;
@@ -568,14 +579,14 @@ header #menu img {
   border-radius: 20px;
   padding: 30px;
   text-align: center;
-  font-family: 'NeoDunggeunmoPro-Regular';
+  font-family: "NeoDunggeunmoPro-Regular";
   font-size: 1.2em;
 }
 .game-container.visible {
   display: block;
 }
 .game-container .game_modal__actions .out-btn {
-  position: absolute;
+  /* position: absolute;
   font: inherit;
   padding: 0.5rem 1.5rem;
   border: 2px outset #427eff;
@@ -584,10 +595,17 @@ header #menu img {
   border-radius: 6px;
   box-shadow: 0 1px 8px rgba(0, 0, 0, 0.26);
   cursor: pointer;
-  cursor: url('./image_main/mouse_cursor/one-finger.png'), auto;
+  cursor: url("./image_main/mouse_cursor/one-finger.png"), auto;
   margin: 0 0.5rem;
   right: 5px;
-  bottom: 10px;
+  bottom: 10px; */
+  position: absolute;
+  background: none;
+  border: none;
+  cursor: pointer;
+  cursor: url("./image_main/mouse_cursor/one-finger.png"), auto;
+  left: 10px;
+  top: 15px;
 }
 .game-container .game_modal__actions .out-btn:hover {
   background: #010caf;
@@ -645,7 +663,7 @@ header #menu img {
   cursor: pointer;
   position: absolute;
   cursor: pointer;
-  cursor: url('./image_main/mouse_cursor/coin.png'), auto;
+  cursor: url("./image_main/mouse_cursor/coin.png"), auto;
   right: 25px;
   top: 1px;
   transition: 0.001s linear;
@@ -662,7 +680,7 @@ header #menu img {
   background: none;
   border: none;
   cursor: pointer;
-  cursor: url('./image_main/mouse_cursor/one-finger.png'), auto;
+  cursor: url("./image_main/mouse_cursor/one-finger.png"), auto;
   left: 5px;
   top: 10px;
 }
@@ -680,27 +698,29 @@ header #menu img {
   border-radius: 130px;
 }
 
-.game-container #timer, #score{
+.game-container #timer,
+#score {
   margin: 3px;
   margin-top: 10px;
   font-size: 1.2em;
 }
-#pattern-display{
+#pattern-display {
   border-radius: 10px;
   border: 3px solid #000;
   height: 40px;
 }
-#message{
+#message {
   height: 20px;
 }
 
-#start, #retry{
+#start,
+#retry {
   border: none;
   border-radius: 10px;
   background: #bdbdbd;
   width: 80px;
   height: 30px;
-  font-family: 'NeoDunggeunmoPro-Regular';
+  font-family: "NeoDunggeunmoPro-Regular";
   font-weight: 700;
-  cursor: url('./image_main/mouse_cursor/one-finger.png'), auto;
+  cursor: url("./image_main/mouse_cursor/one-finger.png"), auto;
 }
