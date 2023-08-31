@@ -1,6 +1,7 @@
 // 자산 nan으로 뜨는거 해결하기
 
 //menu 버튼
+const CLASS_VISIBLE = "visible";
 //헤더에 menu 버튼
 const $menuBtn = document.getElementById("menu");
 // 메뉴 모달
@@ -32,11 +33,13 @@ const exitMenuModalHandler = (e) => {
   console.log(`취소 버튼 눌림`);
 
   $menuModal.classList.remove("visible");
+  $backdrop.classList.remove(CLASS_VISIBLE);
 };
 
 //메뉴 모달을 보여주는 showMenuModalHandler
 const showMenuModalHandler = (e) => {
   $menuModal.classList.add("visible");
+  $backdrop.classList.add(CLASS_VISIBLE);
 };
 
 const showHandler = (e) => {
@@ -59,6 +62,9 @@ const hideHandler = (e) => {
 const exitHandler = (e) => {
   location.href = "./start.html";
 };
+const backdropHandler = (e) => {
+  $backdrop.classList.remove(CLASS_VISIBLE);
+};
 
 //menu 버튼에 클릭이벤트
 $menuBtn.addEventListener("click", showMenuModalHandler);
@@ -68,6 +74,7 @@ $howToPlayExit.addEventListener("click", hideHandler);
 $gameInfoBtn.addEventListener("click", showHandler);
 $gameInfoExit.addEventListener("click", hideHandler);
 $endGameBtn.addEventListener("click", exitHandler);
+$backdrop.addEventListener("click", backdropHandler);
 // 요구사항 버튼
 // 헤더에 요구사항 버튼
 const $demendBtn = document.getElementById("demend");
@@ -103,7 +110,6 @@ let price = 0;
 const $demendModalCloseBtn = $demendModal.querySelector(".modal__actions");
 // 요구사항 확인 컨텐츠들
 const $modal__content = document.querySelector(".modal__content");
-const CLASS_VISIBLE = "visible";
 
 const demendCloseModal = (e) => {
   $demendModal.classList.remove(CLASS_VISIBLE);
