@@ -8,7 +8,7 @@ const $menuModal = document.querySelector('body .menu-modal');
 //메뉴 모달 안에서 x 버튼
 
 const $exitBtn = document.querySelector('body .menu-modal .out-btn');
-
+// refactor
 // 게임방법 버튼
 const $howToPlayBtn = document.getElementById('how-to-play-btn');
 // 게임방법 모달
