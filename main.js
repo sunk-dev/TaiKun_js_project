@@ -9,9 +9,9 @@ const $menuModal = document.querySelector("body .menu-modal");
 //메뉴 모달 안에서 x 버튼
 
 const $exitBtn = document.querySelector("body .menu-modal .out-btn");
-
 const $backdrop = document.getElementById("backdrop");
 
+// refactor
 // 게임방법 버튼
 const $howToPlayBtn = document.getElementById("how-to-play-btn");
 // 게임방법 모달
@@ -325,8 +325,8 @@ const moneyByLevel = {
   pig: [5000, 15000, 30000, 50000, 200000],
 };
 
-let totalMoney = 1000000000;
-let totalCoin = 1000000;
+let totalMoney = 0;
+let totalCoin = 0;
 
 const sellBtn = document.getElementById("asd");
 sellBtn.addEventListener("click", () => {

@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Bagel+Fat+One&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Bagel+Fat+One&display=swap');
 
 body {
   -ms-overflow-style: none;
@@ -16,7 +16,6 @@ body {
     format("truetype");
 }
 
-/* box를 mainbox의 정가운데에 위치시켜볼 예정. 필요 없으면 제거. 1200x950 */
 .mainbox {
   background: url("./image_main/background_white.png");
   width: 910px;
@@ -32,7 +31,6 @@ body {
   display: none;
 }
 #box .animalBtn.visible {
-  /* display: block; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -73,11 +71,11 @@ header {
 header #main_title {
   font-family: "NeoDunggeunmoPro-Regular";
   color: rgba(244, 252, 225, 0.952);
-
   font-size: 50px;
   text-shadow: 0px 5px 2px #073612;
 }
-header button {
+header #demend,
+#menu {
   width: 30%;
   height: 100%;
   background: none;
@@ -86,6 +84,7 @@ header button {
   padding: 0;
   position: relative;
 }
+
 header button:active {
   top: 2px;
 }
@@ -102,7 +101,8 @@ header #menu img {
 .demend-modal {
   position: fixed;
   display: none;
-  background: #fff;
+  background: url('./image_main/sell_list.png');
+  background-size: 100%;
   z-index: 100;
   top: 15%;
   left: 250px;
@@ -123,15 +123,15 @@ header #menu img {
   display: flex;
 }
 .demend-modal .modal__content .demend-main-img {
-  width: 350px;
+  width: 320px;
   right: 10px;
 }
 .demend-modal .modal__content .buy-btn {
   top: 30px;
   position: relative;
   padding: 0.5rem 1.5rem;
-  border: 1px solid #00329e;
-  background: #a5b7c6;
+  border: 2px inset #ffa53f;
+  background: #fff;
   color: rgb(0, 0, 0);
   border-radius: 6px;
   box-shadow: 0 1px 8px rgba(0, 0, 0, 0.26);
@@ -141,11 +141,19 @@ header #menu img {
   width: 200px;
   height: 100px;
   font-size: 30px;
+  font-family: 'NeoDunggeunmoPro-Regular';
+}
+.demend-modal .modal__content .buy-btn:hover {
+  background: #dddddd;
+}
+.demend-modal .modal__content .buy-btn:active {
+  background: #8b8b8b;
 }
 .demend-modal .modal__actions {
   width: 450px;
 }
 .demend-modal .modal__actions .out-btn {
+
   position: absolute;
   background: none;
   border: none;
@@ -169,7 +177,7 @@ header #menu img {
 .market-modal {
   position: fixed;
   display: none;
-  background: url("./image_main/sell_list.png");
+  background: url('./image_main/sell_list.png');
   background-size: 100%;
   z-index: 100;
   top: 15%;
@@ -185,8 +193,11 @@ header #menu img {
   flex-direction: row;
 }
 .force_item p {
+  width: 100%;
   margin-right: 20px;
+  text-align: center;
 }
+
 .force_item button {
   margin-top: 15px;
 }
@@ -219,7 +230,7 @@ header #menu img {
 .menu-modal.visible .menu_modal__content .forBorder,
 .market-modal.visible .market_modal__content .forBorder,
 .sell-modal.visible .sell_modal__content .forBorder {
-  font-family: "NeoDunggeunmoPro-Regular";
+  font-family: 'NeoDunggeunmoPro-Regular';
   font-size: 20px;
 }
 
@@ -233,9 +244,8 @@ header #menu img {
   overflow: auto;
 }
 
-/* [menu]와 [market & sell]버튼은 일부러 분리했습니다. */
 .menu-modal.visible .menu_modal__content .asdbtn {
-  font-family: "NeoDunggeunmoPro-Regular";
+  font-family: 'NeoDunggeunmoPro-Regular';
   font-size: 20px;
   border: 2px inset #ffa53f;
   background: white;
@@ -246,7 +256,7 @@ header #menu img {
 }
 .market-modal.visible .market_modal__content .asdbtn,
 .sell-modal.visible .sell_modal__content #asd {
-  font-family: "NeoDunggeunmoPro-Regular";
+  font-family: 'NeoDunggeunmoPro-Regular';
   font-size: 20px;
   border: 2px inset #ffa53f;
   background: white;
@@ -280,7 +290,7 @@ header #menu img {
 .buy-fail-modal.visible {
   display: block;
   box-shadow: 5px 5px 5px rgb(77, 75, 75);
-  font-family: "NeoDunggeunmoPro-Regular";
+  font-family: 'NeoDunggeunmoPro-Regular';
 }
 .buy-fail-modal .modal__title {
   margin: 0;
@@ -492,11 +502,11 @@ header #menu img {
 }
 .asd {
   position: absolute;
-  bottom: 35px;
+  padding-bottom: 45px;
 }
 
 .footer_main .btn-15:active {
-  top: -5px;
+  top: 12px;
 }
 
 /* 메뉴 css 부분 */
@@ -581,7 +591,7 @@ header #menu img {
   /* position: absolute;
   font: inherit;
   padding: 0.5rem 1.5rem;
-  border: 1px solid #00329e;
+  border: 2px outset #427eff;
   background: #00329e;
   color: white;
   border-radius: 6px;
@@ -598,6 +608,12 @@ header #menu img {
   cursor: url("./image_main/mouse_cursor/one-finger.png"), auto;
   left: 10px;
   top: 15px;
+}
+.game-container .game_modal__actions .out-btn:hover {
+  background: #010caf;
+}
+.game-container .game_modal__actions .out-btn:active {
+  background: #00065e;
 }
 .slot-Machine {
   padding-left: 50px;
